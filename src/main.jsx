@@ -395,18 +395,18 @@ function Hero({ onPick }) {
       <div className="wrap">
         <article className="hero-banner">
           <div className="hero-copy">
-            <span className="hero-kicker">BUYFINIX GLOBAL MARKETPLACE</span>
+            <span className="hero-kicker"><Zap /> INSTANT DELIVERY ON WHATSAPP</span>
             <h1>
-              ALL YOUR DIGITAL.
+              ALL YOUR APPS.
               <br />
               <em>ONE BUYFINIX.</em>
             </h1>
             <p>
-              Genuine games, subscriptions, gift cards and instant top-ups —
-              delivered fast with local support.
+              Games, subscriptions, gift cards and top-ups at fair Bangladeshi
+              prices — delivered fast with real local support.
             </p>
-            <button onClick={() => onPick("games")}>
-              EXPLORE MARKETPLACE <ArrowRight />
+            <button onClick={() => onPick("subscriptions")}>
+              EXPLORE PLANS <ArrowRight />
             </button>
           </div>
           <div className="hero-showcase" aria-hidden="true">
@@ -415,14 +415,14 @@ function Hero({ onPick }) {
             <img src="/category-streaming-v1.webp" alt="" />
           </div>
           <span className="float-card fc-one">
-            STEAM & EPIC
+            DIGITAL GOODS
             <br />
-            <b>GAME KEYS</b>
+            <b>DELIVERED FAST</b>
           </span>
           <span className="float-card fc-two">
-            UP TO
+            STARTING FROM
             <br />
-            <b>60% OFF</b>
+            <b>৳199</b>
           </span>
           <div className="hero-dots">
             <i className="active" />
@@ -434,14 +434,14 @@ function Hero({ onPick }) {
           <button onClick={() => onPick("games")}>
             <img src="/product-game.svg" alt="" />
             <span>
-              <small>Trending now</small>
+              <small>Popular now</small>
               <b>PC game keys</b>
             </span>
           </button>
           <button onClick={() => onPick("streaming")}>
             <img src="/product-google-play.svg" alt="" />
             <span>
-              <small>Entertainment</small>
+              <small>Watch more</small>
               <b>Streaming plans</b>
             </span>
           </button>
@@ -455,7 +455,7 @@ function Hero({ onPick }) {
           <button onClick={() => onPick("top-ups")}>
             <img src="/product-pubg.svg" alt="" />
             <span>
-              <small>Fast delivery</small>
+              <small>Quick recharge</small>
               <b>Game top-ups</b>
             </span>
           </button>
@@ -480,9 +480,9 @@ function Favorites({ onPick }) {
     <section className="favorites">
       <div className="wrap">
         <div className="category-heading">
-          <span>SHOP SMARTER</span>
+          <span>SHOP BY PLAN</span>
           <h2 className="favorites-title">Shop by category.</h2>
-          <p>Everything digital, organized around what you need.</p>
+          <p>Find the right digital product for every need.</p>
         </div>
         <div className="platform-strip">
           {items.map(([key, img, title, sub]) => (
@@ -649,8 +649,7 @@ function ProductGallery({ products, onAdd, onOpen, wishlist, onWish }) {
           </span>
           <h2>Find your next digital product</h2>
           <p>
-            Search, filter and compare games, subscriptions, gift cards and
-            top-ups in one premium gallery.
+            Browse popular products, compare plans and check out in a few taps.
           </p>
         </div>
         <div className="category-tabs" aria-label="Product categories">
@@ -745,10 +744,8 @@ function ProductGallery({ products, onAdd, onOpen, wishlist, onWish }) {
           </div>
         </div>
         <div className="finder-results">
-          <div>
-            <b>{filtered.length}</b> products available
-          </div>
-          <span>Instant delivery · Secure checkout</span>
+          <div><b>{filtered.length}</b> plans available</div>
+          <span>⚡ Instant delivery · Secure checkout</span>
         </div>
         {filtered.length ? (
           <>
@@ -1092,18 +1089,6 @@ function App() {
       })
       .catch(() => {});
   }, []);
-  const visible = useMemo(
-    () =>
-      products.filter(
-        (p) =>
-          (category === "all" || p.category === category) &&
-          (!query ||
-            `${p.title} ${p.cat} ${p.platform}`
-              .toLowerCase()
-              .includes(query.toLowerCase())),
-      ),
-    [products, category, query],
-  );
   const goCatalog = () =>
     setTimeout(
       () =>
@@ -1167,88 +1152,9 @@ function App() {
       <Favorites onPick={choose} />
       <Shelf
         id="deals"
-        title="Extra savings today"
-        description="Limited-time prices on selected digital products"
+        title="Shop by product."
+        description="Popular digital products, clear pricing and instant delivery."
         products={products}
-        {...cardProps}
-      />
-      <Shelf
-        id="bestsellers"
-        title="Bestsellers"
-        description="The products BuyFinix customers choose most"
-        products={products.slice().sort((a, b) => b.price - a.price)}
-        {...cardProps}
-        ranked
-      />
-      <Shelf
-        id="topups"
-        title="Level up instantly with top-ups"
-        description="Game credits delivered fast and securely"
-        products={products
-          .filter((p) => p.category === "top-ups")
-          .concat(products.filter((p) => p.category === "gift-cards"))}
-        {...cardProps}
-        accent
-      />
-      <section className="catalog" id="catalog">
-        <div className="wrap">
-          <div className="section-head">
-            <div>
-              <h2>
-                {query
-                  ? `Results for “${query}”`
-                  : category === "all"
-                    ? "Explore the marketplace"
-                    : categories.find((c) => c.key === category)?.name ||
-                      "Products"}
-              </h2>
-              <p>
-                {visible.length} genuine digital products with local support
-              </p>
-            </div>
-            <button
-              className="reset"
-              onClick={() => {
-                setCategory("all");
-                setQuery("");
-              }}
-            >
-              All products
-            </button>
-          </div>
-          {visible.length ? (
-            <div className="cards catalog-cards">
-              {visible.map((p) => (
-                <ProductCard
-                  p={p}
-                  {...cardProps}
-                  wished={wishlist.includes(p.id)}
-                  key={`catalog-${p.id}`}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="no-results">
-              <Search />
-              <h3>No products found</h3>
-              <button onClick={() => setQuery("")}>Clear search</button>
-            </div>
-          )}
-        </div>
-      </section>
-      <Shelf
-        id="subscriptions"
-        title="Streaming, AI & subscriptions"
-        description="Premium access for entertainment, work and creativity"
-        products={products.filter((p) =>
-          [
-            "streaming",
-            "subscriptions",
-            "ai-tools",
-            "creative",
-            "security",
-          ].includes(p.category),
-        )}
         {...cardProps}
       />
       <Reviews />

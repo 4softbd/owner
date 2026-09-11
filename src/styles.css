@@ -4478,3 +4478,103 @@ footer {
     font-size: 34px;
   }
 }
+
+/* v25: compact, product-led retail direction inspired by modern subscription stores */
+:root {
+  --bf-navy: #171717;
+  --bf-coral: #ff4d1a;
+  --bf-muted: #6b6b6b;
+  --bf-line: #e8e8e5;
+}
+body { background: #fbfbf9; color: #191919; }
+.wrap { width: min(1200px, calc(100% - 40px)); }
+.site-header { box-shadow: 0 1px 0 rgba(20,20,20,.1); }
+.topbar { background: #171717; color: #e4e4df; }
+.topbar-inner { height: 30px; font-size: 10px; letter-spacing: .04em; }
+.header-main { height: 68px; grid-template-columns: 170px 1fr auto; gap: 24px; }
+.brand img { width: 136px; }
+.global-search { height: 40px; max-width: 560px; border: 1px solid #d8d8d4; border-radius: 999px; background: #f7f7f4; }
+.global-search button { background: #171717; padding: 0 20px; font-size: 11px; }
+.head-actions button, .head-actions a { height: 38px; font-weight: 700; }
+.cart-button b { background: var(--bf-coral); }
+.navline { background: #fff; border-top: 1px solid #efefec; }
+.nav-inner, .browse { height: 43px; }
+.browse { padding: 0 17px; background: #171717; font-size: 11px; }
+.nav-inner nav a { padding: 0 15px; font-size: 11px; letter-spacing: .02em; }
+.nav-inner nav a:hover { color: var(--bf-coral); }
+.hero { padding: 14px 0 0; background: #fbfbf9; }
+.hero-grid { grid-template-columns: minmax(0, 1fr) 250px; gap: 12px; }
+.hero-banner { height: 350px; border-radius: 14px; background: #1d1d1b; }
+.hero-banner:before { opacity: .36; background-image: radial-gradient(circle at 78% 20%, rgba(255,77,26,.46), transparent 19%), linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); }
+.hero-copy { top: 46px; left: 42px; width: 49%; }
+.hero-kicker { align-items: center; gap: 5px; padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,.12); letter-spacing: .08em; }
+.hero-kicker svg { width: 12px; color: #ff9b77; }
+.hero-copy h1 { margin: 14px 0 12px; font-size: clamp(36px, 4.4vw, 59px); line-height: .98; }
+.hero-copy h1 em { color: #ff7445; }
+.hero-copy p { max-width: 390px; color: #d4d1ca; line-height: 1.55; }
+.hero-copy button { height: 42px; border-radius: 999px; background: var(--bf-coral); }
+.hero-showcase { height: 70%; bottom: -2%; right: 3%; width: 53%; }
+.hero-showcase img { border-radius: 12px; }
+.float-card { border-radius: 9px; }
+.hero-teasers { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0; }
+.hero-teasers button { min-height: 80px; border: 1px solid #e4e3de; border-radius: 12px; background: #fff; }
+.hero-teasers button:hover { border-color: #ff9a7c; transform: translateY(-2px); }
+.hero-teasers img { width: 42px; height: 42px; }
+.market-trust { padding: 22px 0; background: #fff; border-bottom: 1px solid var(--bf-line); }
+.market-trust .wrap { grid-template-columns: repeat(4,1fr); }
+.market-trust span { padding: 0 24px; }
+.market-trust b { font-size: 13px; }
+.market-trust small { font-size: 10px; }
+.favorites { padding: 55px 0 38px; background: #fbfbf9; }
+.category-heading { display: flex; align-items: baseline; gap: 15px; margin-bottom: 18px; }
+.category-heading > span { color: var(--bf-coral); font-weight: 900; font-size: 10px; letter-spacing: .11em; }
+.category-heading p { margin-left: auto; color: var(--bf-muted); font-size: 13px; }
+.favorites-title, .category-heading h2 { font-size: 28px; margin: 0; letter-spacing: -.045em; }
+.platform-strip { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.platform-strip button { height: 184px; border-radius: 12px; border: 1px solid #e3e3df; background: #fff; }
+.platform-strip button > div { height: 126px; }
+.platform-strip button > div img { height: 126px; }
+.platform-strip button span { height: 56px; padding: 0 12px; }
+.product-finder { padding: 52px 0 64px; background: #f1f1ed; }
+.finder-intro { max-width: none; display: grid; grid-template-columns: auto 1fr auto; align-items: baseline; gap: 14px; }
+.finder-intro > span { color: var(--bf-coral); font-size: 10px; letter-spacing: .1em; }
+.finder-intro h2 { font-size: 30px; margin: 0; letter-spacing: -.045em; }
+.finder-intro p { margin: 0 0 4px auto; font-size: 13px; }
+.category-tabs { margin: 24px 0 13px; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 3px; }
+.category-tabs button { white-space: nowrap; border-radius: 999px; background: #fff; border-color: #deded9; }
+.category-tabs button.active { background: #1b1b19; border-color: #1b1b19; }
+.finder-panel { border-radius: 13px; background: #fff; border: 1px solid #e0e0da; box-shadow: none; }
+.finder-results { font-size: 12px; }
+.gallery-grid { grid-template-columns: repeat(4,1fr); gap: 13px; }
+.product-card { border-radius: 12px; border-color: #e0e0dc; background: #fff; box-shadow: none; }
+.product-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(0,0,0,.08); }
+.poster { height: 178px; }
+.product-info { padding: 13px; }
+.product-title { font-size: 14px; }
+.details-button { border-radius: 7px; background: #f4f4f0; color: #1b1b19; }
+.details-button:hover { background: #1b1b19; color: #fff; }
+.price-row > button { background: var(--bf-coral); }
+.reviews-section, .faq-section { padding: 62px 0; background: #fff; }
+.story-heading h2 { font-size: 34px; }
+.review-grid article { border-radius: 12px; box-shadow: none; border: 1px solid #e7e7e2; }
+.faq-section { background: #f1f1ed; }
+.faq-list details { border-radius: 10px; }
+@media (max-width: 760px) {
+  .wrap { width: calc(100% - 24px); }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-banner { height: 465px; }
+  .hero-copy { left: 24px; top: 30px; width: 88%; }
+  .hero-showcase { width: 85%; height: 43%; right: 4%; }
+  .hero-teasers { grid-template-columns: 1fr 1fr; margin-top: 0; }
+  .hero-teasers button { min-height: 72px; padding: 10px; }
+  .hero-teasers button:nth-child(n+3) { display: none; }
+  .market-trust .wrap { grid-template-columns: 1fr 1fr; }
+  .category-heading { display: block; }
+  .category-heading p { margin: 7px 0 0; }
+  .platform-strip { grid-template-columns: 1fr 1fr; }
+  .finder-intro { display: block; }
+  .finder-intro h2 { margin: 8px 0; }
+  .finder-intro p { margin: 0; }
+  .gallery-grid { grid-template-columns: repeat(2,1fr); }
+  .poster { height: 156px; }
+}
