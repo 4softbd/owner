@@ -11,16 +11,17 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="announcement">⚡ Fast delivery after payment confirmation · WhatsApp support</div>
 <main>
 <section class="hero-band" id="home">
-<header class="nav shell">
+<header class="nav shell shared-nav">
 <a class="brand" href="index.html">BUY <i>⚡</i> FINIX</a>
 <button class="hamburger" id="menu-open" aria-label="Open menu">☰</button>
 <nav>
-<a href="index.html">Home</a>
+<a href="index.html" aria-current="page">Home</a>
 <a href="shop.html">Shop</a>
-<a href="shop.html?category=subscriptions">Categories ▾</a>
-<a href="legal.html">Quick Links ▾</a>
+<div class="nav-drop"><button aria-haspopup="true">Categories <span>⌄</span></button><div class="drop-panel"><a href="shop.html?category=subscriptions">Subscriptions</a><a href="shop.html?category=combos">Combo Packs</a><a href="shop.html?category=software">Software</a><a href="shop.html?category=music">Music</a><a href="shop.html?category=adult">Adult</a><a href="shop.html?category=more">More Plans</a></div></div>
+<div class="nav-drop"><button aria-haspopup="true">Quick Links <span>⌄</span></button><div class="drop-panel"><a href="legal.html#login">Login Terms</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="legal.html#terms">Terms &amp; Conditions</a></div></div>
 </nav>
 <div class="nav-actions">
 <button id="install-app" class="install-app">Install App</button>
@@ -65,9 +66,9 @@
 <i class="steam">S</i>Steam</span>
 </div>
 <div class="trust-pills">
-<span>🛒 <b>10,000+</b> orders</span>
-<span>⚡ <b>24×7</b> auto-delivery</span>
-<span>◯ Replacement <b>warranty</b>
+<span>🛒 <b>Clear</b> pricing</span>
+<span>⚡ <b>Fast</b> delivery</span>
+<span>◯ Replacement <b>support</b>
 </span>
 </div>
 </section>
@@ -87,37 +88,37 @@
 </section>
 <section class="stories">
 <div class="shell">
-<p class="kicker">WORD ON THE STREET</p>
-<h2>Pehle doubt,<br>
-<em>then love.</em>
+<p class="kicker">CUSTOMER FEEDBACK</p>
+<h2>Real stories,<br>
+<em>coming soon.</em>
 </h2>
 <div class="story-track">
 <article>
-<p>“প্রথমে একটু সন্দেহ ছিল। ৳99 plan test করার জন্য নিয়েছিলাম—কয়েক মিনিটের মধ্যেই WhatsApp-এ delivery পেয়েছি।”</p>
+<p>“Add an approved customer review here after receiving permission to publish it.”</p>
 <footer>
-<b>Rafi</b>
-<span>Dhaka · Verified</span>
+<b>Customer review</b>
+<span>Editable placeholder</span>
 </footer>
 </article>
 <article>
-<p>“Replacement warranty সত্যি কাজ করে। Access problem হওয়ার পর দ্রুত নতুন access দিয়েছে—কোনো unnecessary প্রশ্ন নয়।”</p>
+<p>“Use this space for authentic feedback about delivery, support or product quality.”</p>
 <footer>
-<b>Sneha</b>
-<span>Chattogram · Verified</span>
+<b>Customer review</b>
+<span>Editable placeholder</span>
 </footer>
 </article>
 <article>
-<p>“রাতে order করেও কয়েক মিনিটে details পেয়েছি। Support WhatsApp-এ দ্রুত reply করে।”</p>
+<p>“Replace this sample with a review that has been approved for publication.”</p>
 <footer>
-<b>Arjun</b>
-<span>Sylhet · Verified</span>
+<b>Customer review</b>
+<span>Editable placeholder</span>
 </footer>
 </article>
 <article>
-<p>“Software key first try-তেই activate হয়েছে। Price এবং delivery—দুটোই খুব ভালো।”</p>
+<p>“Approved customer stories will appear here as the BuyFinix community grows.”</p>
 <footer>
-<b>Imran</b>
-<span>Rajshahi · Verified</span>
+<b>Customer review</b>
+<span>Editable placeholder</span>
 </footer>
 </article>
 </div>
@@ -235,6 +236,7 @@
 </nav>
 <div class="scrim" id="scrim">
 </div>
+<script src="store.js"></script>
 <script src="app.js">
 </script>
 </body>
