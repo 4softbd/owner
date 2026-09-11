@@ -1,1 +1,46 @@
-<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Account — BuyFinix</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="extras.css"></head><body><header class="nav shell"><a class="brand" href="index.html">BUY ⚡ FINIX</a><nav><a href="shop.html">Shop</a><a href="index.html">Logout</a></nav></header><main class="shell page-shell"><h1 class="page-title">My account.</h1><p class="notice">OTP login will be connected later. Sensitive credentials are not stored in this demo.</p><div class="dashboard-grid"><section class="panel"><h2>Wallet</h2><h3>৳0 credit</h3><p>Referral credit will appear here.</p></section><section class="panel"><h2>Active subscriptions</h2><p>No active subscription in demo mode.</p></section><section class="panel" id="credentials"><h2>My Credentials</h2><p>Protected credentials will appear only after secure authentication is connected.</p></section><section class="panel"><h2>Orders</h2><p>#BF-DEMO-1001 · Pending payment</p></section></div></main></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Account — BuyFinix</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="extras.css">
+</head>
+<body>
+<header class="nav shell">
+<a class="brand" href="index.html">BUY ⚡ FINIX</a>
+<nav>
+<a href="shop.html">Shop</a>
+<a href="index.html">Logout</a>
+</nav>
+</header>
+<main class="shell page-shell">
+<h1 class="page-title">My account.</h1>
+<section class="panel otp-panel" id="login">
+<p class="kicker">SECURE ACCOUNT ACCESS</p><h2>Email login</h2><p>Enter your email and we’ll send a one-time code.</p>
+<form id="otp-form" class="otp-form"><label>Email address<input class="field" id="otp-email" type="email" autocomplete="email" required placeholder="you@example.com"></label><button class="primary-action" type="submit">Send OTP</button><p class="form-status" role="status"></p></form>
+<form id="verify-form" class="otp-form" hidden><label>6-digit code<input class="field" id="otp-code" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" required placeholder="000000"></label><button class="primary-action" type="submit">Verify &amp; continue</button><p class="form-status" role="status"></p></form>
+</section>
+<div class="dashboard-grid">
+<section class="panel">
+<h2>Wallet</h2>
+<h3>৳0 credit</h3>
+<p>Referral credit will appear here.</p>
+</section>
+<section class="panel">
+<h2>Active subscriptions</h2>
+<p>No active subscription in demo mode.</p>
+</section>
+<section class="panel" id="credentials">
+<h2>My Credentials</h2>
+<p>Protected credentials will appear only after secure authentication is connected.</p>
+</section>
+<section class="panel">
+<h2>Orders</h2>
+<p>#BF-DEMO-1001 · Pending payment</p>
+</section>
+</div>
+</main>
+</body>
+</html>
