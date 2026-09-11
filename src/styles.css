@@ -3581,3 +3581,80 @@ footer {
 .cart-items > div {
   border-color: #e4e7df;
 }
+
+/* v23 live contrast corrections */
+.gallery-grid .product-card,
+.cards .product-card,
+.catalog-cards .product-card {
+  background: #ffffff;
+  border-color: #dfe4da;
+}
+.product-info {
+  background: #ffffff;
+  color: #20231e;
+}
+.product-info > small,
+.delivery,
+.section-controls a,
+.finder-intro > span,
+.finder-results span {
+  color: #5b7400;
+}
+.delivery svg {
+  color: #6c8900;
+}
+.price-row small,
+.price-row del {
+  color: #777d74;
+}
+.wish {
+  background: rgba(255, 255, 255, 0.94);
+  color: #474d44;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.wish:hover,
+.wish.active {
+  color: #5f7900;
+}
+.gallery-grid .product-card:hover,
+.cards .product-card:hover {
+  border-color: #a8c653;
+  box-shadow: 0 14px 32px rgba(55, 70, 16, 0.14);
+}
+.gallery-grid .details-button,
+.cards .details-button {
+  background: #f3f6ed;
+  border-color: #d9e1cc;
+  color: #3f4938;
+}
+.gallery-grid .details-button:hover,
+.cards .details-button:hover {
+  background: #eaf3d3;
+  border-color: #91ac42;
+  color: #4c6200;
+}
+.price-row > button,
+.modal-add,
+.checkout {
+  background: #a9cf16;
+  color: #101400;
+}
+.price-row > button:hover,
+.modal-add:hover {
+  background: #96ba0d;
+}
+.section-controls button:hover {
+  border-color: #9bb94a;
+  color: #557000;
+}
+.newsletter form {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.newsletter form button {
+  background: #202819;
+  color: #ffffff;
+}
+.footer-grid a:hover,
+.social-bar svg:hover {
+  color: #5d7600;
+}
