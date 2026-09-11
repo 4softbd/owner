@@ -71,3 +71,9 @@
 @media(max-width:1180px){.gallery-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
 @media(max-width:1000px){.gallery-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.gallery-grid .poster{height:225px}}
 @media(max-width:660px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.gallery-grid .poster{height:190px}.gallery-grid .product-info{padding:10px}.gallery-grid .product-title{font-size:10px;height:29px}.gallery-grid .delivery{display:none}.gallery-grid .smart-art{padding:13px}.gallery-grid .smart-art>span{font-size:15px}}
+
+/* Explicit product details action */
+.details-button{width:100%;height:30px;margin:0 0 9px;padding:0 10px;border:1px solid #303136;border-radius:5px;background:#151518;color:#d5d5d8;display:flex;align-items:center;justify-content:space-between;font-size:8px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+.details-button svg{width:12px;height:12px;color:#b8e01a}
+.details-button:hover{border-color:#b8e01a;color:#b8e01a;background:#10120b}
+.gallery-grid .details-button{height:27px;margin-bottom:8px;font-size:7px}
