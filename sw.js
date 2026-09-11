@@ -1,0 +1,1 @@
+const CACHE='buyfinix-v1',FILES=['index.html','styles.css','app.js','shop.html','product.html','cart.html','checkout.html','account.html'];self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(FILES))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
