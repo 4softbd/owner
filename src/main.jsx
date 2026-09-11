@@ -52,6 +52,12 @@ const categories = [
     items: ["Netflix", "Prime Video", "HBO Max", "Disney+"],
   },
   {
+    name: "Subscriptions",
+    key: "subscriptions",
+    icon: MonitorPlay,
+    items: ["Spotify Premium", "Music plans", "Premium accounts", "View all"],
+  },
+  {
     name: "AI Tools",
     key: "ai-tools",
     icon: Bot,
@@ -75,6 +81,16 @@ const categories = [
     icon: Coins,
     items: ["PUBG UC", "Free Fire Diamonds", "Mobile Legends", "Game credits"],
   },
+];
+const categoryOrder = [
+  "games",
+  "gift-cards",
+  "streaming",
+  "subscriptions",
+  "ai-tools",
+  "creative",
+  "security",
+  "top-ups",
 ];
 const fallback = [
   {
@@ -573,6 +589,12 @@ function ProductGallery({ products, onAdd, onOpen, wishlist, onWish }) {
     if (sort === "price-low") list.sort((a, b) => a.price - b.price);
     if (sort === "price-high") list.sort((a, b) => b.price - a.price);
     if (sort === "name") list.sort((a, b) => a.title.localeCompare(b.title));
+    if (sort === "featured")
+      list.sort(
+        (a, b) =>
+          categoryOrder.indexOf(a.category) -
+            categoryOrder.indexOf(b.category) || a.id - b.id,
+      );
     return list;
   }, [products, type, platform, region, sort, term]);
   const reset = () => {
@@ -595,6 +617,29 @@ function ProductGallery({ products, onAdd, onOpen, wishlist, onWish }) {
             Search, filter and compare games, subscriptions, gift cards and
             top-ups in one premium gallery.
           </p>
+        </div>
+        <div className="category-tabs" aria-label="Product categories">
+          <button
+            className={type === "all" ? "active" : ""}
+            onClick={() => {
+              setType("all");
+              setLimit(12);
+            }}
+          >
+            All products
+          </button>
+          {categories.map(({ key, name, icon: Icon }) => (
+            <button
+              className={type === key ? "active" : ""}
+              onClick={() => {
+                setType(key);
+                setLimit(12);
+              }}
+              key={`tab-${key}`}
+            >
+              <Icon /> {name}
+            </button>
+          ))}
         </div>
         <div className="finder-panel">
           <div className="finder-filters">
@@ -1048,7 +1093,9 @@ function App() {
             <button className="close" onClick={() => setSelected(null)}>
               <X />
             </button>
-            <div className="modal-art"><Artwork p={selected} /></div>
+            <div className="modal-art">
+              <Artwork p={selected} />
+            </div>
             <div>
               <small>
                 {selected.cat} · {selected.region}
@@ -1059,12 +1106,27 @@ function App() {
                 delivery and local customer support.
               </p>
               <div className="product-facts">
-                <span><small>Platform</small><b>{selected.platform}</b></span>
-                <span><small>Region</small><b>{selected.region}</b></span>
-                <span><small>Delivery</small><b>Instant / email</b></span>
-                <span><small>Availability</small><b>In stock</b></span>
+                <span>
+                  <small>Platform</small>
+                  <b>{selected.platform}</b>
+                </span>
+                <span>
+                  <small>Region</small>
+                  <b>{selected.region}</b>
+                </span>
+                <span>
+                  <small>Delivery</small>
+                  <b>Instant / email</b>
+                </span>
+                <span>
+                  <small>Availability</small>
+                  <b>In stock</b>
+                </span>
               </div>
-              <div className="purchase-note"><ShieldCheck /> Genuine product · Secure checkout · Local support</div>
+              <div className="purchase-note">
+                <ShieldCheck /> Genuine product · Secure checkout · Local
+                support
+              </div>
               <div className="modal-price">
                 <span>From</span>
                 <b>{money(selected.price)}</b>
