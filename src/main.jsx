@@ -1,45 +1,1134 @@
-import React,{useEffect,useMemo,useRef,useState}from'react'
-import ReactDOM from'react-dom/client'
-import{Search,Menu,ChevronDown,UserRound,ShoppingCart,Heart,Globe2,Gamepad2,Gift,MonitorPlay,Bot,Palette,ShieldCheck,Coins,ArrowRight,ChevronLeft,ChevronRight,X,Trash2,Zap,Shield,Headphones,Mail,Facebook,Instagram,Check,SlidersHorizontal,RotateCcw}from'lucide-react'
-import'./styles.css'
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import ReactDOM from "react-dom/client";
+import {
+  Search,
+  Menu,
+  ChevronDown,
+  UserRound,
+  ShoppingCart,
+  Heart,
+  Globe2,
+  Gamepad2,
+  Gift,
+  MonitorPlay,
+  Bot,
+  Palette,
+  ShieldCheck,
+  Coins,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  Trash2,
+  Zap,
+  Shield,
+  Headphones,
+  Mail,
+  Facebook,
+  Instagram,
+  Check,
+  SlidersHorizontal,
+  RotateCcw,
+} from "lucide-react";
+import "./styles.css";
 
-const categories=[
-  {name:'Games',key:'games',icon:Gamepad2,items:['Steam Games','Epic Games','New releases','Best sellers']},
-  {name:'Gift Cards',key:'gift-cards',icon:Gift,items:['Apple Gift Card','Steam Wallet','Regional cards','View all']},
-  {name:'Streaming',key:'streaming',icon:MonitorPlay,items:['Netflix','Prime Video','HBO Max','Disney+']},
-  {name:'AI Tools',key:'ai-tools',icon:Bot,items:['ChatGPT Plus','Claude Pro','AI bundles','View all']},
-  {name:'Adobe',key:'creative',icon:Palette,items:['Creative Cloud','Photoshop','Premiere Pro','Acrobat Pro']},
-  {name:'VPN',key:'security',icon:ShieldCheck,items:['Premium VPN','Streaming VPN','Multi-device','View all']},
-  {name:'Top-ups',key:'top-ups',icon:Coins,items:['PUBG UC','Free Fire Diamonds','Mobile Legends','Game credits']}
-]
-const fallback=[
-  {id:1,title:'EA SPORTS FC 26',slug:'ea-sports-fc-26',category:'games',cat:'STEAM',platform:'Steam',region:'GLOBAL',price:4490,old:5990,artwork:'/category-games-v1.webp',tag:'HOT'},
-  {id:2,title:'Apple Gift Card $10',slug:'apple-gift-card',category:'gift-cards',cat:'GIFT CARD',platform:'Apple',region:'USA',price:1190,old:1290,artwork:'/category-giftcards-v1.webp',tag:'-8%'},
-  {id:3,title:'Steam Wallet Code $10',slug:'steam-wallet-code',category:'gift-cards',cat:'GIFT CARD',platform:'Steam',region:'GLOBAL',price:1199,old:1299,artwork:'/category-giftcards-v1.webp',tag:'BESTSELLER'},
-  {id:4,title:'Netflix Premium',slug:'netflix-premium',category:'streaming',cat:'STREAMING',platform:'Digital',region:'GLOBAL',price:399,old:500,artwork:'/category-streaming-v1.webp',tag:'-20%'},
-  {id:5,title:'ChatGPT Plus',slug:'chatgpt-plus',category:'ai-tools',cat:'AI TOOLS',platform:'Digital',region:'GLOBAL',price:1499,old:1999,artwork:'/buyfinix-digital-collection-v1.webp',tag:'POPULAR'},
-  {id:6,title:'Adobe Creative Cloud',slug:'adobe-creative-cloud',category:'creative',cat:'ADOBE',platform:'PC',region:'GLOBAL',price:949,old:1499,artwork:'/buyfinix-digital-collection-v1.webp',tag:'-37%'},
-  {id:7,title:'Spotify Premium',slug:'spotify-premium',category:'subscriptions',cat:'MUSIC',platform:'Digital',region:'GLOBAL',price:199,old:360,artwork:'/category-streaming-v1.webp',tag:'BESTSELLER'},
-  {id:8,title:'PUBG Mobile 660 UC',slug:'pubg-mobile-660-uc',category:'top-ups',cat:'TOP-UP',platform:'Mobile',region:'GLOBAL',price:1100,old:1190,artwork:'/category-topups-v1.webp',tag:'INSTANT'},
-  {id:9,title:'Disney+ Premium',slug:'disney-plus',category:'streaming',cat:'STREAMING',platform:'Digital',region:'GLOBAL',price:299,old:450,artwork:'/category-streaming-v1.webp',tag:'-34%'},
-  {id:10,title:'Claude Pro',slug:'claude-pro',category:'ai-tools',cat:'AI TOOLS',platform:'Digital',region:'GLOBAL',price:1599,old:1999,artwork:'/buyfinix-digital-collection-v1.webp',tag:'NEW'},
-  {id:11,title:'Amazon Prime Video',slug:'amazon-prime-video',category:'streaming',cat:'STREAMING',platform:'Digital',region:'GLOBAL',price:249,old:350,artwork:'/category-streaming-v1.webp',tag:'-29%'},
-  {id:12,title:'Premium VPN — 1 Year',slug:'premium-vpn',category:'security',cat:'VPN',platform:'Multi-device',region:'GLOBAL',price:899,old:1399,artwork:'/buyfinix-digital-collection-v1.webp',tag:'-36%'}
-]
-const money=n=>`৳${Number(n||0).toLocaleString('en-BD')}`
-const group=p=>{const t=`${p.name} ${p.category_name}`.toLowerCase();if(/gift|wallet|apple/.test(t))return'gift-cards';if(/pubg|top.?up|diamond|\buc\b/.test(t))return'top-ups';if(/netflix|prime|hbo|disney|stream/.test(t))return'streaming';if(/chatgpt|claude|\bai\b/.test(t))return'ai-tools';if(/adobe|creative/.test(t))return'creative';if(/vpn|security/.test(t))return'security';if(/spotify|music/.test(t))return'subscriptions';return'games'}
-const adapt=p=>{let plans=[];try{plans=Array.isArray(p.plans)?p.plans:JSON.parse(p.plans||'[]')}catch{}const prices=plans.map(x=>+x.price).filter(Boolean);return{id:p.id,title:p.name,slug:p.slug,category:group(p),cat:(p.category_name||'DIGITAL').toUpperCase(),platform:p.platform||'Digital',region:p.region||'GLOBAL',price:prices.length?Math.min(...prices):0,old:0,artwork:p.image_url||'/product-game.svg',tag:p.best_seller?'BESTSELLER':p.featured?'FEATURED':'',source:'api'}}
+const categories = [
+  {
+    name: "Games",
+    key: "games",
+    icon: Gamepad2,
+    items: ["Steam Games", "Epic Games", "New releases", "Best sellers"],
+  },
+  {
+    name: "Gift Cards",
+    key: "gift-cards",
+    icon: Gift,
+    items: ["Apple Gift Card", "Steam Wallet", "Regional cards", "View all"],
+  },
+  {
+    name: "Streaming",
+    key: "streaming",
+    icon: MonitorPlay,
+    items: ["Netflix", "Prime Video", "HBO Max", "Disney+"],
+  },
+  {
+    name: "AI Tools",
+    key: "ai-tools",
+    icon: Bot,
+    items: ["ChatGPT Plus", "Claude Pro", "AI bundles", "View all"],
+  },
+  {
+    name: "Adobe",
+    key: "creative",
+    icon: Palette,
+    items: ["Creative Cloud", "Photoshop", "Premiere Pro", "Acrobat Pro"],
+  },
+  {
+    name: "VPN",
+    key: "security",
+    icon: ShieldCheck,
+    items: ["Premium VPN", "Streaming VPN", "Multi-device", "View all"],
+  },
+  {
+    name: "Top-ups",
+    key: "top-ups",
+    icon: Coins,
+    items: ["PUBG UC", "Free Fire Diamonds", "Mobile Legends", "Game credits"],
+  },
+];
+const fallback = [
+  {
+    id: 1,
+    title: "EA SPORTS FC 26",
+    slug: "ea-sports-fc-26",
+    category: "games",
+    cat: "STEAM",
+    platform: "Steam",
+    region: "GLOBAL",
+    price: 4490,
+    old: 5990,
+    artwork: "/category-games-v1.webp",
+    tag: "HOT",
+  },
+  {
+    id: 2,
+    title: "Apple Gift Card $10",
+    slug: "apple-gift-card",
+    category: "gift-cards",
+    cat: "GIFT CARD",
+    platform: "Apple",
+    region: "USA",
+    price: 1190,
+    old: 1290,
+    artwork: "/category-giftcards-v1.webp",
+    tag: "-8%",
+  },
+  {
+    id: 3,
+    title: "Steam Wallet Code $10",
+    slug: "steam-wallet-code",
+    category: "gift-cards",
+    cat: "GIFT CARD",
+    platform: "Steam",
+    region: "GLOBAL",
+    price: 1199,
+    old: 1299,
+    artwork: "/category-giftcards-v1.webp",
+    tag: "BESTSELLER",
+  },
+  {
+    id: 4,
+    title: "Netflix Premium",
+    slug: "netflix-premium",
+    category: "streaming",
+    cat: "STREAMING",
+    platform: "Digital",
+    region: "GLOBAL",
+    price: 399,
+    old: 500,
+    artwork: "/category-streaming-v1.webp",
+    tag: "-20%",
+  },
+  {
+    id: 5,
+    title: "ChatGPT Plus",
+    slug: "chatgpt-plus",
+    category: "ai-tools",
+    cat: "AI TOOLS",
+    platform: "Digital",
+    region: "GLOBAL",
+    price: 1499,
+    old: 1999,
+    artwork: "/buyfinix-digital-collection-v1.webp",
+    tag: "POPULAR",
+  },
+  {
+    id: 6,
+    title: "Adobe Creative Cloud",
+    slug: "adobe-creative-cloud",
+    category: "creative",
+    cat: "ADOBE",
+    platform: "PC",
+    region: "GLOBAL",
+    price: 949,
+    old: 1499,
+    artwork: "/buyfinix-digital-collection-v1.webp",
+    tag: "-37%",
+  },
+  {
+    id: 7,
+    title: "Spotify Premium",
+    slug: "spotify-premium",
+    category: "subscriptions",
+    cat: "MUSIC",
+    platform: "Digital",
+    region: "GLOBAL",
+    price: 199,
+    old: 360,
+    artwork: "/category-streaming-v1.webp",
+    tag: "BESTSELLER",
+  },
+  {
+    id: 8,
+    title: "PUBG Mobile 660 UC",
+    slug: "pubg-mobile-660-uc",
+    category: "top-ups",
+    cat: "TOP-UP",
+    platform: "Mobile",
+    region: "GLOBAL",
+    price: 1100,
+    old: 1190,
+    artwork: "/category-topups-v1.webp",
+    tag: "INSTANT",
+  },
+  {
+    id: 9,
+    title: "Disney+ Premium",
+    slug: "disney-plus",
+    category: "streaming",
+    cat: "STREAMING",
+    platform: "Digital",
+    region: "GLOBAL",
+    price: 299,
+    old: 450,
+    artwork: "/category-streaming-v1.webp",
+    tag: "-34%",
+  },
+  {
+    id: 10,
+    title: "Claude Pro",
+    slug: "claude-pro",
+    category: "ai-tools",
+    cat: "AI TOOLS",
+    platform: "Digital",
+    region: "GLOBAL",
+    price: 1599,
+    old: 1999,
+    artwork: "/buyfinix-digital-collection-v1.webp",
+    tag: "NEW",
+  },
+  {
+    id: 11,
+    title: "Amazon Prime Video",
+    slug: "amazon-prime-video",
+    category: "streaming",
+    cat: "STREAMING",
+    platform: "Digital",
+    region: "GLOBAL",
+    price: 249,
+    old: 350,
+    artwork: "/category-streaming-v1.webp",
+    tag: "-29%",
+  },
+  {
+    id: 12,
+    title: "Premium VPN — 1 Year",
+    slug: "premium-vpn",
+    category: "security",
+    cat: "VPN",
+    platform: "Multi-device",
+    region: "GLOBAL",
+    price: 899,
+    old: 1399,
+    artwork: "/buyfinix-digital-collection-v1.webp",
+    tag: "-36%",
+  },
+];
+const money = (n) => `৳${Number(n || 0).toLocaleString("en-BD")}`;
+const group = (p) => {
+  const t = `${p.name} ${p.category_name}`.toLowerCase();
+  if (/gift|wallet|apple/.test(t)) return "gift-cards";
+  if (/pubg|top.?up|diamond|\buc\b/.test(t)) return "top-ups";
+  if (/netflix|prime|hbo|disney|stream/.test(t)) return "streaming";
+  if (/chatgpt|claude|\bai\b/.test(t)) return "ai-tools";
+  if (/adobe|creative/.test(t)) return "creative";
+  if (/vpn|security/.test(t)) return "security";
+  if (/spotify|music/.test(t)) return "subscriptions";
+  return "games";
+};
+const adapt = (p) => {
+  let plans = [];
+  try {
+    plans = Array.isArray(p.plans) ? p.plans : JSON.parse(p.plans || "[]");
+  } catch {}
+  const prices = plans.map((x) => +x.price).filter(Boolean);
+  return {
+    id: p.id,
+    title: p.name,
+    slug: p.slug,
+    category: group(p),
+    cat: (p.category_name || "DIGITAL").toUpperCase(),
+    platform: p.platform || "Digital",
+    region: p.region || "GLOBAL",
+    price: prices.length ? Math.min(...prices) : 0,
+    old: 0,
+    artwork: p.image_url || "/product-game.svg",
+    tag: p.best_seller ? "BESTSELLER" : p.featured ? "FEATURED" : "",
+    source: "api",
+  };
+};
 
-function Header({cartCount,onCart,onCategory,onSearch}){const[open,setOpen]=useState(false),[query,setQuery]=useState('');const submit=e=>{e.preventDefault();onSearch(query)};return <header className="site-header"><div className="wrap header-main"><button className="mobile-menu" onClick={()=>setOpen(!open)} aria-label="Open menu"><Menu/></button><a className="brand" href="/" aria-label="BuyFinix home"><img src="/buyfinix-wordmark.svg" alt="BuyFinix"/></a><div className="navline"><div className="nav-inner"><button onClick={()=>onCategory('games')}><Gamepad2/><span>Games</span></button><button onClick={()=>onCategory('gift-cards')}><Gift/><span>Gift Cards</span></button><button onClick={()=>onCategory('streaming')}><MonitorPlay/><span>Streaming</span></button><button onClick={()=>onCategory('top-ups')}><Coins/><span>Top-ups</span></button><button onClick={()=>onCategory('security')}><ShieldCheck/><span>VPN</span></button><button onClick={()=>setOpen(!open)}><Menu/><span>More</span></button></div></div><form className="global-search" onSubmit={submit}><Search/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search products..." aria-label="Search products"/><button>Search</button></form><div className="head-actions"><a href="/customer" title="My account"><UserRound/><span>Sign in</span></a><button className="cart-button" onClick={onCart} aria-label="Open cart"><ShoppingCart/><b>{cartCount}</b></button></div></div>{open&&<MegaMenu onPick={key=>{onCategory(key);setOpen(false)}}/>}</header>}
-function MegaMenu({onPick}){return <div className="mega"><div className="wrap mega-grid">{categories.map(({name,key,icon:Icon,items})=><section key={key}><button onClick={()=>onPick(key)}><Icon/><b>{name}</b></button>{items.map(item=><a href="#catalog" onClick={()=>onPick(key)} key={item}>{item}</a>)}</section>)}</div></div>}
-function Hero({onPick}){return <main className="hero"><div className="wrap"><article className="hero-banner"><div className="hero-copy"><span className="hero-kicker">BUYFINIX GLOBAL MARKETPLACE</span><h1>PLAY MORE.<br/><em>PAY LESS.</em></h1><p>Games, premium subscriptions, gift cards and instant top-ups — authentic digital products delivered in minutes.</p><button onClick={()=>onPick('games')}>EXPLORE MARKETPLACE <ArrowRight/></button></div><span className="float-card fc-one">STEAM & EPIC<br/><b>GAME KEYS</b></span><span className="float-card fc-two">UP TO<br/><b>60% OFF</b></span><div className="hero-dots"><i className="active"/><i/><i/></div></article><div className="hero-teasers"><button onClick={()=>onPick('games')}><img src="/product-game.svg" alt=""/><span><small>Trending now</small><b>PC game keys</b></span></button><button onClick={()=>onPick('streaming')}><img src="/product-google-play.svg" alt=""/><span><small>Entertainment</small><b>Streaming plans</b></span></button><button onClick={()=>onPick('gift-cards')}><img src="/product-apple.svg" alt=""/><span><small>Instant codes</small><b>Gift cards</b></span></button><button onClick={()=>onPick('top-ups')}><img src="/product-pubg.svg" alt=""/><span><small>Fast delivery</small><b>Game top-ups</b></span></button></div></div></main>}
-function Favorites({onPick}){const items=[['games','/category-games-v1.webp','STEAM & EPIC','PC GAME KEYS'],['gift-cards','/category-giftcards-v1.webp','GIFT CARDS','APPLE & STEAM'],['streaming','/category-streaming-v1.webp','STREAMING','NETFLIX & MORE'],['top-ups','/category-topups-v1.webp','GAME TOP-UPS','INSTANT RECHARGE']];return <section className="favorites"><div className="wrap"><h2 className="favorites-title">Shop Your Favorites</h2><div className="platform-strip">{items.map(([key,img,title,sub])=><button onClick={()=>onPick(key)} key={key}><div><img src={img} alt={title}/></div><span><b>{title}</b><small>{sub}</small></span></button>)}</div></div></section>}
-const FeaturedRelease=Favorites
-function Artwork({p,small=false}){const iconMap={games:Gamepad2,'gift-cards':Gift,streaming:MonitorPlay,subscriptions:MonitorPlay,'ai-tools':Bot,creative:Palette,security:ShieldCheck,'top-ups':Coins};const Icon=iconMap[p.category]||Globe2;return <div className={`smart-art art-${p.category} ${small?'small':''}`}><i/><Icon/><span>{p.title}</span><small>{p.platform} · {p.region}</small></div>}
-function ProductCard({p,onAdd,onOpen,rank,wished,onWish}){return <article className="product-card">{rank&&<span className="rank">{rank}</span>}<button className={`wish ${wished?'active':''}`} onClick={()=>onWish(p.id)} aria-label="Toggle wishlist"><Heart fill={wished?'currentColor':'none'}/></button><button className="poster" onClick={()=>onOpen(p)}><Artwork p={p}/><span>{p.tag}</span></button><div className="product-info"><small>{p.cat}</small><button className="product-title" onClick={()=>onOpen(p)}>{p.title}</button><div className="chips"><i>{p.platform}</i><i>{p.region}</i></div><p className="delivery"><Zap/> Instant delivery</p><button className="details-button" onClick={()=>onOpen(p)}>View details <ArrowRight/></button><div className="price-row"><div><small>From</small><b>{money(p.price)}</b>{p.old>p.price&&<del>{money(p.old)}</del>}</div><button onClick={()=>onAdd(p)} aria-label={`Add ${p.title} to cart`}><ShoppingCart/></button></div></div></article>}
-function ProductGallery({products,onAdd,onOpen,wishlist,onWish}){const[type,setType]=useState('all'),[platform,setPlatform]=useState('all'),[region,setRegion]=useState('all'),[sort,setSort]=useState('featured'),[term,setTerm]=useState(''),[limit,setLimit]=useState(8);const options=(key)=>[...new Set(products.map(p=>p[key]).filter(Boolean))];const filtered=useMemo(()=>{let list=products.filter(p=>(type==='all'||p.category===type)&&(platform==='all'||p.platform===platform)&&(region==='all'||p.region===region)&&(!term||`${p.title} ${p.cat}`.toLowerCase().includes(term.toLowerCase())));if(sort==='price-low')list.sort((a,b)=>a.price-b.price);if(sort==='price-high')list.sort((a,b)=>b.price-a.price);if(sort==='name')list.sort((a,b)=>a.title.localeCompare(b.title));return list},[products,type,platform,region,sort,term]);const reset=()=>{setType('all');setPlatform('all');setRegion('all');setSort('featured');setTerm('');setLimit(8)};return <section className="product-finder" id="catalog"><div className="wrap"><div className="finder-intro"><span><SlidersHorizontal/> BUYFINIX PRODUCT FINDER</span><h2>Find your next digital product</h2><p>Search, filter and compare games, subscriptions, gift cards and top-ups in one premium gallery.</p></div><div className="finder-panel"><div className="finder-filters"><label><small>Product type</small><select value={type} onChange={e=>{setType(e.target.value);setLimit(8)}}><option value="all">All products</option>{categories.map(c=><option value={c.key} key={c.key}>{c.name}</option>)}</select></label><label><small>Platform</small><select value={platform} onChange={e=>setPlatform(e.target.value)}><option value="all">Any platform</option>{options('platform').map(x=><option key={x}>{x}</option>)}</select></label><label><small>Region</small><select value={region} onChange={e=>setRegion(e.target.value)}><option value="all">Any region</option>{options('region').map(x=><option key={x}>{x}</option>)}</select></label><label><small>Sort by</small><select value={sort} onChange={e=>setSort(e.target.value)}><option value="featured">Featured</option><option value="name">Name A–Z</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></label></div><div className="finder-search"><Search/><input value={term} onChange={e=>{setTerm(e.target.value);setLimit(8)}} placeholder="Type product name..."/><button onClick={reset} title="Reset filters"><RotateCcw/></button></div></div><div className="finder-results"><div><b>{filtered.length}</b> products available</div><span>Instant delivery · Secure checkout</span></div>{filtered.length?<><div className="gallery-grid">{filtered.slice(0,limit).map(p=><ProductCard p={p} onAdd={onAdd} onOpen={onOpen} wished={wishlist.includes(p.id)} onWish={onWish} key={`finder-${p.id}`}/>)}</div>{limit<filtered.length&&<button className="load-more" onClick={()=>setLimit(n=>n+8)}>Load more products <ChevronDown/></button>}</>:<div className="no-results"><Search/><h3>No matching products</h3><p>Try changing or resetting your filters.</p><button onClick={reset}>Reset filters</button></div>}</div></section>}
-function Shelf({id,title,description,products,onAdd,onOpen,wishlist,onWish,ranked=false,accent=false}){const row=useRef();const slide=d=>row.current?.scrollBy({left:d*row.current.clientWidth*.8,behavior:'smooth'});if(id==='deals')return <ProductGallery products={products} onAdd={onAdd} onOpen={onOpen} wishlist={wishlist} onWish={onWish}/>;return <section className={`shelf ${accent?'accent-shelf':''}`} id={id}><div className="wrap"><div className="section-head"><div><h2>{title}</h2><p>{description}</p></div><div className="section-controls"><button onClick={()=>slide(-1)} aria-label="Previous products"><ChevronLeft/></button><button onClick={()=>slide(1)} aria-label="Next products"><ChevronRight/></button><a href="#catalog">View all <ArrowRight/></a></div></div><div ref={row} className={`cards ${ranked?'ranked':''}`}>{products.map((p,i)=><ProductCard p={p} onAdd={onAdd} onOpen={onOpen} wished={wishlist.includes(p.id)} onWish={onWish} rank={ranked?i+1:null} key={`${id}-${p.id}`}/>)}</div></div></section>}
-function Newsletter(){const[done,setDone]=useState(false);return <section className="newsletter"><div className="wrap newsletter-inner"><div><Mail/><span><h2>Get 5% off your first order</h2><p>New deals, game releases and member-only discounts.</p></span></div>{done?<p className="newsletter-success"><Check/> You’re on the list!</p>:<form onSubmit={e=>{e.preventDefault();setDone(true)}}><input required type="email" placeholder="Your email address"/><button>Get discount</button></form>}</div></section>}
-function Footer(){return <footer><div className="wrap trust-strip"><span><Zap/> Instant delivery</span><span><Shield/> Secure payment</span><span><Headphones/> Local support</span></div><div className="wrap footer-grid"><div className="footer-brand"><img src="/buyfinix-wordmark.svg" alt="BuyFinix"/><p>Bangladesh’s marketplace for genuine digital entertainment and productivity products.</p></div><div><h4>Marketplace</h4><a href="#deals">Hot deals</a><a href="#bestsellers">Bestsellers</a><a href="#topups">Game top-ups</a><a href="#subscriptions">Subscriptions</a></div><div><h4>Customer service</h4><a href="/customer">My account</a><a href="https://wa.me/8801727278593">Help center</a><a href="mailto:support@buyfinix.com">Contact us</a><a href="#">Refund policy</a></div><div><h4>Company</h4><a href="#">About BuyFinix</a><a href="#">Terms & conditions</a><a href="#">Privacy policy</a></div></div><div className="wrap social-bar"><b>Connect with BuyFinix</b><span><Facebook/><Instagram/></span></div><div className="wrap footer-bottom"><span>© 2026 BuyFinix. All rights reserved.</span><span>bKash · Nagad · Visa · Mastercard</span></div></footer>}
-function App(){const[products,setProducts]=useState(fallback),[category,setCategory]=useState('all'),[query,setQuery]=useState(''),[selected,setSelected]=useState(null),[cartOpen,setCartOpen]=useState(false),[wishlist,setWishlist]=useState(()=>JSON.parse(localStorage.getItem('buyfinix-v2-wishlist')||'[]')),[cart,setCart]=useState(()=>JSON.parse(localStorage.getItem('buyfinix-v2-cart')||'[]'));useEffect(()=>{fetch('/api/products').then(r=>r.ok?r.json():Promise.reject()).then(rows=>{if(rows.length)setProducts(rows.map(adapt))}).catch(()=>{})},[]);const visible=useMemo(()=>products.filter(p=>(category==='all'||p.category===category)&&(!query||`${p.title} ${p.cat} ${p.platform}`.toLowerCase().includes(query.toLowerCase()))),[products,category,query]);const goCatalog=()=>setTimeout(()=>document.querySelector('#catalog')?.scrollIntoView({behavior:'smooth'}),20);const choose=key=>{setCategory(key);setQuery('');goCatalog()};const search=value=>{setCategory('all');setQuery(value.trim());goCatalog()};const toggleWish=id=>setWishlist(current=>{const next=current.includes(id)?current.filter(x=>x!==id):[...current,id];localStorage.setItem('buyfinix-v2-wishlist',JSON.stringify(next));return next});const add=p=>{setCart(current=>{const hit=current.find(x=>x.id===p.id),next=hit?current.map(x=>x.id===p.id?{...x,qty:x.qty+1}:x):[...current,{...p,qty:1}];localStorage.setItem('buyfinix-v2-cart',JSON.stringify(next));return next});setSelected(null);setCartOpen(true)};const remove=id=>setCart(current=>{const next=current.filter(x=>x.id!==id);localStorage.setItem('buyfinix-v2-cart',JSON.stringify(next));return next});const cardProps={onAdd:add,onOpen:setSelected,wishlist,onWish:toggleWish};return <><Header cartCount={cart.reduce((n,p)=>n+p.qty,0)} onCart={()=>setCartOpen(true)} onCategory={choose} onSearch={search}/><Hero onPick={choose}/><FeaturedRelease onPick={choose}/><Shelf id="deals" title="Extra savings today" description="Limited-time prices on selected digital products" products={products} {...cardProps}/><Shelf id="bestsellers" title="Bestsellers" description="The products BuyFinix customers choose most" products={products.slice().sort((a,b)=>b.price-a.price)} {...cardProps} ranked/><Shelf id="topups" title="Level up instantly with top-ups" description="Game credits delivered fast and securely" products={products.filter(p=>p.category==='top-ups').concat(products.filter(p=>p.category==='gift-cards'))} {...cardProps} accent/><section className="catalog" id="catalog"><div className="wrap"><div className="section-head"><div><h2>{query?`Results for “${query}”`:category==='all'?'Explore the marketplace':categories.find(c=>c.key===category)?.name||'Products'}</h2><p>{visible.length} genuine digital products with local support</p></div><button className="reset" onClick={()=>{setCategory('all');setQuery('')}}>All products</button></div>{visible.length?<div className="cards catalog-cards">{visible.map(p=><ProductCard p={p} {...cardProps} wished={wishlist.includes(p.id)} key={`catalog-${p.id}`}/>)}</div>:<div className="no-results"><Search/><h3>No products found</h3><button onClick={()=>setQuery('')}>Clear search</button></div>}</div></section><Shelf id="subscriptions" title="Streaming, AI & subscriptions" description="Premium access for entertainment, work and creativity" products={products.filter(p=>['streaming','subscriptions','ai-tools','creative','security'].includes(p.category))} {...cardProps}/><Newsletter/><Footer/>{selected&&<div className="overlay product-overlay" onClick={e=>e.target===e.currentTarget&&setSelected(null)}><section className="product-modal"><button className="close" onClick={()=>setSelected(null)}><X/></button><img src={selected.artwork} alt={selected.title}/><div><small>{selected.cat} · {selected.region}</small><h2>{selected.title}</h2><p>Genuine digital product with fast delivery and local BuyFinix support.</p><div className="modal-price"><span>From</span><b>{money(selected.price)}</b></div><button className="modal-add" onClick={()=>add(selected)}><ShoppingCart/> Add to cart</button></div></section></div>}{cartOpen&&<div className="overlay" onClick={e=>e.target===e.currentTarget&&setCartOpen(false)}><aside className="cart-drawer"><button className="close" onClick={()=>setCartOpen(false)}><X/></button><span className="drawer-label">YOUR CART</span><h2>Digital products</h2>{cart.length?<><div className="cart-items">{cart.map(p=><div key={p.id}><img src={p.artwork} alt=""/><span><b>{p.title}</b><small>{p.qty} × {money(p.price)}</small></span><button onClick={()=>remove(p.id)}><Trash2/></button></div>)}</div><div className="cart-total"><span>Total</span><b>{money(cart.reduce((n,p)=>n+p.price*p.qty,0))}</b></div><a className="checkout" href={`https://wa.me/8801727278593?text=${encodeURIComponent('Hello BuyFinix, I want to order: '+cart.map(p=>`${p.title} x${p.qty}`).join(', '))}`}>Continue checkout <ArrowRight/></a></>:<div className="empty"><ShoppingCart/><h3>Your cart is empty</h3><button onClick={()=>setCartOpen(false)}>Continue shopping</button></div>}</aside></div>}</>}
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>)
+function Header({ cartCount, onCart, onCategory, onSearch }) {
+  const [open, setOpen] = useState(false),
+    [query, setQuery] = useState("");
+  const submit = (e) => {
+    e.preventDefault();
+    onSearch(query);
+  };
+  return (
+    <header className="site-header">
+      <div className="wrap header-main">
+        <button
+          className="mobile-menu"
+          onClick={() => setOpen(!open)}
+          aria-label="Open menu"
+        >
+          <Menu />
+        </button>
+        <a className="brand" href="/" aria-label="BuyFinix home">
+          <img src="/buyfinix-wordmark.svg" alt="BuyFinix" />
+        </a>
+        <div className="navline">
+          <div className="nav-inner">
+            <button onClick={() => onCategory("games")}>
+              <Gamepad2 />
+              <span>Games</span>
+            </button>
+            <button onClick={() => onCategory("gift-cards")}>
+              <Gift />
+              <span>Gift Cards</span>
+            </button>
+            <button onClick={() => onCategory("streaming")}>
+              <MonitorPlay />
+              <span>Streaming</span>
+            </button>
+            <button onClick={() => onCategory("top-ups")}>
+              <Coins />
+              <span>Top-ups</span>
+            </button>
+            <button onClick={() => onCategory("security")}>
+              <ShieldCheck />
+              <span>VPN</span>
+            </button>
+            <button onClick={() => setOpen(!open)}>
+              <Menu />
+              <span>More</span>
+            </button>
+          </div>
+        </div>
+        <form className="global-search" onSubmit={submit}>
+          <Search />
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search products..."
+            aria-label="Search products"
+          />
+          <button>Search</button>
+        </form>
+        <div className="head-actions">
+          <a href="/customer" title="My account">
+            <UserRound />
+            <span>Sign in</span>
+          </a>
+          <button
+            className="cart-button"
+            onClick={onCart}
+            aria-label="Open cart"
+          >
+            <ShoppingCart />
+            <b>{cartCount}</b>
+          </button>
+        </div>
+      </div>
+      {open && (
+        <MegaMenu
+          onPick={(key) => {
+            onCategory(key);
+            setOpen(false);
+          }}
+        />
+      )}
+    </header>
+  );
+}
+function MegaMenu({ onPick }) {
+  return (
+    <div className="mega">
+      <div className="wrap mega-grid">
+        {categories.map(({ name, key, icon: Icon, items }) => (
+          <section key={key}>
+            <button onClick={() => onPick(key)}>
+              <Icon />
+              <b>{name}</b>
+            </button>
+            {items.map((item) => (
+              <a href="#catalog" onClick={() => onPick(key)} key={item}>
+                {item}
+              </a>
+            ))}
+          </section>
+        ))}
+      </div>
+    </div>
+  );
+}
+function Hero({ onPick }) {
+  return (
+    <main className="hero">
+      <div className="wrap">
+        <article className="hero-banner">
+          <div className="hero-copy">
+            <span className="hero-kicker">BUYFINIX GLOBAL MARKETPLACE</span>
+            <h1>
+              PLAY MORE.
+              <br />
+              <em>PAY LESS.</em>
+            </h1>
+            <p>
+              Games, premium subscriptions, gift cards and instant top-ups —
+              authentic digital products delivered in minutes.
+            </p>
+            <button onClick={() => onPick("games")}>
+              EXPLORE MARKETPLACE <ArrowRight />
+            </button>
+          </div>
+          <div className="hero-showcase" aria-hidden="true">
+            <img src="/category-games-v1.webp" alt="" />
+            <img src="/category-giftcards-v1.webp" alt="" />
+            <img src="/category-streaming-v1.webp" alt="" />
+          </div>
+          <span className="float-card fc-one">
+            STEAM & EPIC
+            <br />
+            <b>GAME KEYS</b>
+          </span>
+          <span className="float-card fc-two">
+            UP TO
+            <br />
+            <b>60% OFF</b>
+          </span>
+          <div className="hero-dots">
+            <i className="active" />
+            <i />
+            <i />
+          </div>
+        </article>
+        <div className="hero-teasers">
+          <button onClick={() => onPick("games")}>
+            <img src="/product-game.svg" alt="" />
+            <span>
+              <small>Trending now</small>
+              <b>PC game keys</b>
+            </span>
+          </button>
+          <button onClick={() => onPick("streaming")}>
+            <img src="/product-google-play.svg" alt="" />
+            <span>
+              <small>Entertainment</small>
+              <b>Streaming plans</b>
+            </span>
+          </button>
+          <button onClick={() => onPick("gift-cards")}>
+            <img src="/product-apple.svg" alt="" />
+            <span>
+              <small>Instant codes</small>
+              <b>Gift cards</b>
+            </span>
+          </button>
+          <button onClick={() => onPick("top-ups")}>
+            <img src="/product-pubg.svg" alt="" />
+            <span>
+              <small>Fast delivery</small>
+              <b>Game top-ups</b>
+            </span>
+          </button>
+        </div>
+      </div>
+    </main>
+  );
+}
+function Favorites({ onPick }) {
+  const items = [
+    ["games", "/category-games-v1.webp", "STEAM & EPIC", "PC GAME KEYS"],
+    [
+      "gift-cards",
+      "/category-giftcards-v1.webp",
+      "GIFT CARDS",
+      "APPLE & STEAM",
+    ],
+    ["streaming", "/category-streaming-v1.webp", "STREAMING", "NETFLIX & MORE"],
+    ["top-ups", "/category-topups-v1.webp", "GAME TOP-UPS", "INSTANT RECHARGE"],
+  ];
+  return (
+    <section className="favorites">
+      <div className="wrap">
+        <h2 className="favorites-title">Shop Your Favorites</h2>
+        <div className="platform-strip">
+          {items.map(([key, img, title, sub]) => (
+            <button onClick={() => onPick(key)} key={key}>
+              <div>
+                <img src={img} alt={title} />
+              </div>
+              <span>
+                <b>{title}</b>
+                <small>{sub}</small>
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+function Artwork({ p, small = false }) {
+  const iconMap = {
+    games: Gamepad2,
+    "gift-cards": Gift,
+    streaming: MonitorPlay,
+    subscriptions: MonitorPlay,
+    "ai-tools": Bot,
+    creative: Palette,
+    security: ShieldCheck,
+    "top-ups": Coins,
+  };
+  const Icon = iconMap[p.category] || Globe2;
+  return (
+    <div className={`smart-art art-${p.category} ${small ? "small" : ""}`}>
+      <i />
+      <Icon />
+      <span>{p.cat}</span>
+      <small>
+        {p.platform} · {p.region}
+      </small>
+    </div>
+  );
+}
+function ProductCard({ p, onAdd, onOpen, rank, wished, onWish }) {
+  return (
+    <article className="product-card">
+      {rank && <span className="rank">{rank}</span>}
+      <button
+        className={`wish ${wished ? "active" : ""}`}
+        onClick={() => onWish(p.id)}
+        aria-label="Toggle wishlist"
+      >
+        <Heart fill={wished ? "currentColor" : "none"} />
+      </button>
+      <button className="poster" onClick={() => onOpen(p)}>
+        <Artwork p={p} />
+        <span>{p.tag}</span>
+      </button>
+      <div className="product-info">
+        <small>{p.cat}</small>
+        <button className="product-title" onClick={() => onOpen(p)}>
+          {p.title}
+        </button>
+        <div className="chips">
+          <i>{p.platform}</i>
+          <i>{p.region}</i>
+        </div>
+        <p className="delivery">
+          <Zap /> Instant delivery
+        </p>
+        <button className="details-button" onClick={() => onOpen(p)}>
+          View details <ArrowRight />
+        </button>
+        <div className="price-row">
+          <div>
+            <small>From</small>
+            <b>{money(p.price)}</b>
+            {p.old > p.price && <del>{money(p.old)}</del>}
+          </div>
+          <button
+            onClick={() => onAdd(p)}
+            aria-label={`Add ${p.title} to cart`}
+          >
+            <ShoppingCart />
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}
+function ProductGallery({ products, onAdd, onOpen, wishlist, onWish }) {
+  const [type, setType] = useState("all"),
+    [platform, setPlatform] = useState("all"),
+    [region, setRegion] = useState("all"),
+    [sort, setSort] = useState("featured"),
+    [term, setTerm] = useState(""),
+    [limit, setLimit] = useState(12);
+  const options = (key) => [
+    ...new Set(products.map((p) => p[key]).filter(Boolean)),
+  ];
+  const filtered = useMemo(() => {
+    let list = products.filter(
+      (p) =>
+        (type === "all" || p.category === type) &&
+        (platform === "all" || p.platform === platform) &&
+        (region === "all" || p.region === region) &&
+        (!term ||
+          `${p.title} ${p.cat}`.toLowerCase().includes(term.toLowerCase())),
+    );
+    if (sort === "price-low") list.sort((a, b) => a.price - b.price);
+    if (sort === "price-high") list.sort((a, b) => b.price - a.price);
+    if (sort === "name") list.sort((a, b) => a.title.localeCompare(b.title));
+    return list;
+  }, [products, type, platform, region, sort, term]);
+  const reset = () => {
+    setType("all");
+    setPlatform("all");
+    setRegion("all");
+    setSort("featured");
+    setTerm("");
+    setLimit(12);
+  };
+  return (
+    <section className="product-finder" id="catalog">
+      <div className="wrap">
+        <div className="finder-intro">
+          <span>
+            <SlidersHorizontal /> BUYFINIX PRODUCT FINDER
+          </span>
+          <h2>Find your next digital product</h2>
+          <p>
+            Search, filter and compare games, subscriptions, gift cards and
+            top-ups in one premium gallery.
+          </p>
+        </div>
+        <div className="finder-panel">
+          <div className="finder-filters">
+            <label>
+              <small>Product type</small>
+              <select
+                value={type}
+                onChange={(e) => {
+                  setType(e.target.value);
+                  setLimit(12);
+                }}
+              >
+                <option value="all">All products</option>
+                {categories.map((c) => (
+                  <option value={c.key} key={c.key}>
+                    {c.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <label>
+              <small>Platform</small>
+              <select
+                value={platform}
+                onChange={(e) => setPlatform(e.target.value)}
+              >
+                <option value="all">Any platform</option>
+                {options("platform").map((x) => (
+                  <option key={x}>{x}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              <small>Region</small>
+              <select
+                value={region}
+                onChange={(e) => setRegion(e.target.value)}
+              >
+                <option value="all">Any region</option>
+                {options("region").map((x) => (
+                  <option key={x}>{x}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              <small>Sort by</small>
+              <select value={sort} onChange={(e) => setSort(e.target.value)}>
+                <option value="featured">Featured</option>
+                <option value="name">Name A–Z</option>
+                <option value="price-low">Price: low to high</option>
+                <option value="price-high">Price: high to low</option>
+              </select>
+            </label>
+          </div>
+          <div className="finder-search">
+            <Search />
+            <input
+              value={term}
+              onChange={(e) => {
+                setTerm(e.target.value);
+                setLimit(12);
+              }}
+              placeholder="Type product name..."
+            />
+            <button onClick={reset} title="Reset filters">
+              <RotateCcw />
+            </button>
+          </div>
+        </div>
+        <div className="finder-results">
+          <div>
+            <b>{filtered.length}</b> products available
+          </div>
+          <span>Instant delivery · Secure checkout</span>
+        </div>
+        {filtered.length ? (
+          <>
+            <div className="gallery-grid">
+              {filtered.slice(0, limit).map((p) => (
+                <ProductCard
+                  p={p}
+                  onAdd={onAdd}
+                  onOpen={onOpen}
+                  wished={wishlist.includes(p.id)}
+                  onWish={onWish}
+                  key={`finder-${p.id}`}
+                />
+              ))}
+            </div>
+            {limit < filtered.length && (
+              <button
+                className="load-more"
+                onClick={() => setLimit((n) => n + 12)}
+              >
+                Load more products <ChevronDown />
+              </button>
+            )}
+          </>
+        ) : (
+          <div className="no-results">
+            <Search />
+            <h3>No matching products</h3>
+            <p>Try changing or resetting your filters.</p>
+            <button onClick={reset}>Reset filters</button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+function Shelf({
+  id,
+  title,
+  description,
+  products,
+  onAdd,
+  onOpen,
+  wishlist,
+  onWish,
+  ranked = false,
+  accent = false,
+}) {
+  const row = useRef();
+  if (id === "topups" && products.length < 4) return null;
+  const slide = (d) =>
+    row.current?.scrollBy({
+      left: d * row.current.clientWidth * 0.8,
+      behavior: "smooth",
+    });
+  if (id === "deals")
+    return (
+      <ProductGallery
+        products={products}
+        onAdd={onAdd}
+        onOpen={onOpen}
+        wishlist={wishlist}
+        onWish={onWish}
+      />
+    );
+  return (
+    <section className={`shelf ${accent ? "accent-shelf" : ""}`} id={id}>
+      <div className="wrap">
+        <div className="section-head">
+          <div>
+            <h2>{title}</h2>
+            <p>{description}</p>
+          </div>
+          <div className="section-controls">
+            <button onClick={() => slide(-1)} aria-label="Previous products">
+              <ChevronLeft />
+            </button>
+            <button onClick={() => slide(1)} aria-label="Next products">
+              <ChevronRight />
+            </button>
+            <a href="#catalog">
+              View all <ArrowRight />
+            </a>
+          </div>
+        </div>
+        <div ref={row} className={`cards ${ranked ? "ranked" : ""}`}>
+          {products.map((p, i) => (
+            <ProductCard
+              p={p}
+              onAdd={onAdd}
+              onOpen={onOpen}
+              wished={wishlist.includes(p.id)}
+              onWish={onWish}
+              rank={ranked ? i + 1 : null}
+              key={`${id}-${p.id}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+function Newsletter() {
+  const [done, setDone] = useState(false);
+  return (
+    <section className="newsletter">
+      <div className="wrap newsletter-inner">
+        <div>
+          <Mail />
+          <span>
+            <h2>Get 5% off your first order</h2>
+            <p>New deals, game releases and member-only discounts.</p>
+          </span>
+        </div>
+        {done ? (
+          <p className="newsletter-success">
+            <Check /> You’re on the list!
+          </p>
+        ) : (
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              setDone(true);
+            }}
+          >
+            <input required type="email" placeholder="Your email address" />
+            <button>Get discount</button>
+          </form>
+        )}
+      </div>
+    </section>
+  );
+}
+function Footer() {
+  return (
+    <footer>
+      <div className="wrap trust-strip">
+        <span>
+          <Zap /> Instant delivery
+        </span>
+        <span>
+          <Shield /> Secure payment
+        </span>
+        <span>
+          <Headphones /> Local support
+        </span>
+      </div>
+      <div className="wrap footer-grid">
+        <div className="footer-brand">
+          <img src="/buyfinix-wordmark.svg" alt="BuyFinix" />
+          <p>
+            Bangladesh’s marketplace for genuine digital entertainment and
+            productivity products.
+          </p>
+        </div>
+        <div>
+          <h4>Marketplace</h4>
+          <a href="#deals">Hot deals</a>
+          <a href="#bestsellers">Bestsellers</a>
+          <a href="#topups">Game top-ups</a>
+          <a href="#subscriptions">Subscriptions</a>
+        </div>
+        <div>
+          <h4>Customer service</h4>
+          <a href="/customer">My account</a>
+          <a href="https://wa.me/8801727278593">Help center</a>
+          <a href="mailto:support@buyfinix.com">Contact us</a>
+          <a href="#">Refund policy</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#">About BuyFinix</a>
+          <a href="#">Terms & conditions</a>
+          <a href="#">Privacy policy</a>
+        </div>
+      </div>
+      <div className="wrap social-bar">
+        <b>Connect with BuyFinix</b>
+        <span>
+          <Facebook />
+          <Instagram />
+        </span>
+      </div>
+      <div className="wrap footer-bottom">
+        <span>© 2026 BuyFinix. All rights reserved.</span>
+        <span>bKash · Nagad · Visa · Mastercard</span>
+      </div>
+    </footer>
+  );
+}
+function App() {
+  const [products, setProducts] = useState(fallback),
+    [category, setCategory] = useState("all"),
+    [query, setQuery] = useState(""),
+    [selected, setSelected] = useState(null),
+    [cartOpen, setCartOpen] = useState(false),
+    [wishlist, setWishlist] = useState(() =>
+      JSON.parse(localStorage.getItem("buyfinix-v2-wishlist") || "[]"),
+    ),
+    [cart, setCart] = useState(() =>
+      JSON.parse(localStorage.getItem("buyfinix-v2-cart") || "[]"),
+    );
+  useEffect(() => {
+    fetch("/api/products")
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((rows) => {
+        if (rows.length) setProducts(rows.map(adapt));
+      })
+      .catch(() => {});
+  }, []);
+  const visible = useMemo(
+    () =>
+      products.filter(
+        (p) =>
+          (category === "all" || p.category === category) &&
+          (!query ||
+            `${p.title} ${p.cat} ${p.platform}`
+              .toLowerCase()
+              .includes(query.toLowerCase())),
+      ),
+    [products, category, query],
+  );
+  const goCatalog = () =>
+    setTimeout(
+      () =>
+        document
+          .querySelector("#catalog")
+          ?.scrollIntoView({ behavior: "smooth" }),
+      20,
+    );
+  const choose = (key) => {
+    setCategory(key);
+    setQuery("");
+    goCatalog();
+  };
+  const search = (value) => {
+    setCategory("all");
+    setQuery(value.trim());
+    goCatalog();
+  };
+  const toggleWish = (id) =>
+    setWishlist((current) => {
+      const next = current.includes(id)
+        ? current.filter((x) => x !== id)
+        : [...current, id];
+      localStorage.setItem("buyfinix-v2-wishlist", JSON.stringify(next));
+      return next;
+    });
+  const add = (p) => {
+    setCart((current) => {
+      const hit = current.find((x) => x.id === p.id),
+        next = hit
+          ? current.map((x) => (x.id === p.id ? { ...x, qty: x.qty + 1 } : x))
+          : [...current, { ...p, qty: 1 }];
+      localStorage.setItem("buyfinix-v2-cart", JSON.stringify(next));
+      return next;
+    });
+    setSelected(null);
+    setCartOpen(true);
+  };
+  const remove = (id) =>
+    setCart((current) => {
+      const next = current.filter((x) => x.id !== id);
+      localStorage.setItem("buyfinix-v2-cart", JSON.stringify(next));
+      return next;
+    });
+  const cardProps = {
+    onAdd: add,
+    onOpen: setSelected,
+    wishlist,
+    onWish: toggleWish,
+  };
+  return (
+    <>
+      <Header
+        cartCount={cart.reduce((n, p) => n + p.qty, 0)}
+        onCart={() => setCartOpen(true)}
+        onCategory={choose}
+        onSearch={search}
+      />
+      <Hero onPick={choose} />
+      <Favorites onPick={choose} />
+      <Shelf
+        id="deals"
+        title="Extra savings today"
+        description="Limited-time prices on selected digital products"
+        products={products}
+        {...cardProps}
+      />
+      <Shelf
+        id="bestsellers"
+        title="Bestsellers"
+        description="The products BuyFinix customers choose most"
+        products={products.slice().sort((a, b) => b.price - a.price)}
+        {...cardProps}
+        ranked
+      />
+      <Shelf
+        id="topups"
+        title="Level up instantly with top-ups"
+        description="Game credits delivered fast and securely"
+        products={products
+          .filter((p) => p.category === "top-ups")
+          .concat(products.filter((p) => p.category === "gift-cards"))}
+        {...cardProps}
+        accent
+      />
+      <section className="catalog" id="catalog">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <h2>
+                {query
+                  ? `Results for “${query}”`
+                  : category === "all"
+                    ? "Explore the marketplace"
+                    : categories.find((c) => c.key === category)?.name ||
+                      "Products"}
+              </h2>
+              <p>
+                {visible.length} genuine digital products with local support
+              </p>
+            </div>
+            <button
+              className="reset"
+              onClick={() => {
+                setCategory("all");
+                setQuery("");
+              }}
+            >
+              All products
+            </button>
+          </div>
+          {visible.length ? (
+            <div className="cards catalog-cards">
+              {visible.map((p) => (
+                <ProductCard
+                  p={p}
+                  {...cardProps}
+                  wished={wishlist.includes(p.id)}
+                  key={`catalog-${p.id}`}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="no-results">
+              <Search />
+              <h3>No products found</h3>
+              <button onClick={() => setQuery("")}>Clear search</button>
+            </div>
+          )}
+        </div>
+      </section>
+      <Shelf
+        id="subscriptions"
+        title="Streaming, AI & subscriptions"
+        description="Premium access for entertainment, work and creativity"
+        products={products.filter((p) =>
+          [
+            "streaming",
+            "subscriptions",
+            "ai-tools",
+            "creative",
+            "security",
+          ].includes(p.category),
+        )}
+        {...cardProps}
+      />
+      <Newsletter />
+      <Footer />
+      {selected && (
+        <div
+          className="overlay product-overlay"
+          onClick={(e) => e.target === e.currentTarget && setSelected(null)}
+        >
+          <section className="product-modal">
+            <button className="close" onClick={() => setSelected(null)}>
+              <X />
+            </button>
+            <div className="modal-art"><Artwork p={selected} /></div>
+            <div>
+              <small>
+                {selected.cat} · {selected.region}
+              </small>
+              <h2>{selected.title}</h2>
+              <p>
+                Genuine digital product supplied securely with fast BuyFinix
+                delivery and local customer support.
+              </p>
+              <div className="product-facts">
+                <span><small>Platform</small><b>{selected.platform}</b></span>
+                <span><small>Region</small><b>{selected.region}</b></span>
+                <span><small>Delivery</small><b>Instant / email</b></span>
+                <span><small>Availability</small><b>In stock</b></span>
+              </div>
+              <div className="purchase-note"><ShieldCheck /> Genuine product · Secure checkout · Local support</div>
+              <div className="modal-price">
+                <span>From</span>
+                <b>{money(selected.price)}</b>
+              </div>
+              <button className="modal-add" onClick={() => add(selected)}>
+                <ShoppingCart /> Add to cart
+              </button>
+            </div>
+          </section>
+        </div>
+      )}
+      {cartOpen && (
+        <div
+          className="overlay"
+          onClick={(e) => e.target === e.currentTarget && setCartOpen(false)}
+        >
+          <aside className="cart-drawer">
+            <button className="close" onClick={() => setCartOpen(false)}>
+              <X />
+            </button>
+            <span className="drawer-label">YOUR CART</span>
+            <h2>Digital products</h2>
+            {cart.length ? (
+              <>
+                <div className="cart-items">
+                  {cart.map((p) => (
+                    <div key={p.id}>
+                      <img src={p.artwork} alt="" />
+                      <span>
+                        <b>{p.title}</b>
+                        <small>
+                          {p.qty} × {money(p.price)}
+                        </small>
+                      </span>
+                      <button onClick={() => remove(p.id)}>
+                        <Trash2 />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <div className="cart-total">
+                  <span>Total</span>
+                  <b>{money(cart.reduce((n, p) => n + p.price * p.qty, 0))}</b>
+                </div>
+                <a
+                  className="checkout"
+                  href={`https://wa.me/8801727278593?text=${encodeURIComponent("Hello BuyFinix, I want to order: " + cart.map((p) => `${p.title} x${p.qty}`).join(", "))}`}
+                >
+                  Continue checkout <ArrowRight />
+                </a>
+              </>
+            ) : (
+              <div className="empty">
+                <ShoppingCart />
+                <h3>Your cart is empty</h3>
+                <button onClick={() => setCartOpen(false)}>
+                  Continue shopping
+                </button>
+              </div>
+            )}
+          </aside>
+        </div>
+      )}
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
