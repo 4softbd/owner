@@ -45,3 +45,29 @@
 .art-top-ups{background:linear-gradient(145deg,#3b1d02,#d28200)}
 .product-card:hover .smart-art>svg{transform:translateY(-4px) rotate(-4deg);transition:transform .35s ease}
 @media(max-width:660px){.smart-art{padding:14px}.smart-art>svg{right:12px;top:14px;width:46px;height:46px}.smart-art>span{font-size:16px}.smart-art>small{font-size:6px;margin-top:7px}}
+
+/* Compact PlayStation-style commerce gallery */
+.gallery-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.gallery-grid .product-card{border-radius:10px}
+.gallery-grid .poster{height:218px}
+.gallery-grid .wish{width:27px;height:27px;right:7px;top:7px}
+.gallery-grid .wish svg{width:13px}
+.gallery-grid .poster>span{left:7px;top:7px;padding:4px 6px;font-size:7px}
+.gallery-grid .product-info{padding:11px 11px 12px}
+.gallery-grid .product-info>small{font-size:7px}
+.gallery-grid .product-title{font-size:11px;height:32px;line-height:1.35;margin:5px 0 6px}
+.gallery-grid .chips{white-space:nowrap;overflow:hidden}
+.gallery-grid .chips i{font-size:6px;padding:3px 4px}
+.gallery-grid .delivery{font-size:7px;margin:7px 0}
+.gallery-grid .delivery svg{width:9px}
+.gallery-grid .price-row{padding-top:8px}
+.gallery-grid .price-row b{font-size:15px}
+.gallery-grid .price-row>button{width:31px;height:31px}
+.gallery-grid .price-row>button svg{width:14px}
+.gallery-grid .smart-art{padding:16px}
+.gallery-grid .smart-art>svg{right:13px;top:15px;width:48px;height:48px}
+.gallery-grid .smart-art>span{font-size:17px}
+.gallery-grid .smart-art>small{font-size:6px;margin-top:7px}
+@media(max-width:1180px){.gallery-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:1000px){.gallery-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.gallery-grid .poster{height:225px}}
+@media(max-width:660px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.gallery-grid .poster{height:190px}.gallery-grid .product-info{padding:10px}.gallery-grid .product-title{font-size:10px;height:29px}.gallery-grid .delivery{display:none}.gallery-grid .smart-art{padding:13px}.gallery-grid .smart-art>span{font-size:15px}}
