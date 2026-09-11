@@ -1,1 +1,51 @@
-<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shop — BuyFinix</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="extras.css"></head><body><header class="nav shell"><a class="brand" href="index.html">BUY ⚡ FINIX</a><nav><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="account.html">My Account</a></nav></header><main class="shell page-shell"><h1 class="page-title">Shop all plans.</h1><div class="toolbar"><input placeholder="Search plans..."><select><option>All categories</option><option>Subscriptions</option><option>Combo Packs</option><option>Software</option><option>Music</option><option>Adult</option></select><select><option>Sort: Featured</option><option>Price low to high</option><option>Newest</option></select></div><p>36 plans available</p><div class="product-grid" id="shop-grid"></div><div class="hero-buttons"><a href="#">1</a><a class="outline" href="#">2</a></div></main><script src="pages.js"></script></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shop — BuyFinix</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="extras.css">
+</head>
+<body>
+<header class="nav shell">
+<a class="brand" href="index.html">BUY ⚡ FINIX</a>
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="account.html">My Account</a>
+</nav>
+</header>
+<main class="shell page-shell">
+<h1 class="page-title">Shop all plans.</h1>
+<div class="category-tabs" id="category-tabs">
+<button data-category="all">All</button><button data-category="subscriptions">Subscriptions</button><button data-category="combos">Combo Packs</button><button data-category="software">Software</button><button data-category="music">Music</button><button data-category="adult">Adult</button><button data-category="more">More Plans</button>
+</div>
+<div class="toolbar">
+<input id="shop-search" placeholder="Search plans..." aria-label="Search plans">
+<select id="shop-category" aria-label="Filter by category">
+<option value="all">All categories</option>
+<option value="subscriptions">Subscriptions</option>
+<option value="combos">Combo Packs</option>
+<option value="software">Software</option>
+<option value="music">Music</option>
+<option value="adult">Adult</option>
+</select>
+<select id="shop-sort" aria-label="Sort products">
+<option>Sort: Featured</option>
+<option>Price low to high</option>
+<option>Newest</option>
+</select>
+</div>
+<p id="product-count">Loading plans…</p>
+<div class="product-grid" id="shop-grid">
+</div>
+<div class="hero-buttons">
+<a href="#">1</a>
+<a class="outline" href="#">2</a>
+</div>
+</main>
+<script src="pages.js">
+</script>
+</body>
+</html>
