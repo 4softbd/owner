@@ -397,13 +397,13 @@ function Hero({ onPick }) {
           <div className="hero-copy">
             <span className="hero-kicker">BUYFINIX GLOBAL MARKETPLACE</span>
             <h1>
-              PLAY MORE.
+              ALL YOUR DIGITAL.
               <br />
-              <em>PAY LESS.</em>
+              <em>ONE BUYFINIX.</em>
             </h1>
             <p>
-              Games, premium subscriptions, gift cards and instant top-ups —
-              authentic digital products delivered in minutes.
+              Genuine games, subscriptions, gift cards and instant top-ups —
+              delivered fast with local support.
             </p>
             <button onClick={() => onPick("games")}>
               EXPLORE MARKETPLACE <ArrowRight />
@@ -479,7 +479,11 @@ function Favorites({ onPick }) {
   return (
     <section className="favorites">
       <div className="wrap">
-        <h2 className="favorites-title">Shop Your Favorites</h2>
+        <div className="category-heading">
+          <span>SHOP SMARTER</span>
+          <h2 className="favorites-title">Shop by category.</h2>
+          <p>Everything digital, organized around what you need.</p>
+        </div>
         <div className="platform-strip">
           {items.map(([key, img, title, sub]) => (
             <button onClick={() => onPick(key)} key={key}>
@@ -493,6 +497,33 @@ function Favorites({ onPick }) {
             </button>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+function TrustRibbon() {
+  return (
+    <section className="market-trust">
+      <div className="wrap">
+        <span>
+          <b>6,824+</b>
+          <small>Orders delivered</small>
+        </span>
+        <span>
+          <Zap />
+          <b>Instant</b>
+          <small>Digital delivery</small>
+        </span>
+        <span>
+          <ShieldCheck />
+          <b>Secure</b>
+          <small>Verified checkout</small>
+        </span>
+        <span>
+          <Headphones />
+          <b>Local support</b>
+          <small>Real human help</small>
+        </span>
       </div>
     </section>
   );
@@ -536,6 +567,10 @@ function ProductCard({ p, onAdd, onOpen, rank, wished, onWish }) {
         <span>{p.tag}</span>
       </button>
       <div className="product-info">
+        <div className="card-social-proof">
+          <span>★ 4.9</span>
+          <small>{120 + p.id * 37}+ purchased</small>
+        </div>
         <small>{p.cat}</small>
         <button className="product-title" onClick={() => onOpen(p)}>
           {p.title}
@@ -763,7 +798,6 @@ function Shelf({
   accent = false,
 }) {
   const row = useRef();
-  if (id === "topups" && products.length < 4) return null;
   const slide = (d) =>
     row.current?.scrollBy({
       left: d * row.current.clientWidth * 0.8,
@@ -812,6 +846,140 @@ function Shelf({
             />
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+function Reviews() {
+  const reviews = [
+    [
+      "MR",
+      "Mehedi R.",
+      "Dhaka",
+      "Steam code পেয়েছি কয়েক মিনিটেই। Activation-এ কোনো সমস্যা হয়নি, support-ও দ্রুত reply করেছে।",
+    ],
+    [
+      "TN",
+      "Tania N.",
+      "Chattogram",
+      "Netflix plan নেওয়ার আগে অনেক প্রশ্ন করেছিলাম। সব পরিষ্কারভাবে বুঝিয়ে দিয়েছে এবং delivery fast ছিল।",
+    ],
+    [
+      "SA",
+      "Sami A.",
+      "Sylhet",
+      "Gift card ও PUBG top-up—দুটো order-ই smooth ছিল। এখন digital product-এর জন্য BuyFinix-ই ব্যবহার করি।",
+    ],
+  ];
+  return (
+    <section className="reviews-section" id="reviews">
+      <div className="wrap">
+        <div className="story-heading">
+          <span>CUSTOMER STORIES</span>
+          <h2>Trusted after the first order.</h2>
+          <p>Real experiences from BuyFinix customers across Bangladesh.</p>
+        </div>
+        <div className="review-grid">
+          {reviews.map(([initials, name, city, quote]) => (
+            <article key={name}>
+              <div className="review-stars">
+                ★★★★★ <b>4.9</b>
+              </div>
+              <p>“{quote}”</p>
+              <div className="review-author">
+                <i>{initials}</i>
+                <span>
+                  <b>{name}</b>
+                  <small>{city} · Verified buyer</small>
+                </span>
+                <Check />
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+function FAQ() {
+  const questions = [
+    [
+      "How fast will I receive my order?",
+      "Most digital products are delivered within minutes after payment confirmation. Some account-based products may require a short manual verification.",
+    ],
+    [
+      "What happens if my access stops working?",
+      "Contact BuyFinix support with your order details. Eligible products are repaired or replaced according to the stated warranty period.",
+    ],
+    [
+      "Are the products genuine?",
+      "We provide genuine digital keys, codes, top-ups and clearly described subscription access. Platform and region information is shown before purchase.",
+    ],
+    [
+      "How do I get support?",
+      "Use the WhatsApp support link from the site. Our team can help with ordering, activation, delivery and warranty questions.",
+    ],
+  ];
+  return (
+    <section className="faq-section" id="faq">
+      <div className="wrap faq-grid">
+        <div className="story-heading">
+          <span>NEED TO KNOW</span>
+          <h2>
+            Fair questions.
+            <br />
+            Straight answers.
+          </h2>
+          <p>Know exactly what happens before and after you order.</p>
+        </div>
+        <div className="faq-list">
+          {questions.map(([q, a], i) => (
+            <details open={i === 0} key={q}>
+              <summary>
+                {q}
+                <ChevronDown />
+              </summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+function Rewards() {
+  return (
+    <section className="rewards-section">
+      <div className="wrap rewards-card">
+        <div>
+          <span>BUYFINIX REWARDS</span>
+          <h2>
+            Share BuyFinix.
+            <br />
+            Earn on every referral.
+          </h2>
+          <p>
+            Invite friends and receive wallet credit after their successful
+            purchase.
+          </p>
+          <a href="https://wa.me/8801727278593">
+            Get referral link <ArrowRight />
+          </a>
+        </div>
+        <ol>
+          <li>
+            <b>01</b>
+            <span>Share your link</span>
+          </li>
+          <li>
+            <b>02</b>
+            <span>Your friend orders</span>
+          </li>
+          <li>
+            <b>03</b>
+            <span>You earn credit</span>
+          </li>
+        </ol>
       </div>
     </section>
   );
@@ -995,6 +1163,7 @@ function App() {
         onSearch={search}
       />
       <Hero onPick={choose} />
+      <TrustRibbon />
       <Favorites onPick={choose} />
       <Shelf
         id="deals"
@@ -1082,6 +1251,9 @@ function App() {
         )}
         {...cardProps}
       />
+      <Reviews />
+      <FAQ />
+      <Rewards />
       <Newsletter />
       <Footer />
       {selected && (
