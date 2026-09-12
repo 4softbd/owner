@@ -1,5 +1,5 @@
-const CACHE='buyfinix-v3';
-const CORE=['index.html','styles.css','extras.css','polish.css','app.js','store.js','shop.html','product.html','cart.html','checkout.html','account.html'];
+const CACHE='buyfinix-master5';
+const CORE=['index.html','styles.css','extras.css','polish.css','app.js','store.js','shop.html','product.html','cart.html','checkout.html','account.html','figma-cards.js'];
 self.addEventListener('install',event=>{self.skipWaiting();event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)))});
 self.addEventListener('activate',event=>{event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))),self.clients.claim()]))});
 self.addEventListener('fetch',event=>{if(event.request.method!=='GET')return;const requestUrl=new URL(event.request.url),liveAsset=event.request.mode==='navigate'||/\.(?:css|js)$/.test(requestUrl.pathname);if(liveAsset){event.respondWith(fetch(event.request).then(response=>{const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));return response}).catch(()=>caches.match(event.request)));return}event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request)))});
