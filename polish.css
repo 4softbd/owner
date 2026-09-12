@@ -363,3 +363,62 @@
 }
 
 .shared-nav .nav-drop.open .drop-panel{display:block;opacity:1;visibility:visible;transform:translateY(0)}
+
+
+/* Live-vs-Figma comparison pass: desktop 1920/1440 and mobile 390. */
+@media(min-width:901px){
+  .hero-band{height:768px;min-height:768px;padding-top:0}
+  .shared-nav{top:12px;margin-top:12px}
+  .hero{padding-top:93px}
+  .hero h1{
+    max-width:none;
+    margin:16px auto 22px;
+    font-size:72px;
+    line-height:74.88px;
+    letter-spacing:-1.8px;
+  }
+  .hero h1 .hero-line{display:block;white-space:nowrap}
+  .hero h1 .hero-brand-line{color:#4f7a08}
+  .hero h1 .hero-brand-line em{font-family:"Instrument Serif",serif;font-weight:400;font-style:italic;color:#4f7a08}
+  .hero h1 .hero-brand-line strong{font-family:"Space Grotesk",sans-serif;font-weight:600;color:#a6ef3f}
+  .hero p{font-size:17.5px;line-height:28px}
+  .brand-rail{margin-top:55px}
+  .trust-pills{margin-top:29px}
+
+  .plan-section{height:355px;padding:48px 0 22px}
+  .plan-section h2{height:54px;margin:0 0 56px;font-size:49px;line-height:54px}
+  .plan-strip{height:175px}
+  .plan{height:173px;min-height:173px}
+
+  .catalog-band{padding:19.2px 0 38px}
+  .catalog-band>div>h2{height:54px;margin:0 0 50px;font-size:49px;line-height:54px}
+  .product-group{margin-bottom:20px}
+  .group-head{height:34.39px;margin-bottom:20px}
+  .group-head h3{font-size:29px;line-height:32px}
+  .product-grid{column-gap:18px;row-gap:18px;align-items:stretch}
+  .product-card{height:381.6px;min-height:381.6px}
+  .product-art{height:208.42px;aspect-ratio:auto;flex:0 0 208.42px}
+  .product-info{flex:1;padding:14px 16px 18px}
+  .product-info h4{margin-bottom:12px}
+  .product-info .card-actions{margin-top:auto}
+}
+@media(max-width:900px){
+  .hero h1 .hero-line{display:block}
+  .hero h1 .hero-brand-line{color:#4f7a08}
+  .hero h1 .hero-brand-line em{font-family:"Instrument Serif",serif;font-weight:400;font-style:italic}
+  .hero h1 .hero-brand-line strong{font-family:"Space Grotesk",sans-serif;font-weight:600;color:#a6ef3f}
+}
+@media(max-width:430px){
+  .hero-band{height:580px;min-height:580px;padding-top:0}
+  .hero{padding-top:63px}
+  .hero h1{font-size:35.1px;line-height:36.5px;letter-spacing:-.88px;margin:0 auto}
+  .hero h1 .hero-line{white-space:normal}
+  .plan-section{height:195.68px;padding:31.2px 0 14px}
+  .plan-section h2{height:32px;margin:0 0 20px;line-height:31.2px}
+  .plan-strip{height:98.44px}
+  .catalog-band{padding-top:12.48px}
+  .product-group{margin-bottom:20px}
+  .product-card{height:auto;min-height:300.68px}
+  .product-art{height:auto;aspect-ratio:1.123/1;flex:none}
+  .product-info{padding:10px 11px 13px}
+}
