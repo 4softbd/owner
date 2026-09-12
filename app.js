@@ -13,5 +13,20 @@ document.addEventListener('click',e=>{const add=e.target.closest('[data-cart]');
 document.querySelector('#cart-open')?.addEventListener('click',openCart);document.querySelector('#cart-close')?.addEventListener('click',closeLayers);document.querySelector('#scrim')?.addEventListener('click',closeLayers);document.querySelector('#menu-open')?.addEventListener('click',()=>{document.querySelector('#mobile-menu')?.classList.add('open');document.querySelector('#scrim')?.classList.add('open')});document.querySelector('#menu-close')?.addEventListener('click',closeLayers);
 const modal=document.querySelector('#search-modal'),input=document.querySelector('#search-input'),results=document.querySelector('#search-results');function renderSearch(q=''){if(!results)return;const term=q.trim().toLowerCase(),matches=term?products.filter(p=>p.name.toLowerCase().includes(term)||p.group.includes(term)):products.slice(0,5);results.innerHTML=matches.length?matches.slice(0,8).map(p=>`<a href="product.html?id=${p.id}"><span class="search-thumb">${p.image?`<img src="${p.image}" alt="" width="54" height="54">`:p.icon}</span><b>${p.name}<small>${title(p.group)} · ${p.duration}</small></b><strong>${money(p.price)}</strong></a>`).join(''):'<div class="empty-state"><b>No matching plans</b><p>Try Netflix, software, music or combo.</p></div>'}
 document.querySelector('#search-open')?.addEventListener('click',()=>{modal?.classList.add('open');modal?.setAttribute('aria-hidden','false');setTimeout(()=>input?.focus(),50)});document.querySelector('#search-close')?.addEventListener('click',()=>{modal?.classList.remove('open');modal?.setAttribute('aria-hidden','true')});input?.addEventListener('input',e=>renderSearch(e.target.value));renderSearch();document.addEventListener('keydown',e=>{if(e.key==='Escape'){modal?.classList.remove('open');closeLayers()}});
-document.querySelectorAll('.faq-list details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.faq-list details').forEach(x=>{if(x!==d)x.open=false})}));let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});document.querySelector('#install-app')?.addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice}else alert('Use your browser menu and choose Add to Home Screen.')});if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js?v=master5');
+document.querySelectorAll('.faq-list details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)document.querySelectorAll('.faq-list details').forEach(x=>{if(x!==d)x.open=false})}));let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e});document.querySelector('#install-app')?.addEventListener('click',async()=>{if(deferredPrompt){deferredPrompt.prompt();await deferredPrompt.userChoice}else alert('Use your browser menu and choose Add to Home Screen.')});if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js?v=nav6');
 const rail=document.querySelector('.brand-rail');if(rail){rail.innerHTML+=rail.innerHTML;rail.classList.add('is-moving')}
+
+document.querySelectorAll('.nav-drop>button').forEach(button=>{
+  const drop=button.parentElement;
+  button.addEventListener('click',event=>{
+    event.stopPropagation();
+    const open=!drop.classList.contains('open');
+    document.querySelectorAll('.nav-drop.open').forEach(item=>{item.classList.remove('open');item.querySelector('button')?.setAttribute('aria-expanded','false')});
+    drop.classList.toggle('open',open);
+    button.setAttribute('aria-expanded',String(open));
+  });
+  button.addEventListener('keydown',event=>{
+    if(event.key==='ArrowDown'){event.preventDefault();drop.classList.add('open');button.setAttribute('aria-expanded','true');drop.querySelector('a')?.focus()}
+  });
+});
+document.addEventListener('click',()=>document.querySelectorAll('.nav-drop.open').forEach(item=>{item.classList.remove('open');item.querySelector('button')?.setAttribute('aria-expanded','false')}));
