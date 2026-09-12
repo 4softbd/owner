@@ -1,5 +1,5 @@
 document.head.insertAdjacentHTML('beforeend','<link rel="stylesheet" href="extras.css">');
-const plans=[['subscriptions','▻','Subscriptions','OTT & premium access'],['combos','🎁','Combo Packs','More value together'],['software','▰','Software','Tools & licenses'],['music','♫','Music','Listen without limits'],['adult','18+','Adult','Private premium plans']];
+const plans=[['subscriptions','🍿','OTT','Subscriptions'],['combos','🎁','Combos','More value together'],['software','💻','Software','Tools & licenses'],['music','🎧','Music','Listen without limits'],['adult','🛡️','Gaming','Private premium plans']];
 const products=[
 {id:1,group:'subscriptions',name:'Netflix Premium 4K',price:399,old:500,icon:'N',bg:'linear-gradient(145deg,#101010,#c91622)',duration:'month'},
 {id:2,group:'subscriptions',name:'Prime Video 4K',price:249,old:350,icon:'prime',bg:'linear-gradient(145deg,#159be8,#144c93)',duration:'month'},
