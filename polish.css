@@ -24,3 +24,104 @@
 .cart-drawer .empty-state{padding:55px 0;color:#606852;font-size:14px}
 @media(max-width:900px){.detail-grid{grid-template-columns:1fr;gap:24px}.detail-image{position:relative;top:auto;min-height:430px}.related>div.product-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:600px){.page-shell:has(.detail-grid){padding-top:28px}.detail-image{min-height:330px;border-radius:20px}.product-panel{padding:24px 20px;border-radius:20px}.product-panel .price b{font-size:32px}.duration-row{display:grid;grid-template-columns:1fr 1fr}.duration-row button,.detail-actions button{width:100%}.related{margin-top:44px}.related>div.product-grid{grid-template-columns:repeat(2,1fr)}.cart-head{min-height:72px;padding:15px 18px}.cart-drawer>#global-cart-items{padding-left:18px;padding-right:18px}.cart-drawer>.cart-total,.cart-drawer>.checkout{margin-left:18px;margin-right:18px}}
+
+
+/* Figma responsive storefront: 1920 / 1440 / 1024 / 768 / 390. */
+.hero-band{overflow:hidden}
+.hero{max-width:1280px}
+.hero h1{max-width:690px;margin-left:auto;margin-right:auto}
+.brand-rail{position:relative;overflow:hidden;white-space:nowrap}
+.plan-strip{padding:0}
+.plan{min-height:173px;padding:22px 18px}
+.stories{background:#f7f5ec;color:var(--ink)}
+.stories .kicker{color:#668e2c}
+.stories h2 em{color:#4d8b06}
+.story-track article{background:var(--paper);border-color:var(--line);box-shadow:0 12px 36px rgba(26,37,22,.05)}
+.story-track footer span{color:var(--muted)}
+.faq-section{background:#fbfaf4}
+.referral-card{overflow:hidden;position:relative;isolation:isolate}
+.referral-card::after{content:"";position:absolute;z-index:-1;width:420px;height:420px;border-radius:50%;right:-170px;bottom:-270px;background:rgba(255,255,255,.26)}
+
+@media(max-width:1024px){
+  .hero-band{min-height:690px}
+  .hero h1{font-size:64px}
+  .product-grid{gap:14px}
+}
+
+@media(max-width:768px){
+  .hero-band{min-height:650px}
+  .hero{padding-top:52px}
+  .hero h1{font-size:56px}
+  .hero-buttons{flex-direction:column;align-items:center}
+  .hero-buttons a{width:320px;justify-content:center}
+  .plan-section{padding-top:32px}
+  .plan-strip{grid-template-columns:repeat(5,1fr);overflow:hidden;border-radius:18px}
+  .plan{min-width:0;min-height:120px;padding:15px 8px}
+  .plan-icon{width:54px;height:54px;margin-bottom:12px;font-size:24px}
+  .plan small{display:none}
+  .faq-grid{max-width:880px}
+}
+
+@media(max-width:430px){
+  .shell{width:92%;max-width:none}
+  .hero-band{min-height:580px}
+  .hero{padding-top:39px}
+  .instant-pill{font-size:11px;max-width:303px}
+  .instant-pill span{display:inline}
+  .hero h1{width:100%;font-size:38px;line-height:.98;margin-top:21px;margin-bottom:14px}
+  .hero p{max-width:320px;margin:auto;font-size:14px;line-height:1.55}
+  .hero-buttons{gap:9px;margin-top:22px}
+  .hero-buttons a{width:320px;max-width:100%;height:49px;padding:0 22px}
+  .brand-rail{width:100vw;margin-left:calc(50% - 50vw);margin-top:32px;gap:12px}
+  .brand-rail>span,.brand-rail>b{height:48px;padding:0 14px}
+  .brand-rail i{width:30px;height:30px}
+  .trust-pills{margin-top:20px;padding:0;justify-content:center;gap:6px;overflow:hidden}
+  .trust-pills span{padding:7px 10px;font-size:10px}
+  .trust-pills span:last-child{display:none}
+  .plan-section{padding:31px 0 14px}
+  .plan-section h2,.catalog-band>div>h2{font-size:31px;margin-bottom:20px}
+  .plan-strip{height:99px}
+  .plan{min-height:97px;padding:10px 3px}
+  .plan-icon{width:38px;height:38px;margin-bottom:7px;font-size:18px}
+  .plan b{font-size:10px;line-height:1.15}
+  .catalog-band{padding:13px 0 50px}
+  .catalog-band>div>h2{margin-bottom:20px}
+  .product-group{margin-bottom:42px}
+  .group-head{margin-bottom:19px}
+  .group-head h3{font-size:21px}
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  .product-card{border-radius:16px}
+  .product-art{height:151px;font-size:44px}
+  .product-info{padding:10px 11px 12px}
+  .product-info h4{height:38px;margin-bottom:9px;font-size:12px;line-height:1.45}
+  .price{margin-bottom:9px}
+  .price b{font-size:17px}
+  .price del{font-size:10px}
+  .card-actions{grid-template-columns:35px minmax(0,1fr);gap:6px}
+  .card-actions button,.card-actions .buy{height:39px;font-size:11px}
+  .stories{padding:22px 0}
+  .stories h2{font-size:32px;margin:8px 0 22px}
+  .story-track{gap:12px}
+  .story-track article{width:calc(100vw - 31px);min-height:192px}
+  .faq-section{padding:22px 0}
+  .faq-grid{gap:20px}
+  .faq-section h2{font-size:32px;line-height:1;margin:10px 0 0}
+  .faq-list summary{min-height:65px;padding:20px 0;font-size:14px;align-items:center}
+  .faq-list p{font-size:13px}
+  .referral{padding:0 0 22px}
+  .referral-card{min-height:312px;padding:22px 20px;gap:16px;border-radius:22px}
+  .referral h2{font-size:31px;margin:9px 0 8px}
+  .referral-card>div:first-child>p:last-child{font-size:13px;margin-bottom:0}
+  .referral-flow{gap:7px}
+  .referral-flow span{font-size:11px}
+  .referral-flow span b{width:28px;height:28px;margin-bottom:5px}
+  .referral-flow a{margin-top:8px;padding:10px}
+}
+
+@media(max-width:370px){
+  .hero-buttons a{width:100%}
+  .instant-pill{font-size:10px}
+  .instant-pill b{font-size:9px}
+  .plan b{font-size:9px}
+  .product-grid{gap:9px}
+}
