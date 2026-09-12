@@ -427,3 +427,86 @@
   .plan-section h2{margin-bottom:8px}
   .catalog-band{min-height:3582.58px}
 }
+
+
+/* Full desktop/mobile Figma parity pass. */
+@media(min-width:901px){
+  .stories{
+    height:741.6px;
+    padding:84px 0;
+    background:#f6f4ea;
+  }
+  .stories .shell{width:1240px;max-width:calc(100% - 76px)}
+  .stories .kicker{font-size:12px;line-height:19.2px;letter-spacing:2.16px}
+  .stories h2{font-size:52px;line-height:54px;letter-spacing:-1.04px;margin:15px 0 56px;white-space:nowrap}
+  .story-track{
+    display:grid;
+    grid-template-rows:213.95px 191.56px;
+    grid-auto-flow:column;
+    grid-auto-columns:390px;
+    gap:16px;
+    height:421.51px;
+    width:max-content;
+  }
+  .story-track article{width:390px;min-height:0;height:100%;padding:20px 22px;border-radius:20px}
+  .faq-section{height:670.17px;padding:84px 0}
+  .faq-grid{gap:56px}
+  .referral{height:388.98px;padding:84px 0}
+  .referral-card{height:220.98px;min-height:220.98px}
+}
+@media(max-width:430px){
+  .shared-nav{position:absolute;top:8px;left:12px;right:12px;width:auto;margin:0}
+  .hero{padding-top:101px}
+  .instant-pill{height:37.59px}
+  .hero h1{margin:22px auto 0}
+  .hero p{margin-top:12px}
+  .hero-buttons{gap:9px;margin-top:22px}
+  .hero-buttons a{width:320px;height:49px;min-height:49px}
+  .brand-rail{margin-top:32px}
+  .trust-pills{margin-top:20px;justify-content:center;overflow:visible;padding:0}
+  .trust-pills span{height:32.39px;padding:6px 12px}
+  .trust-pills span:nth-child(3){display:none}
+
+  .product-grid{gap:12.5px 13px}
+  .product-info .price{flex-wrap:nowrap}
+  .product-info .price del{width:auto;margin-left:auto}
+  .product-info .card-actions{grid-template-columns:38px minmax(0,1fr);gap:8px}
+
+  .stories{height:560.1px;padding:22px 0;background:#f6f4ea}
+  .stories .shell{width:100%;max-width:none}
+  .stories .kicker{margin:6.9px 15.6px 0;font-size:12px;line-height:19.2px;letter-spacing:2.16px}
+  .stories .kicker::before,.faq-section .kicker::before{content:"";display:inline-block;width:26px;height:2px;margin:0 8px 3px 0;border-radius:2px;background:#a3d93a}
+  .stories h2{margin:15.69px 15.6px 20px;font:700 30px/31.2px "Space Grotesk",sans-serif;letter-spacing:-.6px;white-space:nowrap}
+  .stories h2 em{font-family:"Space Grotesk",sans-serif;font-style:normal;color:#161a10}
+  .story-track{
+    display:grid;
+    grid-template-rows:213.95px 191.56px;
+    grid-auto-flow:column;
+    grid-auto-columns:100vw;
+    gap:16px 0;
+    width:max-content;
+    height:421.51px;
+  }
+  .story-track article{width:100vw;height:100%;min-height:0;border-radius:20px;padding:20px 22px}
+  .story-track article p{font-size:14px;line-height:22.4px}
+  .story-track article::before{margin-bottom:10px}
+
+  .faq-section{height:490.19px;padding:22px 0}
+  .faq-grid{width:358.8px;max-width:calc(100% - 31.2px);gap:20px}
+  .faq-grid>div:first-child{height:105.6px;padding-top:6.9px}
+  .faq-section .kicker{margin:0;font-size:12px;line-height:19.2px;letter-spacing:2.16px}
+  .faq-section h2{margin:15.69px 0 0;font-size:30px;line-height:31.2px;letter-spacing:-.6px}
+  .faq-list{gap:12px}
+  .faq-list details{min-height:65px;padding:0 24px;border:1px solid #e6e1cd;border-radius:16px;background:#fdfcf7;overflow:hidden}
+  .faq-list details:first-child{min-height:89.59px}
+  .faq-list summary{min-height:63px;padding:19px 0;font:600 15.5px/24.8px "Space Grotesk",sans-serif}
+  .faq-list details:first-child summary{min-height:87.59px}
+  .faq-list p{font-size:13px;line-height:20px}
+
+  .referral{height:355.5px;padding:22px 0}
+  .referral-card{height:311.5px;min-height:311.5px;padding:22px 20px;border-radius:26px}
+  .referral h2{font-size:23px;line-height:24.38px;letter-spacing:-.69px;margin:9px 0}
+  .referral-flow span{height:40px}
+  .referral-flow span b{width:20px;height:20px;margin:0 7px 0 0}
+  .referral-flow a{height:27.5px;min-height:27.5px;padding:1px 14px;margin-top:12px}
+}
