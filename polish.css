@@ -361,3 +361,5 @@
  .shared-nav .brand{font-size:12.5px;letter-spacing:1.7px}
  .shared-nav .nav-actions{gap:2px}
 }
+
+.shared-nav .nav-drop.open .drop-panel{display:block;opacity:1;visibility:visible;transform:translateY(0)}
