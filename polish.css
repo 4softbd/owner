@@ -422,3 +422,8 @@
   .product-art{height:auto;aspect-ratio:1.123/1;flex:none}
   .product-info{padding:10px 11px 13px}
 }
+
+@media(min-width:901px){
+  .plan-section h2{margin-bottom:8px}
+  .catalog-band{min-height:3582.58px}
+}
