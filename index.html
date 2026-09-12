@@ -8,9 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=figma4">
-<link rel="stylesheet" href="extras.css?v=figma4">
-<link rel="stylesheet" href="polish.css?v=figma4">
+<link rel="stylesheet" href="styles.css?v=master5">
+<link rel="stylesheet" href="extras.css?v=master5">
+<link rel="stylesheet" href="polish.css?v=master5">
 </head>
 <body>
 <div class="announcement">⚡ Fast delivery after payment confirmation · WhatsApp support</div>
@@ -47,7 +47,7 @@
 <div class="hero-buttons">
 <a href="#shop">Explore our plans <span>↓</span>
 </a>
-<a class="outline" href="#whatsapp">● &nbsp; Join WhatsApp community</a>
+<a class="outline" href="contact.html">● &nbsp; Join WhatsApp community</a>
 </div>
 </div>
 <div class="brand-rail" aria-label="Popular products">
@@ -176,7 +176,7 @@
 <i>→</i>
 <span>
 <b>3</b>You earn</span>
-<a href="#account">Get my referral link</a>
+<a href="account.html">Get my referral link</a>
 </div>
 </div>
 </section>
@@ -189,14 +189,14 @@
 <div class="shell footer-bottom">
 <span>© 2026 BuyFinix · Made with ♥ in Bangladesh 🇧🇩</span>
 <nav>
-<a href="#terms">Login Terms</a>
-<a href="#terms">Terms</a>
-<a href="#terms">Refund Policy</a>
+<a href="legal.html#login">Login Terms</a>
+<a href="legal.html#terms">Terms</a>
+<a href="legal.html#refund">Refund Policy</a>
 </nav>
 </div>
 </footer>
 <div class="search-modal" id="search-modal" aria-hidden="true">
-<div class="search-box">
+<div class="search-box" role="dialog" aria-modal="true" aria-label="Search products">
 <div class="search-row">
 <input id="search-input" autocomplete="off" placeholder="Search Netflix, Spotify, combos..." aria-label="Search plans">
 <button id="search-close">Cancel</button>
@@ -205,7 +205,7 @@
 <div id="search-results" class="search-results"></div>
 </div>
 </div>
-<aside class="cart-drawer" id="cart-drawer">
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
 <div class="cart-head">
 <b>Your cart</b>
 <button id="cart-close">×</button>
@@ -238,8 +238,8 @@
 </nav>
 <div class="scrim" id="scrim">
 </div>
-<script src="store.js?v=figma4"></script>
-<script src="app.js?v=figma4">
+<script src="store.js?v=master5"></script>
+<script src="app.js?v=master5">
 </script>
 </body>
 </html>
