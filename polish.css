@@ -269,3 +269,95 @@
   .product-art{height:auto;aspect-ratio:1.123/1}
   .product-info{padding:10px 11px 13px}
 }
+
+
+/* Figma 1:1067 — exact shared top-navigation geometry. */
+.announcement{display:none}
+.shared-nav{
+  position:sticky;
+  top:12px;
+  width:min(1280px,calc(100% - 40px));
+  height:58px;
+  padding:0 20px;
+  margin:12px auto 0;
+  border:1px solid rgba(22,26,16,.06);
+  border-radius:18px;
+  background:rgba(253,252,247,.95);
+  box-shadow:0 1px 3px rgba(22,26,16,.04),0 4px 16px rgba(22,26,16,.04);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  z-index:30;
+}
+.shared-nav .brand{
+  flex:0 0 auto;
+  font-family:"Space Grotesk",sans-serif;
+  font-size:15.5px;
+  line-height:24.8px;
+  font-weight:700;
+  letter-spacing:2.79px;
+  white-space:nowrap;
+}
+.shared-nav>nav{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  align-items:center;
+  gap:0;
+  height:39.19px;
+  margin:0 0 0 -50px;
+}
+.shared-nav>nav>a,.shared-nav .nav-drop>button{
+  display:flex;
+  align-items:center;
+  min-height:39.19px;
+  padding:0 14px;
+  border:0;
+  background:transparent;
+  color:#3a3d35;
+  font:500 14.5px/23.2px Inter,sans-serif;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.shared-nav>nav>a:hover,.shared-nav .nav-drop>button:hover,.shared-nav>nav>a[aria-current="page"]{color:#4f7a08}
+.shared-nav>nav>a[aria-current="page"]::after{content:"";position:absolute;left:14px;right:14px;bottom:3px;height:2px;border-radius:2px;background:#9cdf37}
+.shared-nav>nav>a{position:relative}
+.shared-nav .nav-drop{height:39.19px}
+.shared-nav .nav-drop>button span{margin-left:5px;font-size:12px}
+.shared-nav .drop-panel{top:43px;min-width:210px;padding:9px;border:1px solid rgba(22,26,16,.08);border-radius:16px;background:#fdfcf7;box-shadow:0 18px 45px rgba(22,26,16,.12)}
+.shared-nav .drop-panel a{padding:10px 12px;border-radius:10px}
+.shared-nav .drop-panel a:hover{background:#f1f6e7;color:#4f7a08}
+.shared-nav .nav-actions{margin-left:auto;gap:16px;height:100%}
+.shared-nav .install-app{display:none}
+.shared-nav .nav-actions>button,.shared-nav .nav-actions>a{
+  min-width:22px;
+  min-height:22px;
+  padding:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.shared-nav .nav-actions>a{
+  min-width:119.41px;
+  gap:5px;
+  border-radius:10px;
+  font:600 12px/19.2px "Space Grotesk",sans-serif;
+  letter-spacing:.24px;
+}
+.shared-nav #search-open,.shared-nav #cart-open{font-size:21px;line-height:1}
+.shared-nav #cart-count{top:-7px;right:-8px}
+@media(max-width:900px){
+ .shared-nav{width:calc(100% - 28px);top:8px;margin-top:8px}
+ .shared-nav .hamburger{display:grid;order:-1;width:42px;height:42px;place-items:center;padding:0}
+ .shared-nav .brand{position:absolute;left:50%;transform:translateX(-50%);font-size:14px;letter-spacing:2px}
+ .shared-nav>nav{display:none}
+ .shared-nav .nav-actions{gap:8px}
+ .shared-nav .nav-actions>a{display:none}
+ .shared-nav #search-open,.shared-nav #cart-open{width:38px;height:38px}
+}
+@media(max-width:430px){
+ .shared-nav{width:calc(100% - 24px);height:56px;padding:0 10px;border-radius:17px}
+ .shared-nav .brand{font-size:12.5px;letter-spacing:1.7px}
+ .shared-nav .nav-actions{gap:2px}
+}
