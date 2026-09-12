@@ -30,3 +30,5 @@ document.querySelectorAll('.nav-drop>button').forEach(button=>{
   });
 });
 document.addEventListener('click',()=>document.querySelectorAll('.nav-drop.open').forEach(item=>{item.classList.remove('open');item.querySelector('button')?.setAttribute('aria-expanded','false')}));
+
+const storyTrack=document.querySelector('.story-track');if(storyTrack&&!storyTrack.dataset.cloned){const original=storyTrack.innerHTML;storyTrack.innerHTML=original+original+original;storyTrack.dataset.cloned='true'}
