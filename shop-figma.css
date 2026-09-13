@@ -174,3 +174,53 @@
 
 /* Nested legacy surface already owns the 1240px constraint. */
 .shop-page .shop-surface>.product-grid{width:100%!important}
+
+
+/* Visual audit corrections from Figma nodes 16:16291, 16:16301, 16:16947 and 16:16959 */
+.shop-page header.nav.shell{padding-left:20px!important;padding-right:10px!important}
+.shop-page .toolbar,
+.shop-page .premium-toolbar{
+  position:relative!important;
+  border-bottom:1px solid #e6e1cd!important;
+  padding-bottom:18px!important
+}
+.shop-page #shop-sort{background-color:#fdfcf7!important}
+.shop-page #product-count{top:-49px!important;bottom:auto!important}
+.shop-page .product-art{position:relative!important}
+.shop-page .product-art img{
+  position:absolute!important;
+  left:0!important;
+  top:-5.56%!important;
+  width:100%!important;
+  height:111.11%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  object-position:center!important
+}
+.shop-page .pagination,
+.shop-page .hero-buttons{
+  min-height:82px!important;
+  height:82px!important;
+  margin-top:0!important;
+  padding:40px 0 0 40px!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:8px!important
+}
+.shop-page .pagination button,
+.shop-page .hero-buttons a{
+  min-width:42px!important;width:auto!important;height:42px!important;
+  padding:0 15px!important;border:1px solid #e6e1cd!important;
+  border-radius:12px!important;background:#fdfcf7!important;
+  color:#606852!important;font:600 16px/40px "Space Grotesk",sans-serif!important;
+  text-align:center!important
+}
+.shop-page .pagination button.active,
+.shop-page .hero-buttons a:first-child{
+  background:#c2f068!important;border-color:#c2f068!important;color:#10130a!important
+}
+@media(max-width:760px){
+  .shop-page #product-count{top:-42px!important}
+  .shop-page .pagination,.shop-page .hero-buttons{padding-left:0!important}
+}
