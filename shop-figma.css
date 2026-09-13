@@ -171,3 +171,6 @@
   .shop-page .product-grid{gap:9px!important}.shop-page .product-info{padding:10px!important}
   .shop-page .price{gap:3px!important}.shop-page .price b{font-size:14px!important}.shop-page .price del{font-size:9.5px!important}
 }
+
+/* Nested legacy surface already owns the 1240px constraint. */
+.shop-page .shop-surface>.product-grid{width:100%!important}
