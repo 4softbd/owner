@@ -1,52 +1,2582 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="BuyFinix gaming gift cards, wallet keys and digital goods in Bangladesh.">
-<title>BuyFinix — Gaming Digital Goods</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="initial-scale=1, width=device-width">
+  	
+  	<link rel="stylesheet"  href="./index.css" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@500;700&display=swap" />
+  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument Serif:ital,wght@1,400&display=swap" />
+  	
+  	
+  	
 </head>
 <body>
-<header><nav class="nav container"><a class="brand" href="#home">BUY <i>⚡</i> FINIX</a><div class="links"><a href="#home">Home</a><a href="#products">Store</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div><div class="actions"><button id="searchBtn" aria-label="Search">⌕</button><button id="cartBtn" aria-label="Cart">🛒<b id="cartCount">0</b></button><button id="menuBtn" class="menu" aria-label="Menu">☰</button></div></nav><div id="mobileMenu" class="mobile-menu container"><a href="#home">Home</a><a href="#products">Store</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div></header>
-<main id="home">
-<section class="hero"><div class="hero-glow"></div><div class="container hero-inner"><div class="eyebrow"><b>⚡ INSTANT</b><span>Delivered to your doorstep fast</span></div><h1>All your needs.<br><em>One</em> <strong>BuyFinix.</strong></h1><p>Premium products at the best prices. From <b>৳45/month</b><br>— delivered to your doorstep.</p><div class="hero-actions"><a class="btn primary" href="#products">Explore our plans ↓</a><a class="btn outline" href="#support">Join WhatsApp community</a></div><div class="platforms"><span>STEAM</span><span>EPIC GAMES</span><span>XBOX</span><span>PLAYSTATION</span><span>DISCORD</span><span>RIOT GAMES</span><b>+ 28 more</b></div><div class="trust"><span>🛒 <b>Clear</b> pricing</span><span>⚡ <b>Fast</b> delivery</span><span>♢ Replacement <b>support</b></span></div></div></section>
-<section class="categories container"><h2>Shop by <em>plan.</em></h2><div id="categoryTabs" class="category-tabs"></div></section>
-<section id="products" class="products"><div class="container"><div class="section-head"><div><h2>Shop by <em>product.</em></h2></div><input id="searchInput" type="search" placeholder="Search Steam, Discord, Xbox…" aria-label="Search products"></div><div class="catalog-bar"><span id="productCount"></span><select id="sort"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A–Z</option></select></div><div id="productGrid" class="product-grid"></div><div id="empty" class="empty" hidden><h3>No products found</h3><p>Try another search or category.</p><button id="clear" class="btn primary">Clear filters</button></div></div></section>
-<section id="reviews" class="reviews"><div class="container"><small>PLAYER FEEDBACK</small><h2>First doubt, <em>then trust.</em></h2><div class="review-grid"><article><b>★★★★★</b><p>“The wallet code arrived quickly and the instructions were clear.”</p><span>Approved review placeholder</span></article><article><b>★★★★★</b><p>“Simple checkout, responsive support and no confusing steps.”</p><span>Approved review placeholder</span></article><article><b>★★★★★</b><p>“The price was clear in BDT and activation was straightforward.”</p><span>Approved review placeholder</span></article></div></div></section>
-<section id="faq" class="faq"><div class="container faq-grid"><div><small>FREQUENTLY ASKED</small><h2>Fair questions,<br><em>straight answers.</em></h2></div><div class="faq-list"><details><summary>How fast is delivery?<span>+</span></summary><p>Most in-stock products are sent after payment confirmation. The current estimate is shown before checkout.</p></details><details><summary>How will I receive my purchase?<span>+</span></summary><p>Delivery details and activation instructions are sent through the contact method confirmed with your order.</p></details><details><summary>What if a code does not work?<span>+</span></summary><p>Contact support with your order ID. Eligibility follows the product terms displayed at checkout.</p></details><details><summary>Are payments automatic?<span>+</span></summary><p>Automatic processing is only available when a verified payment backend is connected.</p></details></div></div></section>
-<section id="support" class="support"><div class="container support-card"><div><small>REFER &amp; EARN</small><h2>Share BuyFinix, <em>earn real cash.</em></h2><p>Friends buy, you both get wallet credit — ready to spend on your next plan.</p></div><div class="refer-actions"><div><span><b>1</b> Share link</span><span><b>2</b> They buy</span><span><b>3</b> You earn</span></div><a class="btn dark" href="#">Get my referral link →</a><small>Wallet credit on every referral · No limits</small></div></div></section>
-</main>
-<footer><div class="container footer-row"><a class="brand" href="#home">BUY <i>⚡</i> FINIX</a><p>© 2026 BuyFinix · Made with ♥ in Bangladesh 🇧🇩</p><nav><a href="#">Login Terms</a><a href="#">Terms</a><a href="#">Refund Policy</a></nav></div></footer>
-<div id="scrim" class="scrim" hidden></div><aside id="cart" class="cart" aria-hidden="true"><div class="cart-head"><h2>Your cart</h2><button id="closeCart" aria-label="Close cart">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-footer"><div><span>Subtotal</span><strong id="cartTotal">৳0</strong></div><button class="btn primary">Continue to checkout</button><small>Payment integration requires a verified backend.</small></div></aside>
-<script>
-const products=[
-['Steam Gift Card ($10)','steam-gift-card','Gift Cards',1350,1490,'#18202a','STEAM'],
-['Epic Games Store Wallet Key','epic-games-store-wallet-key','Wallet Keys',990,1190,'#111827','EPIC'],
-['Discord Nitro — 1 Month','discord-nitro','Memberships',899,1099,'#5865f2','DISCORD'],
-['Xbox Game Pass Ultimate','xbox-game-pass-ultimate','Memberships',1199,1399,'#107c10','XBOX'],
-['PlayStation Store Gift Card','playstation-store-gift-card','Gift Cards',1599,1799,'#0050a4','PLAYSTATION'],
-['Riot Points Digital Code','riot-points-digital-code','Game Currency',749,899,'#d32936','RIOT'],
-['Minecraft Java & Bedrock Edition','minecraft-java-bedrock','Game Keys',2999,3399,'#3b7a33','MINECRAFT'],
-['EA Play — 1 Month','ea-play-one-month','Memberships',549,699,'#ff4747','EA PLAY'],
-['Ubisoft Connect Wallet Credit','ubisoft-wallet-credit','Wallet Keys',1099,1299,'#0070ff','UBISOFT'],
-['PUBG Mobile UC Pack','pubg-mobile-uc-pack','Game Currency',499,599,'#f5a623','PUBG'],
-['Free Fire Diamonds Pack','free-fire-diamonds','Game Currency',399,499,'#ef5b25','FREE FIRE'],
-['Roblox Digital Gift Card','roblox-digital-gift-card','Gift Cards',1299,1499,'#20252b','ROBLOX']
-].map(([name,slug,category,price,old,color,mark])=>({name,slug,category,price,old,color,mark}));
-const money=n=>'৳'+Number(n).toLocaleString('en-BD'),url=p=>'https://buyfinix.com/'+p.slug;
-let category='All',query='',sort='featured',basket=JSON.parse(localStorage.getItem('buyfinix-cart')||'[]');
-const grid=document.querySelector('#productGrid'),tabs=document.querySelector('#categoryTabs');
-function renderTabs(){tabs.innerHTML=['All',...new Set(products.map(p=>p.category))].slice(0,5).map((c,i)=>`<button class="tab ${c===category?'active':''}" data-category="${c}"><span>${['🎮','🎁','🔑','🎧','💎'][i]}</span><b>${c==='All'?'All Plans':c}</b></button>`).join('')}
-function renderProducts(){let list=products.filter(p=>(category==='All'||p.category===category)&&p.name.toLowerCase().includes(query));if(sort==='low')list.sort((a,b)=>a.price-b.price);if(sort==='high')list.sort((a,b)=>b.price-a.price);if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));grid.innerHTML=list.map(p=>`<article class="product-card"><a href="${url(p)}" class="art" style="--art:${p.color}"><span>${p.mark}</span><b>⚡ INSTANT</b></a><div class="product-body"><small>${p.category}</small><h3><a href="${url(p)}">${p.name}</a></h3><div class="price"><strong>${money(p.price)}</strong><span>BDT</span><del>${money(p.old)}</del></div><div class="card-actions"><button data-add="${p.slug}" aria-label="Add ${p.name}">＋</button><a href="${url(p)}">Buy now</a></div></div></article>`).join('');document.querySelector('#productCount').textContent=list.length+' products';document.querySelector('#empty').hidden=!!list.length}
-function save(){localStorage.setItem('buyfinix-cart',JSON.stringify(basket));renderCart()}
-function renderCart(){document.querySelector('#cartCount').textContent=basket.reduce((n,i)=>n+i.qty,0);document.querySelector('#cartItems').innerHTML=basket.length?basket.map(i=>{const p=products.find(x=>x.slug===i.slug);return `<div class="cart-item"><span style="--art:${p.color}">${p.mark}</span><div><b>${p.name}</b><small>${i.qty} × ${money(p.price)}</small></div><button data-remove="${p.slug}">×</button></div>`}).join(''):'<div class="cart-empty"><h3>Your cart is empty</h3><p>Add a gaming product to begin.</p></div>';document.querySelector('#cartTotal').textContent=money(basket.reduce((n,i)=>{const p=products.find(x=>x.slug===i.slug);return n+p.price*i.qty},0))}
-function showCart(open){document.querySelector('#cart').classList.toggle('open',open);document.querySelector('#cart').setAttribute('aria-hidden',!open);document.querySelector('#scrim').hidden=!open;document.body.classList.toggle('locked',open)}
-tabs.onclick=e=>{const b=e.target.closest('[data-category]');if(b){category=b.dataset.category;renderTabs();renderProducts()}};
-grid.onclick=e=>{const b=e.target.closest('[data-add]');if(!b)return;const i=basket.find(x=>x.slug===b.dataset.add);i?i.qty++:basket.push({slug:b.dataset.add,qty:1});save();showCart(true)};
-document.querySelector('#cartItems').onclick=e=>{const b=e.target.closest('[data-remove]');if(b){basket=basket.filter(i=>i.slug!==b.dataset.remove);save()}};
-document.querySelector('#searchInput').oninput=e=>{query=e.target.value.trim().toLowerCase();renderProducts()};document.querySelector('#searchBtn').onclick=()=>{location.hash='products';document.querySelector('#searchInput').focus()};document.querySelector('#sort').onchange=e=>{sort=e.target.value;renderProducts()};document.querySelector('#clear').onclick=()=>{category='All';query='';document.querySelector('#searchInput').value='';renderTabs();renderProducts()};document.querySelector('#cartBtn').onclick=()=>showCart(true);document.querySelector('#closeCart').onclick=()=>showCart(false);document.querySelector('#scrim').onclick=()=>showCart(false);document.querySelector('#menuBtn').onclick=()=>document.querySelector('#mobileMenu').classList.toggle('open');
-document.querySelectorAll('details').forEach(d=>d.ontoggle=()=>{if(d.open)document.querySelectorAll('details').forEach(x=>{if(x!==d)x.open=false})});renderTabs();renderProducts();renderCart();
-</script>
-</body></html>
+  	
+  	<div class="w-default">
+    		<div class="maintop">
+      			<div class="sectionhero">
+        				<div class="divhero-inner">
+          					<div class="divhero-glow">
+          					</div>
+          					<div class="spanhero-eyebrowmargin">
+            						<div class="spanhero-eyebrow">
+              							<div class="spanhero-eyebrowshadow">
+              							</div>
+              							<div class="b">
+                								<img class="component-1-icon" alt="">
+                								
+                								<div class="instant">INSTANT</div>
+              							</div>
+              							<div class="delivered-to-your">Delivered to your doorstep fast</div>
+            						</div>
+          					</div>
+          					<div class="h1hero-title">
+            						<div class="spanline">
+              							<b class="all-your-needs">All your needs.</b>
+            						</div>
+            						<div class="spanline2">
+              							<i class="one">One</i>
+              							<b class="buyfinix">BuyFinix.</b>
+            						</div>
+          					</div>
+          					<div class="phero-submargin">
+            						<div class="premium-products-at">Premium products at the best prices. From ৳45/month<br>— delivered to your doorstep.</div>
+          					</div>
+          					<div class="divhero-ctasmargin">
+            						<div class="divhero-ctas">
+              							<div class="component-2" id="component2Container">
+                								<div class="abtnshadow">
+                								</div>
+                								<a class="text" href="https://buyfinix.com/#plans" target="_blank" id="text">Explore our plans</a>
+                								<img class="component-1-icon2" alt="">
+                								
+              							</div>
+              							<div class="abtn" id="abtnContainer">
+                								<img class="component-1-icon3" alt="">
+                								
+                								<a class="join-whatsapp-community" href="https://buyfinix.com/join-us" target="_blank">Join WhatsApp community</a>
+              							</div>
+            						</div>
+          					</div>
+          					<div class="platforms-we-covermargin">
+            						<div class="platforms-we-cover">
+              							<div class="divrail">
+                								<div class="divrail-track">
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">Prime Video</b>
+                    										</div>
+                  									</div>
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">Spotify</b>
+                    										</div>
+                  									</div>
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">YouTube Premium</b>
+                    										</div>
+                  									</div>
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">ChatGPT Plus</b>
+                    										</div>
+                  									</div>
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">Canva Pro</b>
+                    										</div>
+                  									</div>
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">Apple Music</b>
+                    										</div>
+                  									</div>
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">Crunchyroll</b>
+                    										</div>
+                  									</div>
+                  									<div class="spanrail-pill8">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-name8">
+                      											<b class="prime-video">+ 28 more</b>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="divrail-track2">
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">Netflix</b>
+                    										</div>
+                  									</div>
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">Prime Video</b>
+                    										</div>
+                  									</div>
+                  									<div class="spanrail-pill">
+                    										<div class="spanhero-eyebrowshadow">
+                    										</div>
+                    										<div class="spanrail-tile">
+                      											<div class="spanrail-tileshadow">
+                      											</div>
+                      											<img class="component-1-icon4" alt="">
+                      											
+                    										</div>
+                    										<div class="spanrail-name">
+                      											<b class="prime-video">Spotify</b>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="pseudo">
+              							</div>
+            						</div>
+          					</div>
+          					<div class="divhero-trustmargin">
+            						<div class="divhero-trust">
+              							<div class="spantrust-stat">
+                								<div class="spanhero-eyebrowshadow">
+                								</div>
+                								<img class="component-1-icon14" alt="">
+                								
+                								<div class="spanrail-name">
+                  									<b class="warranty">10,000+</b>
+                								</div>
+                								<div class="orders">orders</div>
+              							</div>
+              							<div class="spantrust-stat">
+                								<div class="spanhero-eyebrowshadow">
+                								</div>
+                								<img class="component-1-icon14" alt="">
+                								
+                								<div class="spanrail-name">
+                  									<b class="warranty">24×7</b>
+                								</div>
+                								<div class="orders">auto-delivery</div>
+              							</div>
+              							<div class="spantrust-stat3">
+                								<div class="spanhero-eyebrowshadow">
+                								</div>
+                								<img class="component-1-icon14" alt="">
+                								
+                								<div class="replacement">Replacement</div>
+                								<div class="b6">
+                  									<b class="warranty">warranty</b>
+                								</div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="sectioncategories">
+        				<div class="divcontainer">
+          					<div class="h2section-title">
+            						<b class="shop-by">Shop by </b>
+            						<i class="plan">plan.</i>
+          					</div>
+          					<div class="divcats-grid">
+            						<div class="component-3" id="component3Container">
+              							<img class="divcat-icon" alt="">
+              							
+              							<div class="h3">
+                								<div class="spanc-full">
+                  									<a class="text2" href="https://buyfinix.com/subscriptions/" target="_blank">Subscriptions</a>
+                								</div>
+                								<img class="component-1-icon17" alt="">
+                								
+              							</div>
+            						</div>
+            						<div class="component-32" id="component3Container1">
+              							<div class="pseudo2">
+              							</div>
+              							<img class="divcat-icon2" alt="">
+              							
+              							<div class="h32">
+                								<div class="spanc-full">
+                  									<a class="text2" href="https://buyfinix.com/combo-packs/" target="_blank">Combo Packs</a>
+                								</div>
+                								<img class="component-1-icon17" alt="">
+                								
+              							</div>
+            						</div>
+            						<div class="component-32" id="component3Container2">
+              							<div class="pseudo2">
+              							</div>
+              							<img class="divcat-icon2" alt="">
+              							
+              							<div class="h33">
+                								<div class="spanc-full">
+                  									<a class="text2" href="https://buyfinix.com/software/" target="_blank">Software</a>
+                								</div>
+                								<img class="component-1-icon17" alt="">
+                								
+              							</div>
+              							<div class="pseudo4">
+              							</div>
+            						</div>
+            						<div class="component-32" id="component3Container3">
+              							<div class="pseudo2">
+              							</div>
+              							<img class="divcat-icon2" alt="">
+              							
+              							<div class="h32">
+                								<div class="spanc-full">
+                  									<a class="text2" href="https://buyfinix.com/music/" target="_blank">Music</a>
+                								</div>
+                								<img class="component-1-icon17" alt="">
+                								
+              							</div>
+            						</div>
+            						<div class="component-32" id="component3Container4">
+              							<div class="pseudo2">
+              							</div>
+              							<img class="divcat-icon2" alt="">
+              							
+              							<div class="h33">
+                								<div class="spanc-full">
+                  									<a class="text2" href="https://buyfinix.com/gaming/" target="_blank">Gaming</a>
+                								</div>
+                								<img class="component-1-icon17" alt="">
+                								
+              							</div>
+              							<div class="pseudo7">
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="sectionreviews">
+        				<div class="divcontainer2">
+          					<div class="divsection-head">
+            						<div class="divsection-eyebrow">
+              							<div class="pseudo8">
+              							</div>
+              							<b class="what-our-customers">What our customers say</b>
+            						</div>
+            						<div class="h2section-title2">
+              							<b class="shop-by">First doubt, </b>
+              							<i class="plan">then trust.</i>
+            						</div>
+          					</div>
+        				</div>
+        				<div class="divreviewsmarquee">
+          					<div class="divrev-row">
+            						<div class="divrev-track">
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text">
+                  									<div class="honestly-thought-it">"Honestly thought it was a scam at first 😂 Took the<br>৳45 plan just to test — got my login within 4<br>minutes. It's been 8 months now, everything's perfect."</div>
+                								</div>
+                								<div class="divrev-metamargin">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar">
+                      											<b class="r">R</b>
+                    										</div>
+                    										<div class="div">
+                      											<b class="r">Rohit</b>
+                      											<div class="pune">Pune</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin">
+                      											<div class="spanrev-badge">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text2">
+                  									<div class="replacement-warranty-is">"Replacement warranty is real, not just marketing.<br>My screen logged out in Feb, got new access<br>within an hour. No drama, no 100 questions."</div>
+                								</div>
+                								<div class="divrev-metamargin2">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar2">
+                      											<b class="r">S</b>
+                    										</div>
+                    										<div class="div2">
+                      											<div class="b7">
+                        												<b class="r">Sneha</b>
+                      											</div>
+                      											<div class="bengaluru">Bengaluru</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin2">
+                      											<div class="spanrev-badge2">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text3">
+                  									<div class="replacement-warranty-is">"Best decision ever 💯"</div>
+                								</div>
+                								<div class="divrev-metamargin3">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar3">
+                      											<b class="r">P</b>
+                    										</div>
+                    										<div class="div">
+                      											<b class="r">Priya</b>
+                      											<div class="pune">Delhi</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin3">
+                      											<div class="spanrev-badge">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text">
+                  									<div class="replacement-warranty-is">"Ordered at 2:40 AM before a long weekend.<br>Delivered by 2:43 AM. The 24×7 thing is not a<br>gimmick."</div>
+                								</div>
+                								<div class="divrev-metamargin">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar4">
+                      											<b class="r">A</b>
+                    										</div>
+                    										<div class="div4">
+                      											<div class="b7">
+                        												<b class="r">Arjun</b>
+                      											</div>
+                      											<div class="hyderabad">Hyderabad</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin4">
+                      											<div class="spanrev-badge2">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text5">
+                  									<div class="replacement-warranty-is">"Excellent service. Saved money and zero hassle.<br>Got a replacement instantly. Truly a trustworthy<br>place."</div>
+                								</div>
+                								<div class="divrev-metamargin5">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar5">
+                      											<b class="r">S</b>
+                    										</div>
+                    										<div class="div">
+                      											<b class="r">Suresh</b>
+                      											<div class="pune">Indore</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin5">
+                      											<div class="spanrev-badge2">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text">
+                  									<div class="replacement-warranty-is">"My mom thought I became a hacker 😭 How is<br>it so cheap?! Got the combo pack, both are<br>running smoothly."</div>
+                								</div>
+                								<div class="divrev-metamargin6">
+                  									<div class="divrev-meta6">
+                    										<div class="divrev-avatar6">
+                      											<b class="r">A</b>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+          					</div>
+          					<div class="divrev-row2">
+            						<div class="divrev-track2">
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text5">
+                  									<div class="replacement-warranty-is">"Had trust issues at first, now the entire hostel<br>buys from here 😂"</div>
+                								</div>
+                								<div class="divrev-metamargin5">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar">
+                      											<b class="r">K</b>
+                    										</div>
+                    										<div class="div6">
+                      											<div class="b7">
+                        												<b class="r">Kunal</b>
+                      											</div>
+                      											<div class="mumbai">Mumbai</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin6">
+                      											<div class="spanrev-badge2">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text">
+                  									<div class="replacement-warranty-is">"Support actually replies on WhatsApp. Asked three<br>questions before buying, got straight answers —<br>not copy-paste scripts. That sold me."</div>
+                								</div>
+                								<div class="divrev-metamargin">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar2">
+                      											<b class="r">D</b>
+                    										</div>
+                    										<div class="div7">
+                      											<div class="b7">
+                        												<b class="r">Divya</b>
+                      											</div>
+                      											<div class="chennai">Chennai</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin7">
+                      											<div class="spanrev-badge2">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text">
+                  									<div class="replacement-warranty-is">"Software section is underrated — got a genuine<br>key, activated on first try. A local shop was asking<br>৳5000 for the same thing 😅"</div>
+                								</div>
+                								<div class="divrev-metamargin">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar3">
+                      											<b class="r">I</b>
+                    										</div>
+                    										<div class="div8">
+                      											<div class="b7">
+                        												<b class="r">Imran</b>
+                      											</div>
+                      											<div class="lucknow">Lucknow</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin8">
+                      											<div class="spanrev-badge2">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text3">
+                  									<div class="replacement-warranty-is">"Been buying for 3 years. Never been let down."</div>
+                								</div>
+                								<div class="divrev-metamargin3">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar4">
+                      											<b class="r">V</b>
+                    										</div>
+                    										<div class="div">
+                      											<b class="r">Vikram</b>
+                      											<div class="pune">Jaipur</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin9">
+                      											<div class="spanrev-badge2">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+              							<div class="articlerev-card">
+                								<div class="divrev-starsmargin">
+                  									<div class="divrev-stars">
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                    										<img class="component-1-icon22" alt="">
+                    										
+                  									</div>
+                								</div>
+                								<div class="prev-text">
+                  									<div class="replacement-warranty-is">"Very smooth experience. Paid online, got the<br>details instantly. Renewal reminders come on time,<br>zero spam."</div>
+                								</div>
+                								<div class="divrev-metamargin">
+                  									<div class="divrev-meta">
+                    										<div class="divrev-avatar5">
+                      											<b class="r">M</b>
+                    										</div>
+                    										<div class="div">
+                      											<b class="r">Meera</b>
+                      											<div class="pune">Kochi</div>
+                    										</div>
+                    										<div class="spanrev-badgemargin10">
+                      											<div class="spanrev-badge2">
+                        												<b class="verified">Verified</b>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+          					</div>
+          					<div class="pseudo9">
+          					</div>
+          					<div class="pseudo10">
+          					</div>
+        				</div>
+      			</div>
+      			<div class="sectionfaq">
+        				<div class="divcontainer3">
+          					<div class="divsection-head2">
+            						<div class="divsection-eyebrow">
+              							<div class="pseudo8">
+              							</div>
+              							<b class="what-our-customers">Frequently asked</b>
+            						</div>
+            						<div class="h2section-title3">
+              							<b class="shop-by">Fair questions,</b>
+              							<i class="straight-answers">straight answers.</i>
+            						</div>
+          					</div>
+          					<div class="divfaq-list">
+            						<div class="detailsfaq-item">
+              							<div class="component-7">
+                								<div class="span">
+                  									<b class="text7">How fast is delivery?</b>
+                								</div>
+                								<div class="i2">
+                  									<div class="pseudo12">
+                  									</div>
+                  									<div class="pseudo13">
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+            						<div class="detailsfaq-item">
+              							<div class="component-7">
+                								<div class="span">
+                  									<b class="text7">What if my access stops working?</b>
+                								</div>
+                								<div class="i2">
+                  									<div class="pseudo12">
+                  									</div>
+                  									<div class="pseudo13">
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+            						<div class="detailsfaq-item">
+              							<div class="component-7">
+                								<div class="span">
+                  									<b class="text7">Is my payment info safe?</b>
+                								</div>
+                								<div class="i2">
+                  									<div class="pseudo12">
+                  									</div>
+                  									<div class="pseudo13">
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+            						<div class="detailsfaq-item">
+              							<div class="component-7">
+                								<div class="span">
+                  									<b class="text7">How do I get support after buying?</b>
+                								</div>
+                								<div class="i2">
+                  									<div class="pseudo12">
+                  									</div>
+                  									<div class="pseudo13">
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="sectionrefer">
+        				<div class="divcontainer2">
+          					<div class="divctapanel">
+            						<img class="image-icon" alt="">
+            						
+            						<div class="divcta-content">
+              							<div class="divcta-say">
+                								<div class="spanrefer-kicker">
+                  									<b class="refer-earn">Refer & Earn</b>
+                								</div>
+                								<div class="h2">
+                  									<b class="share-buyfinix">Share BuyFinix, </b>
+                  									<i class="earn-real-cash">earn real cash.</i>
+                								</div>
+                								<div class="p2">
+                  									<div class="friends-buy-you">Friends buy, you both get wallet credit — ready to spend<br>on your next plan.</div>
+                								</div>
+              							</div>
+              							<div class="divcta-act">
+                								<div class="divrefer-steps">
+                  									<div class="divrefer-step">
+                    										<div class="b12">
+                      											<b class="share-link">1</b>
+                    										</div>
+                    										<div class="span5">
+                      											<b class="share-link">Share link</b>
+                    										</div>
+                  									</div>
+                  									<div class="divrefer-step2">
+                    										<div class="b12">
+                      											<b class="share-link">2</b>
+                    										</div>
+                    										<div class="span5">
+                      											<b class="share-link">They buy</b>
+                    										</div>
+                  									</div>
+                  									<div class="divrefer-step">
+                    										<div class="b12">
+                      											<b class="share-link">3</b>
+                    										</div>
+                    										<div class="span5">
+                      											<b class="share-link">You earn</b>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-22" id="component2Container">
+                  									<div class="abtnshadow2">
+                  									</div>
+                  									<a class="text11" href="https://buyfinix.com/referral/" target="_blank">Get my referral link</a>
+                  									<img class="component-1-icon74" alt="">
+                  									
+                								</div>
+                								<div class="spancta-fine">
+                  									<div class="wallet-credit-on">Wallet credit on every referral · No limits</div>
+                								</div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="about-weewoo">
+        				<div class="divcontainer5">
+          					<div class="p3">
+            						<div class="buyfinix-offers-premium">BuyFinix offers premium gadgets, fashion & lifestyle products in Bangladesh from ৳45 — smartwatches, earbuds, accessories and 20+ more categories, delivered fast to your doorstep by a trusted seller.</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="sectionplans" data-scroll-to="sectionplansContainer">
+        				<div class="divsection">
+          					<div class="divcontainer">
+            						<div class="h2section-title4">
+              							<b class="shop-by">Shop by </b>
+              							<i class="plan">product.</i>
+            						</div>
+            						<div class="divcat-subscriptions">
+              							<div class="divcat-row-head">
+                								<div class="span">
+                  									<b class="subscriptions">Subscriptions</b>
+                								</div>
+                								<div class="component-4" id="component4Container">
+                  									<a class="text12" href="https://buyfinix.com/subscriptions/" target="_blank">View all</a>
+                  									<img class="component-1-icon75" alt="">
+                  									
+                								</div>
+              							</div>
+              							<div class="divcat-grid">
+                								<div class="component-6">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/2-in-1-combo" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text13" href="https://buyfinix.com/2-in-1-combo" target="_blank">2-in-1 Combo</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳215</b>
+                        												<div class="mo">/mo</div>
+                        												<div class="smargin">
+                          													<div class="div11">৳299</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/2-in-1-combo" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-62">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/prime-video-4k" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/prime-video-4k" target="_blank">Prime Video 4K</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳99</b>
+                        												<div class="mo2">/mo</div>
+                        												<div class="smargin2">
+                          													<div class="div11">৳199</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/prime-video-4k" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-63">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/hotstar" target="_blank">Hotstar (On Number)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳99</b>
+                        												<div class="mo3">/mo</div>
+                        												<div class="smargin3">
+                          													<div class="div11">৳199</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/hotstar" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-64">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/netflix-premium-4k" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/netflix-premium-4k" target="_blank">Netflix Premium 4K</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b21">৳139</b>
+                        												<div class="mo4">/mo</div>
+                        												<div class="smargin4">
+                          													<div class="div11">৳199</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/netflix-premium-4k" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-65">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/prime-video-4k" target="_blank">Prime Video 4K (On Mail)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳120</b>
+                        												<div class="mo5">/mo</div>
+                        												<div class="smargin5">
+                          													<div class="div11">৳199</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/prime-video-4k" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-66">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/zee5-premium" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/zee5-premium" target="_blank">Zee5 Premium</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳75</b>
+                        												<div class="mo6">/mo</div>
+                        												<div class="smargin6">
+                          													<div class="div11">৳99</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/zee5-premium" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-67">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text13" href="https://buyfinix.com/hotstar-4k" target="_blank">Hotstar 4K</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳99</b>
+                        												<div class="mo2">/mo</div>
+                        												<div class="smargin2">
+                          													<div class="div11">৳199</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/hotstar-4k" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-68">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge5">
+                      											<a class="instant2" href="https://buyfinix.com/anime-premium" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/anime-premium" target="_blank">Anime Premium</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳50</b>
+                        												<div class="mo8">/mo</div>
+                        												<div class="smargin8">
+                          													<div class="div11">৳99</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/anime-premium" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-69">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/apple-tv" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text13" href="https://buyfinix.com/apple-tv" target="_blank">Apple TV+</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳45</b>
+                        												<div class="mo3">/mo</div>
+                        												<div class="smargin3">
+                          													<div class="div11">৳99</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/apple-tv" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-610">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge7">
+                      											<a class="instant2" href="https://buyfinix.com/premium-vpn-2" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/premium-vpn-2" target="_blank">Premium VPN 2</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳149</b>
+                        												<div class="mo10">/mo</div>
+                        												<div class="smargin10">
+                          													<div class="div11">৳399</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/premium-vpn-2" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-611">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/netflix-4k-private" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/netflix-4k-private" target="_blank">Netflix 4K Private</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳199</b>
+                        												<div class="mo11">/mo</div>
+                        												<div class="smargin11">
+                          													<div class="div11">৳299</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/netflix-4k-private" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-611">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/steam-gift-card" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/steam-gift-card" target="_blank">Steam Gift Card ($10)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳135</b>
+                        												<div class="mo11">/mo</div>
+                        												<div class="smargin11">
+                          													<div class="div11">৳299</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/steam-gift-card" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-611">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/epic-games-store-wallet-key" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text25" href="https://buyfinix.com/epic-games-store-wallet-key" target="_blank">Epic Games Store Wallet Key</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳99</b>
+                        												<div class="mo11">/mo</div>
+                        												<div class="smargin11">
+                          													<div class="div11">৳299</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/epic-games-store-wallet-key" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-614">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/designer-pro" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/designer-pro" target="_blank">Designer Pro (On Mail)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳75</b>
+                        												<div class="mo14">/mo</div>
+                        												<div class="smargin6">
+                          													<div class="div11">৳199</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/designer-pro" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-615">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text13" href="https://buyfinix.com/premium-vpn" target="_blank">Premium VPN</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳145</b>
+                        												<div class="mo11">/mo</div>
+                        												<div class="smargin11">
+                          													<div class="div11">৳299</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/premium-vpn" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-616">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/sony-liv-premium" target="_blank">Sony Liv Premium</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳99</b>
+                        												<div class="mo3">/mo</div>
+                        												<div class="smargin3">
+                          													<div class="div11">৳199</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/sony-liv-premium" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-617">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text25" href="https://buyfinix.com/zee5" target="_blank">Zee5 (on your number)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳699</b>
+                        												<div class="mo17">/mo</div>
+                        												<div class="smargin17">
+                          													<div class="div11">৳999</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/zee5" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-618">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/sony-liv" target="_blank">Sony LIV (On Number)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳499</b>
+                        												<div class="mo18">/mo</div>
+                        												<div class="smargin18">
+                          													<div class="div11">৳799</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/sony-liv" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-619">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text13" href="https://buyfinix.com/aha-telugu" target="_blank">Aha Telugu</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳75</b>
+                        												<div class="mo14">/mo</div>
+                        												<div class="smargin6">
+                          													<div class="div11">৳99</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/aha-telugu" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-620">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text13" href="https://buyfinix.com/discovery" target="_blank">Discovery+</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b37">৳49</b>
+                        												<div class="mo20">/mo</div>
+                        												<div class="smargin20">
+                          													<div class="div11">৳75</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/discovery" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-621">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/apple-music" target="_blank">Apple Music (On Mail)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳499</b>
+                        												<div class="mo18">/mo</div>
+                        												<div class="smargin18">
+                          													<div class="div11">৳720</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/apple-music" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-622">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text13" href="https://buyfinix.com/shemaroome" target="_blank">ShemarooMe</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b37">৳60</b>
+                        												<div class="mo22">/mo</div>
+                        												<div class="smargin22">
+                          													<div class="div11">৳75</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/shemaroome" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-623">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/apple-tv" target="_blank">Apple TV+ (On Mail)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b40">৳450</b>
+                        												<div class="mo23">/mo</div>
+                        												<div class="smargin23">
+                          													<div class="div11">৳720</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/apple-tv" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-624">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/hoichoi-premium" target="_blank">Hoichoi Premium</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳70</b>
+                        												<div class="mo24">/mo</div>
+                        												<div class="smargin24">
+                          													<div class="div11">৳99</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/hoichoi-premium" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+            						<div class="divcat-combo">
+              							<div class="divcat-row-head">
+                								<div class="span">
+                  									<b class="subscriptions">Combo Packs</b>
+                								</div>
+                								<div class="component-4" id="component4Container">
+                  									<a class="text12" href="https://buyfinix.com/combo-packs/" target="_blank">View all</a>
+                  									<img class="component-1-icon75" alt="">
+                  									
+                								</div>
+              							</div>
+              							<div class="divcat-grid2">
+                								<div class="component-625">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/combo-2-in-1" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text13" href="https://buyfinix.com/combo-2-in-1" target="_blank">Combo 2 IN 1</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳219</b>
+                        												<div class="mo25">/mo</div>
+                        												<div class="smargin25">
+                          													<div class="div11">৳299</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/combo-2-in-1" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-626">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text39" href="https://buyfinix.com/z5-sony-liv" target="_blank">Z5 + sony liv (on your<br>number )</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳1,299</b>
+                        												<div class="mo26">/mo</div>
+                        												<div class="smargin26">
+                          													<div class="div11">৳1,499</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/z5-sony-liv" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-627">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/epic-games-bundle" target="_blank">Epic Games Bundle</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳199</b>
+                        												<div class="mo11">/mo</div>
+                        												<div class="smargin11">
+                          													<div class="div11">৳299</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/epic-games-bundle" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-628">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge">
+                      											<a class="instant2" href="https://buyfinix.com/3-in-1-combo" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/3-in-1-combo" target="_blank">3 IN 1 combo (2)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳299</b>
+                        												<div class="mo28">/mo</div>
+                        												<div class="smargin28">
+                          													<div class="div11">৳399</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/3-in-1-combo" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+            						<div class="divcat-combo">
+              							<div class="divcat-row-head">
+                								<div class="span">
+                  									<b class="subscriptions">Software</b>
+                								</div>
+                								<div class="component-4" id="component4Container">
+                  									<a class="text12" href="https://buyfinix.com/software/" target="_blank">View all</a>
+                  									<img class="component-1-icon75" alt="">
+                  									
+                								</div>
+              							</div>
+              							<div class="divcat-grid3">
+                								<div class="component-625">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/lovable-lite-on-mail" target="_blank">Lovable Lite on mail</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳499</b>
+                        												<div class="mo18">/mo</div>
+                        												<div class="smargin18">
+                          													<div class="div11">৳1,299</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/lovable-lite-on-mail" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-630">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/google-ai-pro" target="_blank">Google Ai pro (on email)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b47">৳1,999</b>
+                        												<div class="mo30">/mo</div>
+                        												<div class="smargin30">
+                          													<div class="div11">৳4,999</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/google-ai-pro" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-63">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/coursera-on-your-mail" target="_blank">Coursera on your mail</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳999</b>
+                        												<div class="mo17">/mo</div>
+                        												<div class="smargin31">
+                          													<div class="div11">৳6,000</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/coursera-on-your-mail" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-628">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text46" href="https://buyfinix.com/linkedin-career-plan" target="_blank">LinkedIn Career Plan (On<br>Mail)</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳1,799</b>
+                        												<div class="mo32">/mo</div>
+                        												<div class="smargin32">
+                          													<div class="div11">৳3,300</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/linkedin-career-plan" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-633">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge7">
+                      											<a class="instant2" href="https://buyfinix.com/windows-10-pro-license-key" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text46" href="https://buyfinix.com/windows-10-pro-license-key" target="_blank">Windows 10 Pro License<br>Key</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳499</b>
+                        												<div class="mo18">/mo</div>
+                        												<div class="smargin18">
+                          													<div class="div11">৳999</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/windows-10-pro-license-key" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-634">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text39" href="https://buyfinix.com/windows-11-pro-license-key" target="_blank">Windows 11 Pro License<br>Key</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳599</b>
+                        												<div class="mo34">/mo</div>
+                        												<div class="smargin34">
+                          													<div class="div11">৳4,999</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/windows-11-pro-license-key" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-67">
+                  									<img class="aproduct-media-icon" alt="" id="aproductMediaImage">
+                  									
+                  									<div class="divproduct-body3">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/google-gemini-ai-pro" target="_blank">Google Gemini AI Pro</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳349</b>
+                        												<div class="mo35">/mo</div>
+                        												<div class="smargin35">
+                          													<div class="div11">৳999</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/google-gemini-ai-pro" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+                								<div class="component-68">
+                  									<div class="aproduct-media" id="aproductMediaContainer">
+                    										<img class="in-1-combo-icon" alt="">
+                    										
+                    										<div class="spanww-instant-badge5">
+                      											<a class="instant2" href="https://buyfinix.com/quillbot-premium" target="_blank">⚡ INSTANT</a>
+                    										</div>
+                  									</div>
+                  									<div class="divproduct-body">
+                    										<div class="component-12">
+                      											<a class="text14" href="https://buyfinix.com/quillbot-premium" target="_blank">QuillBot Premium</a>
+                    										</div>
+                    										<div class="divproduct-pricemargin">
+                      											<div class="divproduct-price">
+                        												<b class="b18">৳199</b>
+                        												<div class="mo11">/mo</div>
+                        												<div class="smargin11">
+                          													<div class="div11">৳859</div>
+                        												</div>
+                      											</div>
+                    										</div>
+                    										<div class="divproduct-actions">
+                      											<div class="component-5">
+                        												<img class="component-1-icon76" alt="">
+                        												
+                      											</div>
+                      											<div class="abtn2">
+                        												<div class="abtnshadow3">
+                        												</div>
+                        												<a class="buy-now" href="https://buyfinix.com/quillbot-premium" target="_blank">Buy now</a>
+                      											</div>
+                    										</div>
+                  									</div>
+                								</div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="footerfooter">
+      			<div class="divcontainer7">
+        				<div class="divfooter-bar">
+          					<div class="alogo" id="alogoContainer">
+            						<div class="span">
+              							<b class="buy">BUY</b>
+            						</div>
+            						<div class="svglogo-bolt">
+              							<img class="component-1-icon114" alt="">
+              							
+            						</div>
+            						<div class="spanwoo">
+              							<b class="buy">FINIX</b>
+            						</div>
+          					</div>
+          					<div class="spanfooter-copy">
+            						<div class="buyfinix-made">© 2026 BuyFinix · Made with ♥ in Bangladesh 🇧🇩</div>
+          					</div>
+          					<div class="divfooter-links">
+            						<div class="component-8">
+              							<a class="text51" href="https://buyfinix.com/login-terms/" target="_blank">Login Terms</a>
+            						</div>
+            						<div class="spanft-sep">
+            						</div>
+            						<div class="component-82">
+              							<a class="text52" href="https://buyfinix.com/terms-and-conditions/" target="_blank">Terms</a>
+            						</div>
+            						<div class="spanft-sep">
+            						</div>
+            						<div class="component-83">
+              							<a class="text53" href="https://buyfinix.com/refund-policy/" target="_blank">Refund Policy</a>
+            						</div>
+          					</div>
+        				</div>
+      			</div>
+      			<div class="divfooter-glow">
+      			</div>
+    		</div>
+    		<div class="headernav">
+      			<div class="divnav-inner">
+        				<div class="weewoo-home" id="weeWooHomeContainer">
+          					<div class="span">
+            						<b class="buy">BUY</b>
+          					</div>
+          					<img class="component-1-icon75" alt="">
+          					
+          					<div class="spanwoo">
+            						<b class="buy">FINIX</b>
+          					</div>
+        				</div>
+        				<div class="primarymargin">
+          					<div class="span">
+            						<div class="ulmenu-pc-menu">
+              							<div class="span">
+                								<div class="component-84">
+                  									<div class="text54">Home</div>
+                								</div>
+              							</div>
+              							<div class="span">
+                								<div class="component-84">
+                  									<div class="text54">Shop</div>
+                								</div>
+              							</div>
+              							<div class="span">
+                								<div class="component-84">
+                  									<a class="text56" href="https://buyfinix.com/login-terms/" target="_blank">Login Terms</a>
+                								</div>
+              							</div>
+              							<div class="span">
+                								<div class="component-84">
+                  									<div class="text54">Quick Links</div>
+                								</div>
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+        				<div class="divnav-right">
+          					<div class="component-11">
+            						<img class="i2" alt="">
+            						
+          					</div>
+          					<div class="component-10" id="component11">
+            						<img class="i2" alt="">
+            						
+            						<div class="spannav-acct-label">
+              							<a class="text58" href="https://buyfinix.com/my-account/" target="_blank">My Account</a>
+            						</div>
+          					</div>
+          					<div class="component-537" id="component12">
+            						<img class="i2" alt="">
+            						
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="divscrollprogress">
+    		</div>
+    		<div class="divdraweroverlay">
+    		</div>
+    		<div class="menu">
+      			<div class="menushadow">
+      			</div>
+      			<div class="divdrawer-head">
+        				<div class="weewoo-home" id="alogoContainer">
+          					<div class="span">
+            						<b class="buy">BUY</b>
+          					</div>
+          					<div class="svglogo-bolt">
+            						<img class="component-1-icon114" alt="">
+            						
+          					</div>
+          					<div class="spanwoo">
+            						<b class="buy">FINIX</b>
+          					</div>
+        				</div>
+        				<div class="component-112">
+          					<img class="component-1-icon120" alt="">
+          					
+        				</div>
+      			</div>
+      			<div class="divdrawer-body">
+        				<div class="ulmenu-mobile">
+          					<div class="limenu-item-12750">
+            						<div class="component-1237">
+              							<div class="text59">Home</div>
+            						</div>
+          					</div>
+          					<div class="limenu-item-12750">
+            						<div class="component-1237">
+              							<a class="text60" href="https://buyfinix.com/" target="_blank">Shop</a>
+            						</div>
+          					</div>
+          					<div class="limenu-item-12750">
+            						<div class="component-13" id="component13Container">
+              							<div class="text61">Categories</div>
+              							<div class="pseudo20">
+              							</div>
+            						</div>
+          					</div>
+          					<div class="limenu-item-12750">
+            						<div class="component-13" id="component13Container">
+              							<div class="text61">Quick links</div>
+              							<div class="pseudo20">
+              							</div>
+            						</div>
+          					</div>
+        				</div>
+        				<div class="divmenu-bottom">
+          					<div class="abtn38">
+            						<div class="abtnshadow">
+            						</div>
+            						<a class="my-account" href="https://buyfinix.com/my-account/" target="_blank">My Account</a>
+          					</div>
+        				</div>
+      			</div>
+    		</div>
+    		<div class="your-cart">
+      			<div class="your-cartshadow">
+      			</div>
+      			<div class="divdrawer-head">
+        				<div class="b54">
+          					<b class="your-cart2">Your cart</b>
+        				</div>
+        				<div class="component-112">
+          					<img class="component-1-icon120" alt="">
+          					
+        				</div>
+      			</div>
+      			<div class="divcartbody">
+        				<div class="divcart-loading">
+          					<div class="replacement-warranty-is">Loading…</div>
+        				</div>
+      			</div>
+    		</div>
+  	</div>
+  	
+  	
+  	
+  	
+  	<script>
+    		var text = document.getElementById("text");
+    		if(text) {
+      			text.addEventListener("click", function () {
+        				var anchor = document.querySelector("[data-scroll-to='sectionplansContainer']");
+        				if(anchor) {
+          					anchor.scrollIntoView({"block":"start","behavior":"smooth"})
+        				}
+      			});
+    		}
+    		
+    		
+    		var component2Container = document.getElementById("component2Container");
+    		if(component2Container) {
+      			component2Container.addEventListener("click", function () {
+        				window.open("https://weewoo.in/#plans");
+      			});
+    		}
+    		
+    		var abtnContainer = document.getElementById("abtnContainer");
+    		if(abtnContainer) {
+      			abtnContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/joinus");
+      			});
+    		}
+    		
+    		var component3Container = document.getElementById("component3Container");
+    		if(component3Container) {
+      			component3Container.addEventListener("click", function () {
+        				window.open("https://weewoo.in/plans/subscriptions/");
+      			});
+    		}
+    		
+    		var component3Container1 = document.getElementById("component3Container1");
+    		if(component3Container1) {
+      			component3Container1.addEventListener("click", function () {
+        				window.open("https://weewoo.in/plans/combo/");
+      			});
+    		}
+    		
+    		var component3Container2 = document.getElementById("component3Container2");
+    		if(component3Container2) {
+      			component3Container2.addEventListener("click", function () {
+        				window.open("https://weewoo.in/plans/software/");
+      			});
+    		}
+    		
+    		var component3Container3 = document.getElementById("component3Container3");
+    		if(component3Container3) {
+      			component3Container3.addEventListener("click", function () {
+        				window.open("https://weewoo.in/plans/music/");
+      			});
+    		}
+    		
+    		var component3Container4 = document.getElementById("component3Container4");
+    		if(component3Container4) {
+      			component3Container4.addEventListener("click", function () {
+        				window.open("https://weewoo.in/plans/adult/");
+      			});
+    		}
+    		
+    		var component2Container = document.getElementById("component2Container");
+    		if(component2Container) {
+      			component2Container.addEventListener("click", function () {
+        				window.open("https://weewoo.in/my-account/referral/");
+      			});
+    		}
+    		
+    		var component4Container = document.getElementById("component4Container");
+    		if(component4Container) {
+      			component4Container.addEventListener("click", function () {
+        				window.open("https://weewoo.in/plans/subscriptions/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/2-in-1-combo/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/prime-video-4k/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/jio-hotstar-vipon-ur-number/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/nflix-premium/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/prime-video-4k-on-your-mail/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/z5/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/hotstar-4k/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/anime-plan/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/apple-tv/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/premium-vpn2/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/nflix-4k-private/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/designer/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/premium-vpn/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/sony-liv-premium/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/z5-private/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/sony-liv-4k-on-your-number/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/aha-telugu/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/discovery-plus/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/apple-music-on-your-mail/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/shemaroo-me/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/apple-tv-onmail/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/hoichoi-premium/");
+      			});
+    		}
+    		
+    		var component4Container = document.getElementById("component4Container");
+    		if(component4Container) {
+      			component4Container.addEventListener("click", function () {
+        				window.open("https://weewoo.in/plans/combo/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/combo-2-in-1/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/z5sony-private/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/combo-pvt/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/3-in-1-combo-2/");
+      			});
+    		}
+    		
+    		var component4Container = document.getElementById("component4Container");
+    		if(component4Container) {
+      			component4Container.addEventListener("click", function () {
+        				window.open("https://weewoo.in/plans/software/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/loveable/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/gemini/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/coursera/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/professional/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/windows-10-pro-license-key/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/windows-11-pro-license-key/");
+      			});
+    		}
+    		
+    		var aproductMediaImage = document.getElementById("aproductMediaImage");
+    		if(aproductMediaImage) {
+      			aproductMediaImage.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/google-gemini-ai-pro/");
+      			});
+    		}
+    		
+    		var aproductMediaContainer = document.getElementById("aproductMediaContainer");
+    		if(aproductMediaContainer) {
+      			aproductMediaContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/shop/quillbot-premium/");
+      			});
+    		}
+    		
+    		var alogoContainer = document.getElementById("alogoContainer");
+    		if(alogoContainer) {
+      			alogoContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/");
+      			});
+    		}
+    		
+    		var weeWooHomeContainer = document.getElementById("weeWooHomeContainer");
+    		if(weeWooHomeContainer) {
+      			weeWooHomeContainer.addEventListener("click", function () {
+        				window.open("https://weewoo.in/");
+      			});
+    		}
+    		
+    		var component11 = document.getElementById("component11");
+    		if(component11) {
+      			component11.addEventListener("click", function () {
+        				window.open("https://weewoo.in/my-account/");
+      			});
+    		}
+    		
+    		var component12 = document.getElementById("component12");
+    		if(component12) {
+      			component12.addEventListener("click", function () {
+        				window.open("https://weewoo.in/cart/");
+      			});
+    		}
+    		
+    		var component13Container = document.getElementById("component13Container");
+    		if(component13Container) {
+      			component13Container.addEventListener("click", function () {
+        				window.open("https://weewoo.in/");
+      			});
+    		}</script></body>
+</html>
