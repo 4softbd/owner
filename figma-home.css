@@ -47,3 +47,7 @@
   .card-actions{height:44px}
   .card-actions button,.card-actions .buy{height:44px}
 }
+
+
+/* Media-only crop for exported Figma card artwork */
+.figma-card-art{object-position:top center}
