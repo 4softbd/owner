@@ -53,7 +53,9 @@
     const totalPages=Math.max(1,Math.ceil(list.length/pageSize));
     currentPage=Math.min(currentPage,totalPages);
     const start=(currentPage-1)*pageSize;
+    grid.dataset.figmaRendering='1';
     grid.innerHTML=list.slice(start,start+pageSize).map(window.bfCard).join('');
+    delete grid.dataset.figmaRendering;
     if(count)count.textContent=`${list.length} plan${list.length===1?'':'s'}`;
     tabs?.querySelectorAll('[data-category]').forEach(b=>b.classList.toggle('active',b.dataset.category===(category?.value||'all')));
     pagination(totalPages);
@@ -61,6 +63,18 @@
 
   window.bfShop();
   render();
+  setTimeout(render,0);
+  window.addEventListener('load',render,{once:true});
+
+  let repairTimer;
+  new MutationObserver(()=>{
+    if(grid.dataset.figmaRendering==='1')return;
+    clearTimeout(repairTimer);
+    repairTimer=setTimeout(()=>{
+      const expected=Math.min(pageSize,Math.max(0,currentList().length-(currentPage-1)*pageSize));
+      if(grid.children.length!==expected)render();
+    },0);
+  }).observe(grid,{childList:true});
 
   [search,category,sort].forEach(control=>control?.addEventListener(control===search?'input':'change',()=>{
     currentPage=1;
