@@ -69,3 +69,11 @@
 
 /* 1440 categories/products anchors — Figma 1:21204 and 1:21267 */
 @media (min-width:901px) and (max-width:1599px){.plans{height:326.99px;padding:36px 0 16.2px}.plan-strip{height:164.79px;margin-top:56px}.plan{min-height:162.79px}.products{padding-top:14.4px}}
+
+/* 1024w default — Figma node 1:22529 */
+@media (min-width:901px) and (max-width:1100px){
+.container{width:92%;max-width:942.08px}.site-header{padding-top:12px}.nav{width:94%;max-width:962.55px}.nav-links{display:flex}.hamburger{display:none}.account-btn span{display:inline}
+.hero{height:625.53px;min-height:625.53px}.hero-inner{width:92%;max-width:942.08px;height:625.53px}.hero .eyebrow{top:116px}.hero h1{top:175.59px;font-size:60px;line-height:62.4px;letter-spacing:-1.5px}.hero p{top:311.625px;width:438px;font-size:15.75px;line-height:25px}.hero-ctas{top:389.97px}.brand-rail-wrap{top:487.95px}.trust{top:570.34px}
+.plans{height:249.494px;padding:25.6px 0 12px}.section-title{font-size:45px;line-height:46.86px;letter-spacing:-.9px}.plan-strip{height:118.964px;margin-top:46.07px}.plan{min-height:116.964px}.plan-icon{width:68px;height:68px}
+.products{padding-top:10.24px}.product-group{margin-top:46px}.product-grid{grid-template-columns:repeat(4,1fr);gap:18px}.product-card{height:371.18px}
+}
