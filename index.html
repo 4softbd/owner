@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="figma-home.css?v=frame-125349">
+<link rel="stylesheet" href="figma-home.css?v=shop-dropdown">
 </head>
 <body>
 <header class="site-header">
@@ -16,7 +16,17 @@
     <a class="brand" href="#top"><span>BUY</span><span class="bolt"><img src="https://www.figma.com/api/mcp/asset/c86a546a-e7d0-47f2-9d99-2a79b11600e4.svg" alt="" width="15" height="15"></span><span class="finix">FINIX</span></a>
     <div class="nav-links">
       <a href="#top">Home</a>
-      <a href="#plans">Shop</a>
+      <div class="nav-drop shop-drop">
+        <button type="button" aria-expanded="false">Shop</button>
+        <div class="drop-panel shop-panel">
+          <a href="shop.html?category=subscriptions">Subscriptions</a>
+          <a href="shop.html?category=combos">Combo Pack</a>
+          <a href="shop.html?category=software">Software</a>
+          <a href="shop.html?category=adult">Adult</a>
+          <a href="shop.html?category=music">Music</a>
+          <a href="shop.html">More Plans</a>
+        </div>
+      </div>
       <a href="legal.html">Login Terms</a>
       <div class="nav-drop">
         <button type="button" aria-expanded="false">Quick Links</button>
