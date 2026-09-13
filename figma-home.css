@@ -103,3 +103,6 @@
 .mobile-dock{display:block;position:fixed;z-index:70;left:50%;bottom:10px;transform:translateX(-50%);width:366px;max-width:calc(100% - 24px)}.mobile-dock-inner{height:66px;padding:6px;border:1px solid rgba(22,26,16,.07);border-radius:22px;background:#fdfcf7;box-shadow:0 18px 38px -18px rgba(22,26,16,.45),0 2px 6px -3px rgba(22,26,16,.14);display:flex}.mobile-dock a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:3px 0 2px;text-decoration:none;color:#7f887a;font:700 10px/16px Inter,sans-serif}.mobile-dock i{width:47px;height:29px;padding:3px 12px;border-radius:999px}.mobile-dock i img{width:23px;height:23px}.mobile-dock a.active{color:#3f6b0a}.mobile-dock a.active i{background:#dff2b8}
 .drawer{width:92vw;max-width:358.8px}
 }
+
+/* Missing Shop dropdown from supplied navigation reference */
+.shop-drop>button{background:#f0f1eb}.shop-panel{top:44px;min-width:210px;padding:8px 0;border-radius:14px}.shop-panel a{padding:10px 20px;font-size:14px;line-height:20px}.shop-panel a:hover{background:#f3f5ed}
