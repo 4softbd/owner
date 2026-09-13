@@ -16,3 +16,18 @@
 @media(max-width:760px){.site-header{padding:8px 10px 0}.nav{height:54px;padding-left:14px}.brand{font-size:13px}.hero{padding-top:130px;min-height:700px}.hero h1{font-size:48px;letter-spacing:-1.3px}.hero p{font-size:15px;line-height:24px}.hero-ctas{flex-direction:column;align-items:center}.btn{width:min(330px,100%);height:56px}.brand-rail-wrap{margin-top:35px}.trust{margin-top:25px}.section{padding:64px 0}.section-title{font-size:42px;line-height:44px}.plan-strip{margin-top:35px;grid-template-columns:repeat(5,180px)}.product-grid{grid-template-columns:repeat(2,1fr);gap:12px}.product-info{padding:12px}.refer-panel{padding:30px 24px}.refer-steps{grid-template-columns:1fr}.footer-bar{height:auto;padding:25px 0;grid-template-columns:1fr;text-align:center}.footer-links{justify-content:center}.reviews-track{animation-duration:48s}.review-card{width:300px}.account-btn{display:none}}
 @media(max-width:460px){.container{width:min(100% - 24px,var(--container))}.hero h1{font-size:42px}.eyebrow span{font-size:11px}.product-grid{grid-template-columns:1fr 1fr}.product-info h4{font-size:13px}.price b{font-size:15px}.card-actions{grid-template-columns:38px 1fr}.card-actions button,.card-actions .buy{height:38px;font-size:12px}.section-title{font-size:36px;line-height:39px}.refer-panel h2{font-size:34px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Figma desktop geometry pass: header + hero (52:11025 / 1:19396) */
+@media (min-width:901px){
+  .hero{height:767.94px;min-height:767.94px;padding-top:0}
+  .hero-inner{height:767.94px;position:relative}
+  .hero .eyebrow{position:absolute;top:168px;left:50%;transform:translateX(-50%);height:37.59px;margin:0}
+  .hero .eyebrow b{height:23.59px;padding:0 9px;display:inline-flex;align-items:center}
+  .hero h1{position:absolute;top:227.59px;left:50%;transform:translateX(-50%);width:max-content;margin:0;line-height:74.88px}
+  .hero p{position:absolute;top:396.34px;left:50%;transform:translateX(-50%);width:500px;max-width:none;margin:0}
+  .hero-ctas{position:absolute;top:480.34px;left:50%;transform:translateX(-50%);width:534px;height:59.59px;margin:0;flex-wrap:nowrap}
+  .hero-ctas .btn{height:59.59px}
+  .brand-rail-wrap{position:absolute;top:603.94px;left:50%;transform:translateX(-50%);width:100vw;height:60px;margin:0;padding-bottom:4px}
+  .trust{position:absolute;top:699.94px;left:50%;transform:translateX(-50%);width:526px;height:36px;margin:0;flex-wrap:nowrap}
+  .trust span{height:36px}
+}
