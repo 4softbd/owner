@@ -1,4 +1,4 @@
-const plans=[['subscriptions','assets/figma/category-ott.png','OTT','Subscriptions'],['combos','assets/figma/category-combos.png','Combos','More value together'],['software','assets/figma/category-software.png','Software','Tools & licenses'],['music','assets/figma/category-music.png','Music','Listen without limits'],['adult','assets/figma/category-gaming.png','Gaming','Private premium plans']];
+const plans=[['subscriptions','assets/figma/category-ott.png','Subscriptions','Subscriptions'],['combos','assets/figma/category-combos.png','Combo Packs','More value together'],['software','assets/figma/category-software.png','Software','Tools & licenses'],['music','assets/figma/category-music.png','Music','Listen without limits'],['adult','assets/figma/category-gaming.png','Gaming','Private premium plans']];
 const products=(window.BF_PRODUCTS||[]);
 window.BuyFinix={products};const money=n=>'৳'+Number(n).toLocaleString('en-BD'),title=s=>s[0].toUpperCase()+s.slice(1);
 const productUrl=p=>'https://buyfinix.com/'+String(p.slug||p.name).toLowerCase().trim().replace(/&/g,'and').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
