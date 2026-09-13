@@ -31,3 +31,19 @@
   .trust{position:absolute;top:699.94px;left:50%;transform:translateX(-50%);width:526px;height:36px;margin:0;flex-wrap:nowrap}
   .trust span{height:36px}
 }
+
+
+/* Figma product-card geometry pass (1:19673) */
+@media (min-width:901px){
+  .product-grid{row-gap:18.025px}
+  .product-card{height:381.6px;background:#f9fafb;border-color:#e4e7ec}
+  .product-art{height:208.42px;aspect-ratio:auto;background:#f6f4ea}
+  .product-info{height:171.18px;padding:16px 16px 18px;display:flex;flex-direction:column;justify-content:space-between}
+  .product-info h4{height:41.59px;min-height:41.59px;margin:0;font-size:16px;line-height:20.8px;overflow:hidden}
+  .price{height:52px;margin:0;padding:12px 0 14px;align-items:center}
+  .price b{font-size:24px;line-height:24px}
+  .price span{font-size:12.5px;line-height:20px;font-weight:600}
+  .price del{font-size:13px;line-height:20.8px}
+  .card-actions{height:44px}
+  .card-actions button,.card-actions .buy{height:44px}
+}
