@@ -119,3 +119,6 @@
 .search-results>a{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:center;gap:12px;padding:8px 0;background:transparent;border:0;border-radius:0;text-decoration:none}.search-thumb{width:52px;height:52px;border-radius:10px;overflow:hidden;background:#ece8da}.search-thumb img{width:100%;height:100%;object-fit:cover}
 .search-results a>b{font:600 14px/18px 'Space Grotesk',sans-serif}.search-results a>b small{display:flex;align-items:baseline;gap:7px;margin-top:3px}.search-results a>b small del{color:#aaa99d;font:400 12px Inter,sans-serif}.search-results a>b small strong{color:#5f8805;font:700 12px Inter,sans-serif;white-space:nowrap}
 @media(max-width:460px){.global-search-layer{padding:82px 12px 12px}.global-search-box{width:100%}.search-row{padding-left:14px;gap:8px}.search-row input{font-size:13px}.search-results{padding-left:14px;padding-right:14px}}
+
+/* Keep every BDT price unit on one line */
+.price{display:flex;align-items:baseline;flex-wrap:nowrap!important;white-space:nowrap!important;min-width:0;overflow:hidden}.price>*{white-space:nowrap!important;flex:0 0 auto}.price b,.price strong,.price del{white-space:nowrap!important}
