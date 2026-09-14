@@ -261,3 +261,13 @@
   .shop-page header.nav.shell>.nav-actions>#global-search,
   .shop-page header.nav.shell>.nav-actions>#global-cart{flex-basis:38px!important;width:38px!important;height:38px!important}
 }
+
+
+/* Header state in the captured Shop frame is visually neutral. */
+.shop-page header.nav.shell>nav>a,
+.shop-page header.nav.shell>nav>.nav-drop>button{
+  background:transparent!important;box-shadow:none!important;
+  border:0!important;color:#3a3d35!important;
+  font:500 14.5px/18px Inter,sans-serif!important
+}
+.shop-page header.nav.shell>nav>a::after{display:none!important}
