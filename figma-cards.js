@@ -10,7 +10,7 @@
     return;
   }
 
-  const grid=document.querySelector('#shop-grid');
+  let grid=document.querySelector('#shop-grid');
   const count=document.querySelector('#product-count');
   const tabs=document.querySelector('#category-tabs');
   const search=document.querySelector('#shop-search');
@@ -49,6 +49,7 @@
   }
 
   function render(){
+    grid=document.querySelector('#shop-grid');
     if(!grid)return;
     const list=currentList();
     const totalPages=Math.max(1,Math.ceil(list.length/pageSize));
@@ -75,7 +76,7 @@
       const expected=Math.min(pageSize,Math.max(0,currentList().length-(currentPage-1)*pageSize));
       if(grid.children.length!==expected)render();
     },0);
-  }).observe(grid,{childList:true});
+  }).observe(document.body,{childList:true,subtree:true});
 
   [search,category,sort].forEach(control=>control?.addEventListener(control===search?'input':'change',()=>{
     currentPage=1;
