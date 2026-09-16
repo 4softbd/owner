@@ -87,7 +87,7 @@
       }
       const quick=[...nav.querySelectorAll('.nav-drop')].find(d=>/^Quick Links/.test(d.querySelector('button')?.textContent.trim()||''));
       const quickButton=quick?.querySelector('button');
-      if(quickButton)quickButton.textContent='Quick Links';
+      if(quickButton&&quickButton.textContent.trim()!=='Quick Links')quickButton.textContent='Quick Links';
     }
     const search=header.querySelector('#global-search');
     if(search&&!search.dataset.figmaIcon){search.dataset.figmaIcon='1';search.innerHTML='<img src="https://www.figma.com/api/mcp/asset/6387bafc-a8a7-4e1f-b192-177aa6872bfc/bb9f6.svg" alt="" width="22" height="22">';}
