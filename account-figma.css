@@ -1,12 +1,12 @@
 /* Figma account frame 1:805 */
 .account-page,.account-page *{box-sizing:border-box}
-.account-page{margin:0;min-height:1200px;background:#f6f4ea;color:#14180f;font-family:Inter,Arial,sans-serif}
+.account-page{margin:0;min-height:100vh;background:#f6f4ea;color:#14180f;font-family:Inter,Arial,sans-serif}
 .account-page a{color:inherit}
 .account-nav{position:relative;z-index:20;width:min(1280px,calc(100% - 40px));height:58px;margin:12px auto 0;padding:0 10px 0 20px;display:flex;align-items:center;border:1px solid rgba(22,26,16,.06);border-radius:18px;background:rgba(253,252,247,.95);box-shadow:0 1px 3px rgba(22,26,16,.04),0 4px 16px rgba(22,26,16,.04)}
 .account-brand{display:flex;align-items:center;gap:4px;text-decoration:none;font:700 15.5px/24.8px "Space Grotesk",sans-serif;letter-spacing:2.79px;white-space:nowrap}.account-brand i{font-style:normal;font-size:14px}.account-brand span:last-child{color:#4f7a08}
 .account-nav-links{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:2px}.account-nav-links a{padding:8px 14px;border-radius:10px;text-decoration:none;color:#3a3d35;font:500 14.5px/19.94px Inter,sans-serif;white-space:nowrap}
 .account-nav-right{margin-left:auto;display:flex;align-items:center;gap:6px;height:42px}.account-icon,.account-link{height:42px;border:0;background:transparent;border-radius:12px;display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer}.account-icon{width:42px;font-size:21px}.account-link{gap:5px;padding:0 10px;font:600 12px/28px "Space Grotesk",sans-serif;letter-spacing:.24px}.account-link b{font-size:19px;font-weight:400}
-.account-main{width:100%;min-height:1104px;padding:26px 20px 595px;display:flex;justify-content:center}.account-shell{width:min(640px,100%);display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 4px}
+.account-main{width:100%;min-height:calc(100vh - 70px);padding:26px 20px 295.39px;display:flex;justify-content:center}.account-shell{width:min(640px,100%);display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 4px}
 .account-shell h1{margin:0;color:#000;font:700 23px/32.2px "Space Grotesk",sans-serif;letter-spacing:-.69px;text-align:center}.account-intro{margin:0 0 1px;color:#4c5347;font:400 13.5px/20.25px Inter,sans-serif;text-align:center}
 .account-benefits{width:100%;margin:0;padding:12px 0 14px;list-style:none;background:#fff;border:1px solid rgba(20,24,15,.09);border-radius:16px;overflow:hidden}.account-benefits li{min-height:59px;padding:12px 14px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(20,24,15,.055)}.account-benefits li:last-child{border-bottom:0}
 .benefit-icon{flex:0 0 34px;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:16px}.benefit-icon.green{background:#edf4df}.benefit-icon.blue{background:#e4eefb}.benefit-icon.gold{background:#fbf0da}
