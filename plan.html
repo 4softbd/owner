@@ -77,13 +77,14 @@
     const nav=header.querySelector(':scope > nav');
     if(nav){
       const drops=[...nav.querySelectorAll('.nav-drop')];
-      const categories=drops.find(d=>/^Categories/.test(d.querySelector('button')?.textContent.trim()||''));
-      if(categories)categories.remove();
-      if(!nav.querySelector('[data-login-terms]')){
-        const login=document.createElement('a');
-        login.href='legal.html#login';login.textContent='Login Terms';login.dataset.loginTerms='1';
-        const shop=[...nav.children].find(el=>el.matches('a')&&el.textContent.trim()==='Shop');
-        shop?.insertAdjacentElement('afterend',login);
+      const categories=drops.find(d=>/^Categories|^Login Terms/.test(d.querySelector('button')?.textContent.trim()||''));
+      const loginButton=categories?.querySelector('button');
+      if(loginButton&&loginButton.textContent.trim()!=='Login Terms')loginButton.textContent='Login Terms';
+      if(loginButton&&!loginButton.dataset.loginTerms){
+        loginButton.dataset.loginTerms='1';
+        loginButton.addEventListener('click',event=>{
+          event.preventDefault();event.stopImmediatePropagation();location.href='legal.html#login';
+        },true);
       }
       const quick=[...nav.querySelectorAll('.nav-drop')].find(d=>/^Quick Links/.test(d.querySelector('button')?.textContent.trim()||''));
       const quickButton=quick?.querySelector('button');
