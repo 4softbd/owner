@@ -343,3 +343,57 @@
   .shop-page header.nav.shell.shared-nav>.nav-actions .header-cart b:empty,
   .shop-page header.nav.shell.shared-nav>.nav-actions .header-cart b[data-cart-count="0"]{display:none!important}
 }
+
+/* WeeWoo live shop parity pass v9 */
+@media(min-width:901px){
+  .shop-page .shop-surface{padding-top:6px!important}
+  .shop-page header.nav.shell.shared-nav>nav>a:nth-child(2){
+    background:#f0f1ec!important;
+    border-radius:13px!important;
+  }
+  .shop-page header.nav.shell.shared-nav .brand{
+    display:flex!important;
+    align-items:center!important;
+    gap:7px!important;
+    font-size:0!important;
+  }
+  .shop-page header.nav.shell.shared-nav .brand::before{
+    content:"BUY";
+    color:#161a10;
+    font:700 15px/18px "Space Grotesk",sans-serif;
+    letter-spacing:2.35px;
+  }
+  .shop-page header.nav.shell.shared-nav .brand i{
+    width:10px!important;
+    height:17px!important;
+    margin:0 -2px 0 -1px!important;
+    color:transparent!important;
+    font-size:0!important;
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='17' viewBox='0 0 10 17'%3E%3Cpath fill='%234f7a08' d='M5.8 0 0 9h4l-.8 8L10 7H6z'/%3E%3C/svg%3E") center/10px 17px no-repeat!important;
+  }
+  .shop-page header.nav.shell.shared-nav .brand::after{
+    content:"FINIX";
+    color:#4f7a08;
+    font:700 15px/18px "Space Grotesk",sans-serif;
+    letter-spacing:2.35px;
+  }
+}
+.shop-page .category-tabs button[data-category="more"]{min-width:109px!important}
+.shop-page #shop-sort{font-size:16px!important}
+.shop-page .card-actions .buy{letter-spacing:normal!important}
+.shop-page .card-actions button{
+  color:transparent!important;
+  font-size:0!important;
+  background-color:#fdfcf7!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 7h13l-1.5 9h-10L5 3H2'/%3E%3Ccircle cx='9' cy='21' r='1.3'/%3E%3Ccircle cx='16' cy='21' r='1.3'/%3E%3C/svg%3E")!important;
+  background-repeat:no-repeat!important;
+  background-position:center!important;
+  background-size:22px 22px!important;
+}
+.shop-page .pagination,
+.shop-page .hero-buttons{display:none!important}
+.shop-page .site-footer{display:none!important}
+@media(max-width:900px){
+  .shop-page .shop-surface{padding-top:4px!important}
+  .shop-page .category-tabs button[data-category="more"]{min-width:auto!important}
+}
