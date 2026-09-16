@@ -9,6 +9,17 @@
     if (sort?.options?.length) sort.options[0].textContent = 'Default sorting';
 
     const grid = document.querySelector('#shop-grid');
+
+    grid?.querySelectorAll('.product-card').forEach(card => {
+      const heading = card.querySelector('.product-info h4');
+      const link = heading?.querySelector('a');
+      if (heading && /^Google Ai pro \(on$/.test(heading.textContent.trim())) {
+        if (link) link.textContent = 'Google Ai pro (on email)';
+        else heading.textContent = 'Google Ai pro (on email)';
+        const image = card.querySelector('img');
+        if (image) image.alt = 'Google Ai pro (on email)';
+      }
+    });
     if (grid && (!sort || sort.value === 'featured')) {
       const priority = [
         'Lovable Lite on mail',
@@ -30,7 +41,8 @@
       const cards = [...grid.querySelectorAll('.product-card')];
       const rank = card => {
         const name = card.querySelector('.product-info h4')?.textContent.trim() || '';
-        const index = priority.findIndex(item => name.startsWith(item));
+        let index = priority.indexOf(name);
+        if (index < 0 && name.startsWith('Google Ai pro')) index = priority.indexOf('Google Ai pro (on');
         return index < 0 ? priority.length + cards.indexOf(card) : index;
       };
       const sorted = [...cards].sort((a, b) => rank(a) - rank(b));
