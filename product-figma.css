@@ -261,3 +261,31 @@
   color:#315600;
   font:700 9px/12px Inter,sans-serif;
 }
+
+/* Exact green BuyFinix wordmark v10 */
+.shared-nav .brand{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:0!important;
+}
+.shared-nav .brand::before{
+  content:"BUY";
+  color:#161a10;
+  font:700 15px/18px "Space Grotesk",sans-serif;
+  letter-spacing:2.35px;
+}
+.shared-nav .brand i{
+  width:10px;
+  height:17px;
+  margin:0 -2px 0 -1px;
+  color:transparent!important;
+  font-size:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='17' viewBox='0 0 10 17'%3E%3Cpath fill='%234f7a08' d='M5.8 0 0 9h4l-.8 8L10 7H6z'/%3E%3C/svg%3E") center/10px 17px no-repeat;
+}
+.shared-nav .brand::after{
+  content:"FINIX";
+  color:#4f7a08;
+  font:700 15px/18px "Space Grotesk",sans-serif;
+  letter-spacing:2.35px;
+}
