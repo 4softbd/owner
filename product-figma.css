@@ -413,3 +413,15 @@
   .combo-reference .included li span{color:#606852;font-size:12px;line-height:19px}
   .combo-reference .included details{display:block}
 }
+
+/* Correct combo description content order v12 */
+@media(min-width:901px){
+  .combo-reference .included::before{
+    font:600 24px/30px "Space Grotesk",sans-serif;
+    margin-bottom:18px;
+  }
+  .combo-reference .included h3{order:2}
+  .combo-reference .included ul{order:3}
+  .combo-reference .included h4{order:4}
+  .combo-reference .included details{order:5}
+}
