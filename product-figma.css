@@ -15,3 +15,88 @@
 .related{margin-top:54px}.related .group-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.related .group-head h2{margin:0;font:600 30px/1.2 "Space Grotesk";letter-spacing:-.7px}.related .group-head a{color:var(--green);font-weight:700;text-decoration:none}.related .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.related .product-card{min-width:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--paper)}.related .product-art{height:208px;background:#111;display:grid;place-items:center;position:relative;text-decoration:none}.related .product-mark{font:600 52px "Space Grotesk";color:var(--lime)}.related .instant-tag{position:absolute;right:10px;top:10px;color:var(--lime);font-size:10px;font-weight:700}.related .product-info{padding:14px}.related .product-info h4{height:38px;margin:0 0 10px;font:600 14px/19px "Space Grotesk"}.related .product-info h4 a{color:var(--ink);text-decoration:none}.related .price{display:flex;align-items:baseline;gap:5px;white-space:nowrap}.related .price b{font:700 20px "Space Grotesk"}.related .price del{margin-left:auto;color:#8a8e83;font-size:11px}.related .card-actions{display:grid;grid-template-columns:38px 1fr;gap:8px;margin-top:12px}.related .card-actions button,.related .card-actions .buy{height:38px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center}.related .card-actions .buy{background:var(--ink);color:#fff;text-decoration:none;font-weight:700;font-size:13px}
 @media(max-width:900px){.shared-nav{width:calc(100% - 24px);height:56px;padding:0 10px}.shared-nav .hamburger{display:grid;order:-1;width:38px;height:38px;place-items:center;border:0;background:transparent}.shared-nav>.brand{position:absolute;left:50%;transform:translateX(-50%);font-size:13px}.shared-nav>nav,.shared-nav .nav-actions>a{display:none}.shared-nav .nav-actions{gap:1px}.page-shell{width:calc(100% - 30px);margin:24px auto 54px}.detail-grid{grid-template-columns:1fr;gap:24px}.detail-image{height:auto;aspect-ratio:1/1;max-height:440px}.product-panel{padding:0}.related .product-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.page-shell{width:calc(100% - 24px);margin-top:16px}.detail-image{border-radius:20px}.product-panel h1{font-size:31px;letter-spacing:-.7px}.product-panel>.price b{font-size:27px}.duration-row{display:grid;grid-template-columns:1fr 1fr}.duration-row button{padding:0 8px}.quantity-row{margin-top:22px}.notice{height:auto;min-height:66px;padding:14px 16px;line-height:20px}.detail-actions{grid-template-columns:1fr}.included{padding:24px 20px}.related .group-head h2{font-size:24px}.related .product-grid{gap:12px}.related .product-art{height:auto;aspect-ratio:1.12/1}.related .product-info{padding:11px}.related .price{flex-wrap:nowrap}.related .price del{margin-left:auto}}
+
+/* Figma product-detail parity pass v3 */
+@media(min-width:901px){
+  .announcement{display:none!important}
+  .shared-nav{position:absolute;top:12px;left:50%;transform:translateX(-50%);margin:0}
+  .page-shell{margin-top:22px}
+  .detail-grid{position:relative;height:697px;min-height:697px;align-items:start}
+  .detail-image{height:440px;border:1px solid #e6e1cd;border-radius:20px;box-shadow:none;position:relative}
+  .detail-image::after{content:"⚡ INSTANT";position:absolute;top:10px;right:14px;padding:5px 10px;border-radius:6px;background:#121212;color:#c2f068;box-shadow:0 4px 4px rgba(0,0,0,.35);font:800 11px/13.2px Inter,sans-serif;letter-spacing:.5px}
+  .product-panel{height:440px;padding:4px 0 23px;position:relative}
+  .product-panel>.kicker{display:none}
+  .product-panel h1{margin:0 0 8px;font-size:40px;line-height:48px;letter-spacing:-.8px}
+  .product-panel>.price{height:50px;gap:8px;align-items:center;padding:5px 0 4px}
+  .product-panel>.price b{font-size:30px;line-height:30px}
+  .product-panel>.price del{font:500 18px/18px "Space Grotesk",sans-serif;color:#a1a1aa}
+  .product-panel>.price::after{content:"33% OFF";margin-left:8px;padding:4px 10px;border:1px solid rgba(163,217,58,.55);border-radius:999px;background:#dff2b8;color:#2f5c06;font:700 12.5px/28px "Space Grotesk",sans-serif;letter-spacing:.25px;height:30px;display:flex;align-items:center}
+  .product-panel>p:not(.notice){display:none}
+  .field-label{display:none}
+  .duration-row{height:64.75px;margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .duration-row button{height:64.75px;padding:11px 12px 13px;border:1px solid rgba(22,26,16,.13);border-radius:15px;background:#fff;box-shadow:0 1px 2px rgba(22,26,16,.04);font:600 13.5px/16.88px "Space Grotesk",sans-serif;position:relative}
+  .duration-row button::after{content:"৳" attr(data-value) "/mo";display:block;margin-top:4px;color:#3f5a14;font:700 13.5px/16.88px Inter,sans-serif}
+  .duration-row button.active{border-color:#161a10;background:#161a10;color:rgba(255,255,255,.72);box-shadow:0 9px 24px -11px rgba(22,26,16,.62)}
+  .duration-row button.active::after{color:rgba(255,255,255,.66)}
+  .duration-row button:nth-child(n+3){display:none}
+  .quantity-row{display:none}
+  .detail-actions{height:56px;margin-top:32px;display:grid;grid-template-columns:56px 1fr;gap:10px}
+  .detail-actions button{height:56px;min-height:56px;border:2px solid #141414;border-radius:999px}
+  .detail-actions .primary-action{width:56px;padding:0;background:#fff;color:transparent;font-size:0;position:relative}
+  .detail-actions .primary-action::before{content:"🛒";color:#141414;font-size:18px;line-height:1}
+  .detail-actions .secondary-action{background:#141414;box-shadow:0 8px 11px rgba(20,20,20,.2);font-size:0}
+  .detail-actions .secondary-action::before{content:"Buy Now  ⚡";font:700 16px/16px "Space Grotesk",sans-serif;letter-spacing:.3px;color:#fff}
+  .notice{position:absolute;left:-488px;top:466px;width:1240px;height:59px;margin:0;padding:20px 24px;border:1px solid rgba(194,240,104,.2);border-radius:18px;background:#121212;color:#c2f068;box-shadow:0 4px 9px rgba(0,0,0,.18);font:700 13px/18px Inter,sans-serif}
+  .notice::before{content:"⚡";margin-right:10px}
+  .included{position:absolute;left:-488px;top:551px;width:1240px;height:146px;margin:0;padding:0;border:0;border-radius:0;background:transparent}
+  .included::before{content:"Description";display:block;margin-bottom:13px;font:600 18px/24px "Space Grotesk",sans-serif;color:#161a10}
+  .included::after{content:"Premium digital access with clear validity, setup assistance and replacement support during the applicable warranty period.";display:block;margin-bottom:18px;color:#606852;font:400 13px/20px Inter,sans-serif}
+  .included h3{margin:18px 0 9px;font:700 11px/16px Inter,sans-serif;letter-spacing:.75px;text-transform:uppercase}
+  .included ul{height:74px;margin:0;padding:0 18px;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;gap:20px;border:1px solid #e6e1cd;border-radius:12px;background:#fdfcf7;list-style:none}
+  .included li{margin:0;padding-left:22px;position:relative;color:#3a3d35;font-size:11.5px;line-height:16px}
+  .included li::before{content:"✓";position:absolute;left:0;color:#4f7a08;font-weight:800}
+  .included details{display:none}
+  .related{margin-top:54px}
+  .related .group-head{height:34px;margin-bottom:20px}
+  .related .group-head h2{font-size:30px;line-height:34px}
+  .related .group-head h2{font-size:0}
+  .related .group-head h2::before{content:"You may also like";font:600 30px/34px "Space Grotesk",sans-serif;letter-spacing:-.6px}
+  .related .group-head a{font-size:0}
+  .related .group-head a::before,.related .group-head a::after{display:inline-grid;place-items:center;width:34px;height:34px;border:1px solid #e6e1cd;border-radius:999px;color:#161a10;font:500 16px/1 Inter,sans-serif;background:#fdfcf7}
+  .related .group-head a::before{content:"‹";margin-right:8px}
+  .related .group-head a::after{content:"›"}
+  .related .product-grid{grid-template-columns:repeat(5,1fr);gap:18px}
+  .related .product-card{height:379.52px;border-radius:16px}
+  .related .product-art{height:208.42px}
+  .related .product-info{height:171px;padding:14px 16px 18px;display:flex;flex-direction:column}
+  .related .product-info h4{height:38px;margin-bottom:12px}
+  .related .card-actions{margin-top:auto}
+}
+@media(max-width:900px){
+  .announcement{display:none!important}
+  .detail-image{border:1px solid #e6e1cd;border-radius:20px;position:relative}
+  .detail-image::after{content:"⚡ INSTANT";position:absolute;top:10px;right:14px;padding:5px 10px;border-radius:6px;background:#121212;color:#c2f068;font:800 10px/13px Inter,sans-serif;letter-spacing:.5px}
+  .product-panel>.kicker{display:none}
+  .product-panel h1{font-size:32px;line-height:38px;margin:0 0 6px}
+  .product-panel>.price::after{content:"33% OFF";margin-left:8px;padding:3px 8px;border:1px solid rgba(163,217,58,.55);border-radius:999px;background:#dff2b8;color:#2f5c06;font:700 11px/22px "Space Grotesk",sans-serif}
+  .product-panel>p:not(.notice){display:none}
+  .field-label{display:none}
+  .duration-row{display:grid;grid-template-columns:1fr 1fr;height:auto;margin-top:14px}
+  .duration-row button{height:62px;border-radius:14px;position:relative}
+  .duration-row button::after{content:"৳" attr(data-value) "/mo";display:block;margin-top:4px;font:700 12px/16px Inter,sans-serif;color:#3f5a14}
+  .duration-row button.active{background:#161a10;color:#fff;border-color:#161a10}
+  .duration-row button.active::after{color:rgba(255,255,255,.7)}
+  .duration-row button:nth-child(n+3){display:none}
+  .quantity-row{display:none}
+  .detail-actions{grid-template-columns:56px 1fr;margin-top:22px}
+  .detail-actions .primary-action{font-size:0;border-radius:999px;background:#fff;border:2px solid #141414}
+  .detail-actions .primary-action::before{content:"🛒";font-size:18px}
+  .detail-actions .secondary-action{border-radius:999px}
+  .notice{background:#121212;color:#c2f068;border-color:rgba(194,240,104,.2)}
+  .included{background:transparent;border:0;padding:24px 0}
+  .included::before{content:"Description";display:block;margin-bottom:10px;font:600 18px/24px "Space Grotesk",sans-serif}
+  .included h3{margin-top:22px}
+  .included ul{padding:18px 20px;border:1px solid #e6e1cd;border-radius:14px;background:#fdfcf7}
+  .related .group-head h2{font-size:0}
+  .related .group-head h2::before{content:"You may also like";font:600 24px/30px "Space Grotesk",sans-serif}
+}
