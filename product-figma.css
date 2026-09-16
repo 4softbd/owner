@@ -100,3 +100,14 @@
   .related .group-head h2{font-size:0}
   .related .group-head h2::before{content:"You may also like";font:600 24px/30px "Space Grotesk",sans-serif}
 }
+
+/* Figma vertical rhythm and description ordering v4 */
+@media(min-width:901px){
+  .page-shell{margin-top:104px}
+  .included{display:flex;flex-direction:column}
+  .included::before{order:0}
+  .included::after{order:1;margin-bottom:14px}
+  .included h3{order:2;margin:0 0 9px}
+  .included ul{order:3}
+  .related{margin-top:70px}
+}
