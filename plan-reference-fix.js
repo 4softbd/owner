@@ -7,6 +7,10 @@
 
     const sort = document.querySelector('#shop-sort');
     if (sort?.options?.length) sort.options[0].textContent = 'Default sorting';
+    if (sort && !sort.dataset.referenceBound) {
+      sort.dataset.referenceBound = '1';
+      sort.addEventListener('change', () => setTimeout(applyShopReference, 0));
+    }
 
     const grid = document.querySelector('#shop-grid');
 
@@ -20,7 +24,7 @@
         if (image) image.alt = 'Google Ai pro (on email)';
       }
     });
-    if (grid && (!sort || sort.value === 'featured')) {
+    if (grid) {
       const priority = [
         'Lovable Lite on mail',
         'Google Ai pro (on',
@@ -45,7 +49,13 @@
         if (index < 0 && name.startsWith('Google Ai pro')) index = priority.indexOf('Google Ai pro (on');
         return index < 0 ? priority.length + cards.indexOf(card) : index;
       };
-      const sorted = [...cards].sort((a, b) => rank(a) - rank(b));
+      const price = card => Number((card.querySelector('.price b')?.textContent || '').replace(/[^0-9.]/g, '')) || 0;
+      const mode = sort?.value || 'featured';
+      let sorted = [...cards];
+      if (mode === 'low') sorted.sort((a, b) => price(a) - price(b));
+      else if (mode === 'high') sorted.sort((a, b) => price(b) - price(a));
+      else if (mode === 'stock') sorted.sort((a, b) => Number(!b.querySelector('.instant-tag')) - Number(!a.querySelector('.instant-tag')));
+      else sorted.sort((a, b) => rank(a) - rank(b));
       if (cards.some((card, index) => card !== sorted[index])) {
         sorted.forEach(card => grid.appendChild(card));
       }
