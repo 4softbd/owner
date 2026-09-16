@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="styles.css?v=figma4">
 <link rel="stylesheet" href="extras.css?v=figma4">
 <link rel="stylesheet" href="polish.css?v=figma4">
-<link rel="stylesheet" href="shop-figma.css?v=7">
+<link rel="stylesheet" href="shop-figma.css?v=8">
 </head>
 <body class="shop-page">
 <header class="nav shell">
@@ -63,6 +63,46 @@
       if(/^(?:\.\/)?shop(?:\.html)?(?:[?#].*)?$/.test(raw)||raw.startsWith('/shop')) a.setAttribute('href',canonical);
     });
   };
+
+  const applyFigmaPlanNav=()=>{
+    const header=document.querySelector('header.nav');
+    if(!header)return;
+    header.classList.add('shared-nav');
+    const brand=header.querySelector('.brand');
+    if(brand&&!brand.dataset.figmaNav){
+      brand.dataset.figmaNav='1';
+      brand.innerHTML='<span>BUY</span><img src="https://www.figma.com/api/mcp/asset/6387bafc-a8a7-4e1f-b192-177aa6872bfc/77638.svg" alt="" width="15" height="15"><span>FINIX</span>';
+      brand.setAttribute('href','index.html');
+    }
+    const nav=header.querySelector(':scope > nav');
+    if(nav){
+      const drops=[...nav.querySelectorAll('.nav-drop')];
+      const categories=drops.find(d=>/^Categories/.test(d.querySelector('button')?.textContent.trim()||''));
+      if(categories)categories.remove();
+      if(!nav.querySelector('[data-login-terms]')){
+        const login=document.createElement('a');
+        login.href='legal.html#login';login.textContent='Login Terms';login.dataset.loginTerms='1';
+        const shop=[...nav.children].find(el=>el.matches('a')&&el.textContent.trim()==='Shop');
+        shop?.insertAdjacentElement('afterend',login);
+      }
+      const quick=[...nav.querySelectorAll('.nav-drop')].find(d=>/^Quick Links/.test(d.querySelector('button')?.textContent.trim()||''));
+      const quickButton=quick?.querySelector('button');
+      if(quickButton)quickButton.textContent='Quick Links';
+    }
+    const search=header.querySelector('#global-search');
+    if(search&&!search.dataset.figmaIcon){search.dataset.figmaIcon='1';search.innerHTML='<img src="https://www.figma.com/api/mcp/asset/6387bafc-a8a7-4e1f-b192-177aa6872bfc/bb9f6.svg" alt="" width="22" height="22">';}
+    const account=header.querySelector('.nav-actions>a');
+    if(account&&!account.dataset.figmaIcon){account.dataset.figmaIcon='1';account.innerHTML='<img src="https://www.figma.com/api/mcp/asset/6387bafc-a8a7-4e1f-b192-177aa6872bfc/8c6f5.svg" alt="" width="22" height="22"><span>My Account</span>';}
+    const cart=header.querySelector('#global-cart');
+    if(cart&&!cart.dataset.figmaIcon){
+      cart.dataset.figmaIcon='1';
+      const badge=cart.querySelector('b');
+      cart.innerHTML='<img src="https://www.figma.com/api/mcp/asset/6387bafc-a8a7-4e1f-b192-177aa6872bfc/92db0.svg" alt="" width="22" height="22">';
+      if(badge)cart.appendChild(badge);
+    }
+  };
+  applyFigmaPlanNav();
+
   normalize();
   rewriteLinks();
   document.addEventListener('click',event=>{
@@ -70,7 +110,7 @@
   },true);
   document.addEventListener('input',()=>setTimeout(normalize,0),true);
   document.addEventListener('change',()=>setTimeout(normalize,0),true);
-  new MutationObserver(rewriteLinks).observe(document.documentElement,{childList:true,subtree:true});
+  new MutationObserver(()=>{rewriteLinks();applyFigmaPlanNav();}).observe(document.documentElement,{childList:true,subtree:true});
 })();
 </script>
 </body>
