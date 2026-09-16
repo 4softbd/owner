@@ -110,7 +110,7 @@
   },true);
   document.addEventListener('input',()=>setTimeout(normalize,0),true);
   document.addEventListener('change',()=>setTimeout(normalize,0),true);
-  new MutationObserver(()=>{rewriteLinks();applyFigmaPlanNav();}).observe(document.documentElement,{childList:true,subtree:true});
+  [0,50,250,1000].forEach(delay=>setTimeout(()=>{rewriteLinks();applyFigmaPlanNav();},delay));
 })();
 </script>
 </body>
