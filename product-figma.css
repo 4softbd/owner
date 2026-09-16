@@ -111,3 +111,32 @@
   .included ul{order:3}
   .related{margin-top:70px}
 }
+
+/* Permanent Figma artwork mapping v5 */
+.detail-image[style*="#b51622"]{
+  background-image:url("assets/figma/netflix-4k-private.png")!important;
+  background-size:cover!important;
+  background-position:center!important;
+  color:transparent!important;
+  font-size:0!important;
+}
+.related .product-art[style*="#168ed0"],
+.related .product-art[style*="#236aa5"]{
+  background-image:url("assets/figma/prime-video-4k.png")!important;
+  background-size:cover!important;
+  background-position:center!important;
+}
+.related .product-art[style*="#502d86"]{
+  background-image:url("assets/figma/hotstar-4k.png")!important;
+  background-size:cover!important;
+  background-position:center!important;
+}
+.related .product-art[style*="#b51622"]{
+  background-image:url("assets/figma/netflix-premium-4k.png")!important;
+  background-size:cover!important;
+  background-position:center!important;
+}
+.related .product-art[style*="#168ed0"] .product-mark,
+.related .product-art[style*="#236aa5"] .product-mark,
+.related .product-art[style*="#502d86"] .product-mark,
+.related .product-art[style*="#b51622"] .product-mark{display:none}
