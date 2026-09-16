@@ -289,3 +289,127 @@
   font:700 15px/18px "Space Grotesk",sans-serif;
   letter-spacing:2.35px;
 }
+
+/* WeeWoo 2-in-1 Combo parity v11 */
+.combo-reference .detail-image{
+  background:#111 url("https://weewoo.in/wp-content/uploads/2025/07/1000986245-1024x1024.jpg") center/cover no-repeat!important;
+  color:transparent!important;
+  font-size:0!important;
+}
+@media(min-width:901px){
+  .combo-reference .detail-grid{height:940px;min-height:940px}
+  .combo-reference .product-panel>.price::after{content:"28% OFF"}
+  .combo-reference .duration-row{
+    height:159px;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:74.5px 74.5px;
+    gap:10px;
+  }
+  .combo-reference .duration-row button{
+    display:block!important;
+    height:74.5px;
+  }
+  .combo-reference .duration-row button:nth-child(4)::before{
+    content:"BEST VALUE";
+    position:absolute;
+    top:-1px;
+    right:-1px;
+    padding:3px 9px;
+    border-radius:0 14px 0 8px;
+    background:#c2f068;
+    color:#315600;
+    font:800 9px/12px Inter,sans-serif;
+    letter-spacing:.35px;
+  }
+  .combo-reference .detail-actions{margin-top:31px}
+  .combo-reference .notice::before{content:"⚡"}
+  .combo-reference .included{
+    height:auto;
+    min-height:335px;
+  }
+  .combo-reference .included::after{display:none}
+  .combo-reference .included h3{
+    margin:0 0 14px;
+    padding-left:24px;
+    position:relative;
+    font:700 12px/18px Inter,sans-serif;
+    letter-spacing:1.8px;
+  }
+  .combo-reference .included h3::before,
+  .combo-reference .included h4::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:8px;
+    width:14px;
+    height:2px;
+    background:#c2f068;
+  }
+  .combo-reference .included ul{
+    height:107px;
+    padding:20px 24px;
+    align-items:start;
+  }
+  .combo-reference .included li{
+    padding-left:22px;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:0 6px;
+    color:#606852;
+    font-size:12px;
+    line-height:20px;
+  }
+  .combo-reference .included li strong{color:#30342b;white-space:nowrap}
+  .combo-reference .included li span{display:inline}
+  .combo-reference .included h4{
+    margin:23px 0 14px;
+    padding-left:24px;
+    position:relative;
+    color:#30342b;
+    font:700 12px/18px Inter,sans-serif;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+  }
+  .combo-reference .included details{
+    display:block;
+    margin:0;
+    padding:0 18px;
+    border:1px solid #e6e1cd;
+    border-radius:12px;
+    background:#fdfcf7;
+  }
+  .combo-reference .included summary{
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    cursor:pointer;
+    font:600 13px/18px Inter,sans-serif;
+    list-style:none;
+  }
+  .combo-reference .included details p{
+    margin:0 0 18px;
+    color:#606852;
+    font-size:12px;
+    line-height:20px;
+  }
+  .combo-reference .related{margin-top:54px}
+}
+@media(max-width:900px){
+  .combo-reference .product-panel>.price::after{content:"28% OFF"}
+  .combo-reference .duration-row{
+    grid-template-columns:1fr 1fr;
+  }
+  .combo-reference .duration-row button:nth-child(n+3){display:block}
+  .combo-reference .included::after{display:none}
+  .combo-reference .included h4{
+    margin:22px 0 10px;
+    font:700 12px/18px Inter,sans-serif;
+    letter-spacing:1.4px;
+    text-transform:uppercase;
+  }
+  .combo-reference .included ul{display:grid;gap:14px;list-style:none}
+  .combo-reference .included li{display:grid;gap:4px}
+  .combo-reference .included li span{color:#606852;font-size:12px;line-height:19px}
+  .combo-reference .included details{display:block}
+}
