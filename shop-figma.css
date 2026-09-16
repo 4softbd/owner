@@ -271,3 +271,75 @@
   font:500 14.5px/18px Inter,sans-serif!important
 }
 .shop-page header.nav.shell>nav>a::after{display:none!important}
+
+
+/* Figma header#nav 35:9864 — plan page exact navigation */
+@media(min-width:901px){
+  .shop-page header.nav.shell.shared-nav{
+    position:relative!important;
+    inset:auto!important;
+    width:min(1280px,calc(100% - 40px))!important;
+    max-width:1280px!important;
+    height:58px!important;
+    min-height:58px!important;
+    margin:12px auto 0!important;
+    padding:0 10px 0 20px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    border:1px solid rgba(22,26,16,.06)!important;
+    border-radius:18px!important;
+    background:rgba(253,252,247,.95)!important;
+    box-shadow:0 1px 3px rgba(22,26,16,.04),0 4px 16px rgba(22,26,16,.04)!important;
+    backdrop-filter:blur(14px)!important;
+    -webkit-backdrop-filter:blur(14px)!important;
+    z-index:30!important;
+  }
+  .shop-page header.nav.shell.shared-nav .brand{
+    display:flex!important;align-items:center!important;gap:4px!important;
+    color:#161a10!important;text-decoration:none!important;
+    font:700 15.5px/24.8px "Space Grotesk",sans-serif!important;
+    letter-spacing:2.79px!important;white-space:nowrap!important;
+  }
+  .shop-page header.nav.shell.shared-nav .brand span:last-child{color:#4f7a08!important}
+  .shop-page header.nav.shell.shared-nav .brand img{width:15px!important;height:15px!important;display:block!important}
+  .shop-page header.nav.shell.shared-nav>.hamburger{display:none!important}
+  .shop-page header.nav.shell.shared-nav>nav{
+    position:absolute!important;left:50%!important;top:50%!important;
+    transform:translate(-50%,-50%)!important;margin:0!important;
+    height:39.19px!important;display:flex!important;align-items:center!important;gap:2px!important;
+  }
+  .shop-page header.nav.shell.shared-nav>nav>a,
+  .shop-page header.nav.shell.shared-nav>nav>.nav-drop>button{
+    min-height:39.19px!important;height:39.19px!important;padding:0 14px!important;
+    display:flex!important;align-items:center!important;border:0!important;border-radius:10px!important;
+    background:transparent!important;color:#3a3d35!important;box-shadow:none!important;
+    font:500 14.5px/23.2px Inter,sans-serif!important;text-decoration:none!important;white-space:nowrap!important;
+  }
+  .shop-page header.nav.shell.shared-nav>nav>a::after{display:none!important}
+  .shop-page header.nav.shell.shared-nav .nav-drop{height:39.19px!important}
+  .shop-page header.nav.shell.shared-nav .nav-drop>button span{display:none!important}
+  .shop-page header.nav.shell.shared-nav>.nav-actions{
+    position:relative!important;inset:auto!important;margin-left:auto!important;
+    width:auto!important;height:42px!important;display:flex!important;align-items:center!important;
+    justify-content:flex-end!important;gap:6px!important;
+  }
+  .shop-page header.nav.shell.shared-nav>.nav-actions>#global-search,
+  .shop-page header.nav.shell.shared-nav>.nav-actions>#global-cart{
+    position:relative!important;inset:auto!important;flex:0 0 42px!important;
+    width:42px!important;height:42px!important;padding:10px!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;
+    border:0!important;border-radius:12px!important;background:transparent!important;
+  }
+  .shop-page header.nav.shell.shared-nav>.nav-actions>a{
+    position:relative!important;inset:auto!important;flex:0 0 auto!important;
+    width:auto!important;min-width:119.41px!important;height:42px!important;padding:0 10px!important;
+    display:flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;
+    border:0!important;border-radius:10px!important;background:transparent!important;
+    color:#161a10!important;text-decoration:none!important;
+    font:600 12px/19.2px "Space Grotesk",sans-serif!important;letter-spacing:.24px!important;
+  }
+  .shop-page header.nav.shell.shared-nav>.nav-actions img{width:22px!important;height:22px!important;display:block!important}
+  .shop-page header.nav.shell.shared-nav>.nav-actions .header-cart b:empty,
+  .shop-page header.nav.shell.shared-nav>.nav-actions .header-cart b[data-cart-count="0"]{display:none!important}
+}
