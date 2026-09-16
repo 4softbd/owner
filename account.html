@@ -1,48 +1,56 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>My Account — BuyFinix</title>
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="extras.css">
-<link rel="stylesheet" href="polish.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="account-figma.css?v=1">
 </head>
-<body>
-<header class="nav shell">
-<a class="brand" href="index.html">BUY ⚡ FINIX</a>
-<nav>
-<a href="/plan">Shop</a>
-<a href="index.html">Logout</a>
+<body class="account-page">
+<header class="account-nav">
+<a class="account-brand" href="index.html"><span>BUY</span><i>⚡</i><span>FINIX</span></a>
+<nav class="account-nav-links" aria-label="Primary navigation">
+<a href="index.html">Home</a><a href="/plan">Shop</a><a href="legal.html#login">Login Terms</a><a href="legal.html#terms">Quick Links</a>
 </nav>
-</header>
-<main class="shell page-shell">
-<h1 class="page-title">My account.</h1>
-<section class="panel otp-panel" id="login">
-<p class="kicker">SECURE ACCOUNT ACCESS</p><h2>Email login</h2><p>Enter your email and we’ll send a one-time code.</p>
-<form id="otp-form" class="otp-form"><label>Email address<input class="field" id="otp-email" type="email" autocomplete="email" required placeholder="you@example.com"></label><button class="primary-action" type="submit">Send OTP</button><p class="form-status" role="status"></p></form>
-<form id="verify-form" class="otp-form" hidden><label>6-digit code<input class="field" id="otp-code" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" required placeholder="000000"></label><button class="primary-action" type="submit">Verify &amp; continue</button><p class="form-status" role="status"></p></form>
-</section>
-<div class="dashboard-grid">
-<section class="panel">
-<h2>Wallet</h2>
-<h3>৳0 credit</h3>
-<p>Referral credit will appear here.</p>
-</section>
-<section class="panel">
-<h2>Active subscriptions</h2>
-<p>No active subscription in demo mode.</p>
-</section>
-<section class="panel" id="credentials">
-<h2>My Credentials</h2>
-<p>Protected credentials will appear only after secure authentication is connected.</p>
-</section>
-<section class="panel">
-<h2>Orders</h2>
-<p>#BF-DEMO-1001 · Pending payment</p>
-</section>
+<div class="account-nav-right">
+<a class="account-icon" href="/plan" aria-label="Search plans">⌕</a>
+<a class="account-link" href="account.html"><b>♙</b><span>My Account</span></a>
+<a class="account-icon" href="cart.html" aria-label="Open cart">🛒</a>
 </div>
+</header>
+<main class="account-main">
+<section class="account-shell" aria-labelledby="account-title">
+<h1 id="account-title">Sign in to BuyFinix</h1>
+<p class="account-intro">One tap with your WhatsApp number — no password to remember.</p>
+<ul class="account-benefits">
+<li><span class="benefit-icon green">◉</span><span class="benefit-copy"><b>Your Account</b><small>Every active plan, ready to copy</small></span></li>
+<li><span class="benefit-icon blue">◷</span><span class="benefit-copy"><b>Expiry dates</b><small>Know exactly when to renew</small></span></li>
+<li><span class="benefit-icon gold">▣</span><span class="benefit-copy"><b>Wallet &amp; orders</b><small>Coins apply at checkout automatically</small></span></li>
+</ul>
+<button class="account-action primary" type="button" data-auth-mode="login">Log in</button>
+<button class="account-action secondary" type="button" data-auth-mode="create">Create an account</button>
+<a class="browse-plans" href="/plan">Browse plans instead</a>
+</section>
 </main>
-<script src="store.js"></script>
+<dialog class="account-dialog" id="auth-dialog">
+<div class="dialog-head"><b id="dialog-title">Log in to BuyFinix</b><button class="dialog-close" type="button" aria-label="Close">×</button></div>
+<div class="dialog-body">
+<p id="dialog-copy">Enter your email and we’ll send a one-time code.</p>
+<form id="otp-form" class="otp-form"><label>Email address<input id="otp-email" type="email" autocomplete="email" required placeholder="you@example.com"></label><button type="submit">Send OTP</button><p class="form-status" role="status"></p></form>
+<form id="verify-form" class="otp-form" hidden><label>6-digit code<input id="otp-code" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" required placeholder="000000"></label><button type="submit">Verify &amp; continue</button><p class="form-status" role="status"></p></form>
+</div>
+</dialog>
+<script>
+const authDialog=document.querySelector('#auth-dialog'),dialogTitle=document.querySelector('#dialog-title'),dialogCopy=document.querySelector('#dialog-copy');
+document.querySelectorAll('[data-auth-mode]').forEach(button=>button.addEventListener('click',()=>{const creating=button.dataset.authMode==='create';dialogTitle.textContent=creating?'Create your BuyFinix account':'Log in to BuyFinix';dialogCopy.textContent=creating?'Enter your email to create your secure account.':'Enter your email and we’ll send a one-time code.';authDialog.showModal()}));
+document.querySelector('.dialog-close').addEventListener('click',()=>authDialog.close());
+authDialog.addEventListener('click',event=>{if(event.target===authDialog)authDialog.close()});
+const otp=document.querySelector('#otp-form'),verify=document.querySelector('#verify-form');
+otp.addEventListener('submit',event=>{event.preventDefault();const email=document.querySelector('#otp-email').value;otp.querySelector('.form-status').textContent='A code was requested for '+email+'.';verify.hidden=false;document.querySelector('#otp-code').focus()});
+verify.addEventListener('submit',event=>{event.preventDefault();verify.querySelector('.form-status').textContent='Email verified for this preview session.'});
+</script>
 </body>
 </html>
