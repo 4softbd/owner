@@ -195,3 +195,69 @@
 
 /* Figma header has no numeric badge; keep cart state inside the drawer v8 */
 .shared-nav .nav-actions .header-cart [data-cart-count]{display:none!important}
+
+/* Screenshot-matched product navigation v9 */
+@media(min-width:901px){
+  .shared-nav{
+    top:4px;
+    width:min(1280px,calc(100% - 70px));
+    height:56px;
+    padding:0 19px;
+    border:1px solid rgba(22,26,16,.045);
+    border-radius:18px;
+    background:#fdfcf7;
+    box-shadow:0 9px 21px -13px rgba(79,122,8,.38),0 7px 14px -12px rgba(22,26,16,.35);
+  }
+  .shared-nav .brand{font-size:15px;letter-spacing:2.35px}
+  .shared-nav>nav{gap:0}
+  .shared-nav>nav>a,
+  .shared-nav .nav-drop>button{
+    min-height:40px;
+    padding:0 14px;
+    display:flex;
+    align-items:center;
+    border-radius:13px;
+    color:#35382f;
+    font:500 14px/20px Inter,sans-serif;
+  }
+  .shared-nav>nav>a:nth-child(2){background:#f0f1ec}
+  .shared-nav .nav-drop>button span{display:none}
+  .shared-nav .nav-actions{gap:12px}
+}
+.shared-nav .nav-actions>button#global-search{
+  width:36px;
+  height:36px;
+  color:transparent;
+  font-size:0;
+  background-color:transparent;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6.5'/%3E%3Cpath d='m16 16 4 4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:21px 21px;
+}
+.shared-nav .nav-actions>a{
+  min-height:36px;
+  font-size:0!important;
+}
+.shared-nav .nav-actions>a::before{
+  content:"";
+  width:22px;
+  height:22px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%23161a10' stroke-width='1.65' stroke-linecap='round'%3E%3Ccircle cx='12' cy='7.5' r='3.25'/%3E%3Cpath d='M5.5 20c.35-4.25 2.65-6.5 6.5-6.5s6.15 2.25 6.5 6.5'/%3E%3C/svg%3E") center/22px 22px no-repeat;
+}
+.shared-nav .nav-actions>a span{
+  font:600 12px/18px "Space Grotesk",sans-serif;
+}
+.shared-nav .nav-actions .header-cart [data-cart-count]{
+  top:-3px;
+  right:-3px;
+  display:grid!important;
+  min-width:16px;
+  width:auto;
+  height:16px;
+  padding:0 4px;
+  border:2px solid #fdfcf7;
+  background:#c2f068;
+  color:#315600;
+  font:700 9px/12px Inter,sans-serif;
+}
