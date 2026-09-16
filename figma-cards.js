@@ -9,7 +9,7 @@
   if(moreTab)moreTab.textContent='More Plans';
   const featuredOption=document.querySelector('#shop-sort option:first-child');
   if(featuredOption)featuredOption.textContent='Default sorting';
-  if(page!=='shop.html'){
+  if(page!=='shop.html'&&page!=='plan'&&page!=='plan.html'){
     if(page==='product.html')window.bfProductPage();
     return;
   }
