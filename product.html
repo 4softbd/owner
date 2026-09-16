@@ -1,58 +1,82 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Netflix Premium — BuyFinix</title>
-<link rel="stylesheet" href="styles.css?v=figma4">
-<link rel="stylesheet" href="extras.css?v=figma4">
-<link rel="stylesheet" href="polish.css?v=figma4">
+<meta name="description" content="BuyFinix premium digital plan details.">
+<title>Product — BuyFinix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="product-figma.css?v=1">
 </head>
 <body>
-<header class="nav shell">
-<a class="brand" href="index.html">BUY ⚡ FINIX</a>
-<nav>
-<a href="index.html">Home</a>
-<a href="shop.html">Shop</a>
-<a href="cart.html">Cart</a>
-</nav>
+<header class="product-header">
+  <nav class="product-nav" aria-label="Primary navigation">
+    <button class="menu-trigger icon-button" id="menu-open" aria-label="Open menu">☰</button>
+    <a class="brand" href="/">BUY <span>⚡</span> <b>FINIX</b></a>
+    <div class="desktop-links">
+      <a href="/">Home</a>
+      <a href="/plan">Shop</a>
+      <div class="nav-menu"><button type="button">Categories <span>⌄</span></button><div class="nav-popover"><a href="/plan">Subscriptions</a><a href="/plan">Combo Packs</a><a href="/plan">Software</a><a href="/plan">Music</a><a href="/plan">More Plans</a></div></div>
+      <div class="nav-menu"><button type="button">Quick Links <span>⌄</span></button><div class="nav-popover"><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="legal.html">Terms & Conditions</a></div></div>
+    </div>
+    <div class="nav-actions">
+      <button class="icon-button" id="search-open" aria-label="Search">⌕</button>
+      <a class="account-link" href="/account"><span aria-hidden="true">♙</span><span>My Account</span></a>
+      <button class="icon-button cart-button" id="cart-open" aria-label="Cart">🛒<b id="cart-count" hidden>0</b></button>
+    </div>
+  </nav>
 </header>
-<main class="shell page-shell detail-grid">
-<div class="detail-image">N</div>
-<section class="panel">
-<p class="kicker">⚡ INSTANT DELIVERY</p>
-<h1>Netflix Premium 4K</h1>
-<div class="price">
-<b id="detail-price">৳399</b>
-<del>৳500</del>
-</div>
-<p>Choose plan duration</p>
-<div class="duration-row">
-<button class="active" data-duration data-price="৳399">1 Month</button>
-<button data-duration data-price="৳1,099">3 Months</button>
-<button data-duration data-price="৳2,099">6 Months</button>
-<button data-duration data-price="৳3,899">12 Months</button>
-</div>
-<p class="notice">Delivered on WhatsApp within minutes. In stock.</p>
-<div class="hero-buttons">
-<a href="cart.html">Add to Cart</a>
-<a class="outline" href="checkout.html">Buy Now</a>
-</div>
-<h3>What’s included</h3>
-<ul>
-<li>4K UHD streaming</li>
-<li>Full validity warranty</li>
-<li>Setup and replacement support</li>
-</ul>
-<details>
-<summary>Good to know</summary>
-<p>Use only on supported devices and follow the login terms supplied with your order.</p>
-</details>
-</section>
+
+<main class="product-page">
+  <section class="product-hero" aria-labelledby="product-name">
+    <div class="product-visual"><img id="product-image" alt="" hidden><span id="product-mark">N</span></div>
+    <div class="product-summary">
+      <div class="instant-label">⚡ INSTANT DELIVERY</div>
+      <h1 id="product-name">Netflix 4K Private</h1>
+      <div class="product-price"><strong id="product-price">৳199</strong><del id="product-old-price">৳299</del></div>
+      <p id="product-description">Premium digital plan with fast delivery and support.</p>
+      <fieldset class="plan-fieldset"><legend>Choose plan duration</legend><div class="duration-options">
+        <button type="button" class="active" data-duration="1 Month" data-multiplier="1">1 Month</button>
+        <button type="button" data-duration="3 Months" data-multiplier="3">3 Months</button>
+        <button type="button" data-duration="6 Months" data-multiplier="6">6 Months</button>
+        <button type="button" data-duration="12 Months" data-multiplier="12">12 Months</button>
+      </div></fieldset>
+      <div class="purchase-row">
+        <div class="quantity" aria-label="Quantity"><button type="button" id="qty-minus">−</button><output id="quantity">1</output><button type="button" id="qty-plus">+</button></div>
+        <button class="add-button" id="add-to-cart">Add to cart</button>
+        <a class="buy-button" href="checkout.html" id="buy-now">Buy now</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="delivery-strip"><span>✓</span><b>20 available</b><i></i><span>Delivered on WhatsApp after payment confirmation.</span></div>
+
+  <section class="product-description-section">
+    <h2>Description</h2>
+    <p id="long-description">Get reliable access with clear validity, setup assistance and replacement support during the applicable warranty period.</p>
+    <div class="included-grid"><div><h3>What’s included</h3><ul><li>Full plan validity</li><li>Setup assistance</li><li>Replacement support during warranty</li></ul></div><details><summary>Good to know <span>+</span></summary><p>Follow the login and device instructions supplied with your order.</p></details></div>
+  </section>
+
+  <section class="related-section" id="related-section">
+    <div class="section-head"><h2>Related products</h2><a href="/plan">View all <span>→</span></a></div>
+    <div class="related-grid" id="related-products"></div>
+  </section>
 </main>
-<script src="pages.js?v=figma4">
-</script>
-<script src="store.js?v=figma4"></script>
-<script src="figma-cards.js?v=figma4"></script>
+
+<footer class="product-footer"><div><a class="brand" href="/">BUY <span>⚡</span> <b>FINIX</b></a><p>Premium subscriptions and digital products in Bangladesh.</p></div><nav><a href="/plan">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="legal.html">Policies</a></nav><small>© 2026 BuyFinix · Bangladesh 🇧🇩</small></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="mobile-drawer" id="mobile-menu" aria-hidden="true">
+  <div class="drawer-header"><a class="brand" href="/">BUY <span>⚡</span> <b>FINIX</b></a><button id="menu-close" aria-label="Close menu">×</button></div>
+  <nav><a href="/">Home <span>›</span></a><a href="/plan">Shop <span>›</span></a><a href="/plan">Categories <span>›</span></a><a href="about.html">Quick links <span>›</span></a></nav>
+  <div class="install-card"><b>BuyFinix app</b><p>Faster access to your plans.</p><button type="button">Install app</button></div>
+  <a class="drawer-account" href="/account">Log in / My Account</a>
+</aside>
+<aside class="cart-drawer" id="cart-drawer" aria-hidden="true"><div class="drawer-header"><h2>Your cart</h2><button id="cart-close" aria-label="Close cart">×</button></div><div id="cart-items" class="cart-items"><p>Your cart is empty.</p></div><a class="checkout-button" href="checkout.html">View cart & checkout</a></aside>
+<div class="search-layer" id="search-modal" aria-hidden="true"><div class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search Netflix, Spotify, combos…" autocomplete="off"><button id="search-close">Cancel</button></div></div>
+<script src="store.js?v=products-3"></script>
+<script src="product-detail.js?v=1"></script>
 </body>
 </html>
