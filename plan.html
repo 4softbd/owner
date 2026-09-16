@@ -53,5 +53,25 @@
 <script src="pages.js?v=route1"></script>
 <script src="store.js?v=figma4"></script>
 <script src="figma-cards.js?v=figma11"></script>
+<script>
+(function(){
+  const canonical='/plan';
+  const normalize=()=>{ if(location.pathname!==canonical||location.search||location.hash) history.replaceState(null,'',canonical); };
+  const rewriteLinks=()=>{
+    document.querySelectorAll('a[href]').forEach(a=>{
+      const raw=a.getAttribute('href')||'';
+      if(/^(?:\.\/)?shop(?:\.html)?(?:[?#].*)?$/.test(raw)||raw.startsWith('/shop')) a.setAttribute('href',canonical);
+    });
+  };
+  normalize();
+  rewriteLinks();
+  document.addEventListener('click',event=>{
+    if(event.target.closest('[data-category],a[href*="shop"]')) setTimeout(()=>{normalize();rewriteLinks();},0);
+  },true);
+  document.addEventListener('input',()=>setTimeout(normalize,0),true);
+  document.addEventListener('change',()=>setTimeout(normalize,0),true);
+  new MutationObserver(rewriteLinks).observe(document.documentElement,{childList:true,subtree:true});
+})();
+</script>
 </body>
 </html>
