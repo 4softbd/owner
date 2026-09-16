@@ -192,3 +192,6 @@
 
 /* Preserve runtime empty-cart visibility state v7 */
 .shared-nav .nav-actions .header-cart [data-cart-count][hidden]{display:none!important}
+
+/* Figma header has no numeric badge; keep cart state inside the drawer v8 */
+.shared-nav .nav-actions .header-cart [data-cart-count]{display:none!important}
