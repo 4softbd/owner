@@ -9,7 +9,7 @@
     if (sort?.options?.length) sort.options[0].textContent = 'Default sorting';
     if (sort && !sort.dataset.referenceBound) {
       sort.dataset.referenceBound = '1';
-      sort.addEventListener('change', () => setTimeout(applyShopReference, 0));
+      sort.addEventListener('change', () => [0, 80, 240].forEach(delay => setTimeout(applyShopReference, delay)));
     }
 
     const grid = document.querySelector('#shop-grid');
