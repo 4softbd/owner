@@ -17,6 +17,19 @@
 
     const grid = document.querySelector('#shop-grid');
 
+    if (grid && ![...grid.querySelectorAll('.product-info h4')].some(node => /coursera/i.test(node.textContent))) {
+      const coursera = typeof BF_PRODUCTS !== 'undefined' && BF_PRODUCTS.find(product => /coursera/i.test(product.name));
+      if (coursera && typeof bfCard === 'function') {
+        const holder = document.createElement('div');
+        holder.innerHTML = bfCard(coursera);
+        const card = holder.firstElementChild;
+        if (card) {
+          if (grid.children.length >= 30) grid.lastElementChild?.remove();
+          grid.appendChild(card);
+        }
+      }
+    }
+
     grid?.querySelectorAll('.product-card').forEach(card => {
       const heading = card.querySelector('.product-info h4');
       const link = heading?.querySelector('a');
