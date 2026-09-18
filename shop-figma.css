@@ -454,3 +454,67 @@
 .shop-page header.nav.shell.shared-nav>.nav-actions>#global-cart [data-cart-count="0"]{
   display:none!important;
 }
+
+/* Homepage-matched Figma mobile dock */
+.shop-page .plan-mobile-dock{display:none!important}
+@media(max-width:900px){
+  .shop-page{padding-bottom:88px!important}
+  .shop-page .plan-mobile-dock{
+    position:fixed!important;
+    left:50%!important;
+    right:auto!important;
+    bottom:10px!important;
+    z-index:100!important;
+    transform:translateX(-50%)!important;
+    display:grid!important;
+    grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    align-items:center!important;
+    width:366px!important;
+    max-width:calc(100% - 24px)!important;
+    height:66px!important;
+    padding:6px!important;
+    box-sizing:border-box!important;
+    border:1px solid rgba(22,26,16,.07)!important;
+    border-radius:22px!important;
+    background:#fdfcf7!important;
+    box-shadow:0 18px 38px -18px rgba(22,26,16,.45),0 2px 6px -3px rgba(22,26,16,.14)!important;
+  }
+  .shop-page .plan-mobile-dock a{
+    display:flex!important;
+    min-width:0!important;
+    height:54px!important;
+    padding:3px 0 2px!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:3px!important;
+    color:#7f887a!important;
+    font:700 10px/16px Inter,sans-serif!important;
+    text-decoration:none!important;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .shop-page .plan-mobile-dock a i{
+    display:block!important;
+    width:47px!important;
+    height:29px!important;
+    padding:3px 12px!important;
+    box-sizing:border-box!important;
+    border-radius:999px!important;
+  }
+  .shop-page .plan-mobile-dock a i img{
+    display:block!important;
+    width:23px!important;
+    height:23px!important;
+    object-fit:contain!important;
+  }
+  .shop-page .plan-mobile-dock a span{
+    overflow:hidden!important;
+    max-width:100%!important;
+    color:inherit!important;
+    font:700 10px/16px Inter,sans-serif!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+  }
+  .shop-page .plan-mobile-dock a[aria-current="page"]{color:#3f6b0a!important}
+  .shop-page .plan-mobile-dock a[aria-current="page"] i{background:#dff2b8!important}
+}
