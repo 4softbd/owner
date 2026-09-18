@@ -101,6 +101,50 @@
   .related .group-head h2::before{content:"You may also like";font:600 24px/30px "Space Grotesk",sans-serif}
 }
 
+/* Figma responsive frames 1:7734 (1024w), 1:8732 (overlay), 1:8808 (390w) */
+@media(min-width:901px){
+  .page-shell{
+    width:min(1240px,92%)!important;
+  }
+}
+@media(max-width:900px){
+  .page-shell{
+    width:92%!important;
+    margin-top:32px!important;
+  }
+  .detail-grid{
+    gap:34px!important;
+  }
+  .product-panel{
+    display:flex;
+    flex-direction:column;
+  }
+  .product-panel h1{order:1}
+  .product-panel>.price{order:2}
+  .product-panel>p:not(.notice),
+  .product-panel>.field-label{display:none!important}
+  .duration-row{order:3}
+  .quantity-row{display:none!important}
+  .detail-actions{order:4}
+  .notice{
+    order:5;
+    margin-top:26px!important;
+  }
+  .included{
+    order:6;
+    margin-top:26px!important;
+  }
+  .related .product-grid{gap:14px!important}
+}
+@media(max-width:560px){
+  .product-panel h1{
+    font-size:30px!important;
+    line-height:37.5px!important;
+    letter-spacing:-.6px!important;
+  }
+  .related{margin-top:42px!important}
+}
+
 /* Figma vertical rhythm and description ordering v4 */
 @media(min-width:901px){
   .page-shell{margin-top:104px}
