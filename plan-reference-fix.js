@@ -15,6 +15,26 @@
     const cartCount = document.querySelector('[data-cart-count]');
     if (cartCount) cartCount.setAttribute('data-cart-count', cartCount.textContent.trim() || '0');
 
+    const bottomNavigation = document.querySelector('.mobile-bottom');
+    const bottomLinks = bottomNavigation?.querySelectorAll('a');
+    if (bottomNavigation && bottomLinks?.length >= 4) {
+      bottomNavigation.classList.add('plan-mobile-dock');
+      bottomNavigation.setAttribute('aria-label', 'Mobile navigation');
+      const bottomItems = [
+        ['index.html', 'https://www.figma.com/api/mcp/asset/e1054686-0953-4d6e-9c67-835f0463da9a.svg', 'Home'],
+        ['/plan', 'https://www.figma.com/api/mcp/asset/8a6df5e3-4265-4b5b-9822-4b8bad8864e0.svg', 'Shop'],
+        ['account.html#credentials', 'https://www.figma.com/api/mcp/asset/812bc584-8adf-4ab6-aef2-cdaa5e9bb22d.svg', 'My Creds'],
+        ['account.html', 'https://www.figma.com/api/mcp/asset/68c3922f-7946-482a-825a-3b18a062d016.svg', 'Account']
+      ];
+      bottomLinks.forEach((link, index) => {
+        const [href, icon, label] = bottomItems[index];
+        link.href = href;
+        link.innerHTML = `<i><img src="${icon}" alt="" width="23" height="23"></i><span>${label}</span>`;
+        link.removeAttribute('aria-current');
+      });
+      bottomLinks[1].setAttribute('aria-current', 'page');
+    }
+
     const grid = document.querySelector('#shop-grid');
 
     if (grid && typeof BF_PRODUCTS !== 'undefined' && typeof bfCard === 'function') {
@@ -95,5 +115,5 @@
   } else {
     run();
   }
-  [50, 250, 800, 1600].forEach(delay => setTimeout(run, delay));
+  [0, 50, 250, 800, 1600].forEach(delay => setTimeout(run, delay));
 })();
