@@ -14,6 +14,15 @@
     const cartCount = document.querySelector('[data-cart-count]');
     if (cartCount) cartCount.setAttribute('data-cart-count', cartCount.textContent.trim() || '0');
 
+    const bottomNavigation = document.querySelector('.mobile-bottom');
+    const bottomLinks = bottomNavigation?.querySelectorAll('a');
+    if (bottomLinks?.length >= 4) {
+      bottomLinks[1].href = '/plan';
+      bottomLinks[1].setAttribute('aria-current', 'page');
+      const credentialsLabel = bottomLinks[2].querySelector('span');
+      if (credentialsLabel) credentialsLabel.textContent = 'My Creds';
+    }
+
     const productId = Number(new URLSearchParams(location.search).get('id'));
     const title = document.querySelector('.product-panel h1')?.textContent.trim() || '';
     if (productId === 11 || title === 'Netflix 4K Private') {
