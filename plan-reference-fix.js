@@ -12,6 +12,9 @@
       sort.addEventListener('change', () => [0, 80, 240].forEach(delay => setTimeout(applyShopReference, delay)));
     }
 
+    const cartCount = document.querySelector('[data-cart-count]');
+    if (cartCount) cartCount.setAttribute('data-cart-count', cartCount.textContent.trim() || '0');
+
     const grid = document.querySelector('#shop-grid');
 
     grid?.querySelectorAll('.product-card').forEach(card => {
