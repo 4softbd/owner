@@ -425,3 +425,49 @@
   .combo-reference .included h4{order:4}
   .combo-reference .included details{order:5}
 }
+
+/* Figma frame fVRhXoE2TSv1R2HG93FdBH / 1:7217 */
+.shared-nav .nav-actions .header-cart [data-cart-count="0"],
+.shared-nav .nav-actions .header-cart [data-cart-count]:empty{
+  display:none!important;
+}
+@media(min-width:901px){
+  .netflix-private-reference .notice{
+    font-size:12px;
+  }
+  .netflix-private-reference .included::after{
+    content:"It’s a private Netflix plan. You receive a dedicated profile with full warranty and clear device instructions.";
+  }
+  .netflix-private-reference .included ul{
+    height:74px;
+    padding:12px 18px;
+    align-items:start;
+  }
+  .netflix-private-reference .included li{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:0 6px;
+    padding-left:18px;
+  }
+  .netflix-private-reference .included li strong{
+    color:#30342b;
+    font-weight:700;
+    white-space:nowrap;
+  }
+  .netflix-private-reference .included li span{
+    color:#606852;
+    font-size:10.5px;
+    line-height:15px;
+  }
+}
+@media(max-width:900px){
+  .netflix-private-reference .included li{
+    display:grid;
+    gap:4px;
+  }
+  .netflix-private-reference .included li span{
+    color:#606852;
+    font-size:12px;
+    line-height:18px;
+  }
+}
