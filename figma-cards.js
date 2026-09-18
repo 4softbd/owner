@@ -4,6 +4,17 @@
   window.bfCard=function(p){return `<article class="product-card"><a class="product-art" href="product.html?id=${p.id}"><img class="figma-card-art" src="${p.image}" alt="${p.name}" width="173" height="301"></a><div class="product-info"><h4><a href="product.html?id=${p.id}">${p.name}</a></h4><div class="price"><b>৳${Number(p.price).toLocaleString('en-BD')}</b><span>/mo</span><del>৳${Number(p.old).toLocaleString('en-BD')}</del></div><div class="card-actions"><button data-add="${p.id}" aria-label="Add ${p.name} to cart">🛒</button><a class="buy" href="product.html?id=${p.id}">Buy now</a></div></div></article>`};
 
   const allProducts=window.BF_PRODUCTS.slice();
+  const featuredOrder=[
+    'Lovable Lite on mail',
+    'Google Ai pro (on',
+    'Coursera on your mail',
+    '2-in-1 Combo',
+    'Prime Video 4K',
+    'Hotstar (On Number)',
+    'Netflix Premium 4K',
+    'Prime Video 4K (On Mail)',
+    'Zee5 Premium'
+  ];
   const page=location.pathname.split('/').pop();
   const moreTab=document.querySelector('#category-tabs [data-category="more"]');
   if(moreTab)moreTab.textContent='More Plans';
@@ -33,6 +44,14 @@
     if(/low to high/i.test(sortValue))list.sort((a,b)=>Number(a.price)-Number(b.price));
     if(/high to low/i.test(sortValue))list.sort((a,b)=>Number(b.price)-Number(a.price));
     if(/newest/i.test(sortValue))list.reverse();
+    if(!sortValue||sortValue==='featured')list.sort((a,b)=>{
+      const rank=p=>{
+        let index=featuredOrder.indexOf(p.name);
+        if(index<0&&p.name.startsWith('Google Ai pro'))index=featuredOrder.indexOf('Google Ai pro (on');
+        return index<0?featuredOrder.length+allProducts.indexOf(p):index;
+      };
+      return rank(a)-rank(b);
+    });
     return list;
   }
 
