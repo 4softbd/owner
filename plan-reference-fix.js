@@ -28,6 +28,7 @@
       const priority = [
         'Lovable Lite on mail',
         'Google Ai pro (on',
+        'Coursera on your mail',
         '2-in-1 Combo',
         'Prime Video 4K',
         'Hotstar (On Number)',
