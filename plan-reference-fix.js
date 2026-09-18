@@ -17,17 +17,27 @@
 
     const grid = document.querySelector('#shop-grid');
 
-    if (grid && ![...grid.querySelectorAll('.product-info h4')].some(node => /coursera/i.test(node.textContent))) {
-      const coursera = typeof BF_PRODUCTS !== 'undefined' && BF_PRODUCTS.find(product => /coursera/i.test(product.name));
-      if (coursera && typeof bfCard === 'function') {
-        const holder = document.createElement('div');
-        holder.innerHTML = bfCard(coursera);
-        const card = holder.firstElementChild;
-        if (card) {
-          if (grid.children.length >= 30) grid.lastElementChild?.remove();
-          grid.appendChild(card);
+    if (grid && typeof BF_PRODUCTS !== 'undefined' && typeof bfCard === 'function') {
+      const required = [
+        product => product.name.startsWith('Google Ai pro'),
+        product => /coursera/i.test(product.name)
+      ];
+      required.forEach(match => {
+        const visible = [...grid.querySelectorAll('.product-info h4')].some(node => {
+          const product = { name: node.textContent.trim() };
+          return match(product);
+        });
+        const product = BF_PRODUCTS.find(match);
+        if (!visible && product) {
+          const holder = document.createElement('div');
+          holder.innerHTML = bfCard(product);
+          const card = holder.firstElementChild;
+          if (card) {
+            if (grid.children.length >= 30) grid.lastElementChild?.remove();
+            grid.appendChild(card);
+          }
         }
-      }
+      });
     }
 
     grid?.querySelectorAll('.product-card').forEach(card => {
